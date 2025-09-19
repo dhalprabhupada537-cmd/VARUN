@@ -168,4 +168,35 @@ def get_css():
     }
 
     /* Tab styling */
-    .stTabs > div > div > div
+    .stTabs > div > div > div {
+        background-color: var(--card-background);
+    }
+
+    .stTabs > div > div > div > div {
+        color: var(--text-color);
+    }
+
+    .stTabs > div > div > div > div[aria-selected="true"] {
+        color: var(--primary-color);
+        font-weight: bold;
+        border-bottom: 2px solid var(--primary-color);
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+        .main-header {
+            font-size: 2rem;
+        }
+        
+        .card {
+            padding: 1rem;
+        }
+        
+        .language-selector {
+            top: 0.5rem;
+            right: 0.5rem;
+            padding: 0.3rem 0.8rem;
+        }
+    }
+    </style>
+    """
