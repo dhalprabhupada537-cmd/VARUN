@@ -1,344 +1,253 @@
+import streamlit as st
+import pandas as pd
 import numpy as np
+import plotly.express as px
+import plotly.graph_objects as go
+from PIL import Image
+import time
+from datetime import datetime, timedelta
+import os
 
-# Regional crop preferences with weights
-REGIONAL_PREFERENCES = {
-    "Punjab": {"Wheat": 0.9, "Rice": 0.8, "Cotton": 0.7, "Maize": 0.6, "Sugarcane": 0.5},
-    "Haryana": {"Wheat": 0.9, "Rice": 0.8, "Cotton": 0.7, "Mustard": 0.6, "Bajra": 0.5},
-    "Uttar Pradesh": {"Wheat": 0.9, "Rice": 0.8, "Sugarcane": 0.8, "Potato": 0.7, "Pulses": 0.6},
-    "Maharashtra": {"Cotton": 0.9, "Soybean": 0.8, "Pulses": 0.7, "Sugarcane": 0.7, "Groundnut": 0.6},
-    "Karnataka": {"Rice": 0.8, "Cotton": 0.7, "Pulses": 0.7, "Coffee": 0.8, "Sugarcane": 0.6},
-    "Tamil Nadu": {"Rice": 0.9, "Sugarcane": 0.8, "Cotton": 0.7, "Groundnut": 0.7, "Coconut": 0.8},
-    "Andhra Pradesh": {"Rice": 0.9, "Cotton": 0.8, "Chilli": 0.7, "Groundnut": 0.7, "Tobacco": 0.6},
-    "Gujarat": {"Cotton": 0.9, "Groundnut": 0.8, "Wheat": 0.7, "Pulses": 0.6, "Castor": 0.5},
-    "Odisha": {"Rice": 0.9, "Pulses": 0.7, "Oilseeds": 0.6, "Millets": 0.6, "Jute": 0.5},
-    "Jharkhand": {"Rice": 0.9, "Pulses": 0.7, "Oilseeds": 0.6, "Maize": 0.6, "Wheat": 0.5},
-    "West Bengal": {"Rice": 0.9, "Jute": 0.8, "Tea": 0.7, "Potato": 0.6, "Wheat": 0.5},
-    "Bihar": {"Rice": 0.9, "Wheat": 0.8, "Maize": 0.7, "Pulses": 0.6, "Sugarcane": 0.5}
-}
+# Import custom modules
+from crop_data import predict_best_crops
+from image_generator import generate_soil_images, generate_logo
 
-# Crop data with optimal conditions
-CROPS = [
-    {
-        'name': 'Wheat', 
-        'soil_types': ['Loam', 'Clay Loam'], 
-        'ph_min': 6.0, 'ph_max': 7.5,
-        'temp_min': 10, 'temp_max': 25, 
-        'rainfall_min': 500, 'rainfall_max': 1000,
-        'n_min': 50, 'n_max': 80, 
-        'p_min': 30, 'p_max': 60, 
-        'k_min': 40, 'k_max': 70,
-        'humidity_min': 40, 'humidity_max': 80
-    },
-    {
-        'name': 'Rice', 
-        'soil_types': ['Clay', 'Clay Loam'], 
-        'ph_min': 5.0, 'ph_max': 6.5,
-        'temp_min': 20, 'temp_max': 35, 
-        'rainfall_min': 1000, 'rainfall_max': 2000,
-        'n_min': 60, 'n_max': 90, 
-        'p_min': 40, 'p_max': 70, 
-        'k_min': 50, 'k_max': 80,
-        'humidity_min': 60, 'humidity_max': 100
-    },
-    {
-        'name': 'Maize', 
-        'soil_types': ['Loam', 'Sandy Loam'], 
-        'ph_min': 5.5, 'ph_max': 7.0,
-        'temp_min': 15, 'temp_max': 30, 
-        'rainfall_min': 600, 'rainfall_max': 1200,
-        'n_min': 70, 'n_max': 100, 
-        'p_min': 50, 'p_max': 80, 
-        'k_min': 60, 'k_max': 90,
-        'humidity_min': 50, 'humidity_max': 80
-    },
-    {
-        'name': 'Cotton', 
-        'soil_types': ['Sandy', 'Sandy Loam'], 
-        'ph_min': 5.5, 'ph_max': 7.5,
-        'temp_min': 20, 'temp_max': 35, 
-        'rainfall_min': 500, 'rainfall_max': 800,
-        'n_min': 40, 'n_max': 70, 
-        'p_min': 30, 'p_max': 60, 
-        'k_min': 50, 'k_max': 80,
-        'humidity_min': 40, 'humidity_max': 70
-    },
-    {
-        'name': 'Soybean', 
-        'soil_types': ['Silt', 'Silt Loam'], 
-        'ph_min': 6.0, 'ph_max': 7.0,
-        'temp_min': 15, 'temp_max': 30, 
-        'rainfall_min': 600, 'rainfall_max': 1000,
-        'n_min': 30, 'n_max': 60, 
-        'p_min': 40, 'p_max': 70, 
-        'k_min': 50, 'k_max': 80,
-        'humidity_min': 50, 'humidity_max': 85
-    },
-    {
-        'name': 'Pulses', 
-        'soil_types': ['Loam', 'Sandy Loam'], 
-        'ph_min': 6.0, 'ph_max': 7.5,
-        'temp_min': 15, 'temp_max': 30, 
-        'rainfall_min': 500, 'rainfall_max': 800,
-        'n_min': 20, 'n_max': 50, 
-        'p_min': 30, 'p_max': 60, 
-        'k_min': 40, 'k_max': 70,
-        'humidity_min': 40, 'humidity_max': 70
-    },
-    {
-        'name': 'Sugarcane', 
-        'soil_types': ['Loam', 'Clay Loam'], 
-        'ph_min': 6.0, 'ph_max': 7.5,
-        'temp_min': 20, 'temp_max': 35, 
-        'rainfall_min': 1000, 'rainfall_max': 1500,
-        'n_min': 100, 'n_max': 150, 
-        'p_min': 50, 'p_max': 80, 
-        'k_min': 80, 'k_max': 120,
-        'humidity_min': 60, 'humidity_max': 85
-    },
-    {
-        'name': 'Groundnut', 
-        'soil_types': ['Sandy', 'Sandy Loam'], 
-        'ph_min': 5.5, 'ph_max': 7.0,
-        'temp_min': 20, 'temp_max': 35, 
-        'rainfall_min': 500, 'rainfall_max': 1000,
-        'n_min': 20, 'n_max': 40, 
-        'p_min': 30, 'p_max': 50, 
-        'k_min': 40, 'k_max': 60,
-        'humidity_min': 50, 'humidity_max': 80
+# Page configuration
+st.set_page_config(
+    page_title="VARUN AI Crop Recommendation",
+    page_icon="🌾",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
+
+# Custom CSS with VARUN branding
+st.markdown("""
+<style>
+    .main-header {
+        font-size: 3.5rem;
+        color: #2E8B57;
+        text-align: center;
+        font-weight: bold;
+        margin-bottom: 0;
     }
-]
+    .tagline {
+        font-size: 1.2rem;
+        color: #3CB371;
+        text-align: center;
+        margin-top: 0;
+        font-style: italic;
+    }
+    .sub-header {
+        font-size: 1.8rem;
+        color: #2E8B57;
+        border-bottom: 2px solid #3CB371;
+        padding-bottom: 10px;
+    }
+    .card {
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 6px 12px 0 rgba(0,0,0,0.2);
+        margin: 15px 0;
+        background-color: #FFFFFF;
+        border-left: 5px solid #4CAF50;
+    }
+    .recommendation-card {
+        background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%);
+        padding: 25px;
+        border-radius: 15px;
+        border-left: 5px solid #4CAF50;
+    }
+    .soil-image {
+        border-radius: 12px;
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .weather-card {
+        background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%);
+        padding: 20px;
+        border-radius: 12px;
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .footer {
+        text-align: center;
+        margin-top: 30px;
+        padding: 20px;
+        background-color: #2E8B57;
+        color: white;
+        border-radius: 10px;
+    }
+    .team-name {
+        font-weight: bold;
+        color: #FFD700;
+    }
+    .stProgress > div > div > div > div {
+        background: linear-gradient(90deg, #4CAF50 0%, #8BC34A 100%);
+    }
+    .suitability-bar {
+        height: 20px;
+        background: linear-gradient(90deg, #ff4b4b 0%, #ffa500 50%, #4CAF50 100%);
+        border-radius: 10px;
+        margin: 5px 0;
+    }
+    .analysis-box {
+        background-color: #f0f8ff;
+        padding: 15px;
+        border-radius: 10px;
+        border-left: 4px solid #4CAF50;
+        margin: 10px 0;
+    }
+</style>
+""", unsafe_allow_html=True)
 
-# Additional crop information
-PLANTING_TIMES = {
-    'Wheat': 'October-November',
-    'Rice': 'June-July', 
-    'Maize': 'April-May',
-    'Cotton': 'May-June',
-    'Soybean': 'June-July',
-    'Pulses': 'October-November',
-    'Sugarcane': 'February-March',
-    'Groundnut': 'June-July'
-}
+# Generate images
+try:
+    os.makedirs("assets", exist_ok=True)
+    logo_success = generate_logo()
+    soil_success = generate_soil_images()
+except Exception as e:
+    st.error(f"Error creating assets: {e}")
 
-WATER_REQUIREMENTS = {
-    'Wheat': 'Moderate (600-800 mm)',
-    'Rice': 'High (1000-1500 mm)',
-    'Maize': 'Moderate (600-800 mm)',
-    'Cotton': 'Low (400-600 mm)',
-    'Soybean': 'Moderate (500-700 mm)',
-    'Pulses': 'Low to Moderate (400-600 mm)',
-    'Sugarcane': 'High (1200-1800 mm)',
-    'Groundnut': 'Moderate (500-800 mm)'
-}
+# App header
+col1, col2, col3 = st.columns([1, 3, 1])
+with col2:
+    st.markdown('<h1 class="main-header">VARUN<span style="color: #FFD700;">ai</span></h1>', unsafe_allow_html=True)
+    st.markdown('<p class="tagline">Vikasit Adhunik Roopantaran ke liye Uttam Nirdesh</p>', unsafe_allow_html=True)
 
-FERTILIZER_RECOMMENDATIONS = {
-    'Wheat': 'N:P:K = 60:40:40 kg/ha',
-    'Rice': 'N:P:K = 80:40:40 kg/ha',
-    'Maize': 'N:P:K = 100:50:50 kg/ha',
-    'Cotton': 'N:P:K = 50:25:25 kg/ha',
-    'Soybean': 'N:P:K = 40:60:40 kg/ha',
-    'Pulses': 'N:P:K = 20:50:40 kg/ha',
-    'Sugarcane': 'N:P:K = 150:60:100 kg/ha',
-    'Groundnut': 'N:P:K = 20:50:40 kg/ha'
-}
+# Sidebar
+with st.sidebar:
+    try:
+        st.image("assets/logo.png", width=280)
+    except:
+        st.warning("Logo image not found")
+    
+    st.markdown("## Farmer Details")
+    
+    farmer_name = st.text_input("Full Name")
+    farm_location = st.selectbox("Region (Optional)", ["Select Region", "Punjab", "Haryana", "Uttar Pradesh", "Maharashtra", 
+                                           "Karnataka", "Tamil Nadu", "Andhra Pradesh", "Gujarat",
+                                           "Odisha", "Jharkhand", "West Bengal", "Bihar"])
+    farm_size = st.slider("Farm Size (acres)", 1, 100, 10)
+    
+    st.markdown("## Soil Properties")
+    soil_type = st.selectbox("Soil Type (Optional)", ["Select Soil Type", "Loam", "Clay", "Sandy", "Silt", "Clay Loam", "Sandy Loam", "Silt Loam"])
+    soil_ph = st.slider("Soil pH", 4.0, 9.0, 6.5)
+    soil_moisture = st.slider("Soil Moisture (%)", 0, 100, 50)
+    nitrogen = st.slider("Nitrogen (kg/ha)", 0, 200, 50)
+    phosphorus = st.slider("Phosphorus (kg/ha)", 0, 200, 40)
+    potassium = st.slider("Potassium (kg/ha)", 0, 200, 60)
+    
+    st.markdown("## Environmental Factors")
+    temperature = st.slider("Temperature (°C)", 0, 45, 25)
+    rainfall = st.slider("Annual Rainfall (mm)", 0, 2000, 800)
+    humidity = st.slider("Humidity (%)", 0, 100, 60)
+    
+    analyze_button = st.button("Analyze & Recommend", type="primary")
 
-HARVEST_TIMES = {
-    'Wheat': 'March-April',
-    'Rice': 'October-November',
-    'Maize': 'August-September',
-    'Cotton': 'October-December',
-    'Soybean': 'September-October',
-    'Pulses': 'February-March',
-    'Sugarcane': 'February-March',
-    'Groundnut': 'September-October'
-}
-
-def calculate_suitability_score(crop, soil_type, ph, nitrogen, phosphorus, potassium, 
-                              temperature, rainfall, humidity, region):
+# Function to display suitability bars
+def display_suitability_bars(reasons):
     """
-    Calculate suitability score for a crop based on various parameters
+    Display suitability factors as visual bars
     """
-    score = 0
-    reasons = []
-    
-    # Regional preference (weight: 25%)
-    regional_weight = 0.25
-    regional_score = REGIONAL_PREFERENCES.get(region, {}).get(crop['name'], 0.5)
-    score += regional_score * 100 * regional_weight
-    reasons.append(f"Regional suitability: {regional_score*100:.1f}%")
-    
-    # Soil type match (weight: 20%)
-    soil_weight = 0.20
-    if soil_type and soil_type in crop['soil_types']:
-        soil_score = 1.0
-    else:
-        soil_score = 0.3  # Some crops can grow in other soils with reduced yield
-    score += soil_score * 100 * soil_weight
-    reasons.append(f"Soil type compatibility: {soil_score*100:.1f}%")
-    
-    # pH suitability (weight: 15%)
-    ph_weight = 0.15
-    if crop['ph_min'] <= ph <= crop['ph_max']:
-        ph_score = 1.0
-    else:
-        # Calculate how far from optimal range
-        ph_mid = (crop['ph_min'] + crop['ph_max']) / 2
-        ph_distance = min(abs(ph - crop['ph_min']), abs(ph - crop['ph_max']))
-        ph_score = max(0, 1 - (ph_distance / 3))  # Reduced to 0 if 3 units away
-    score += ph_score * 100 * ph_weight
-    reasons.append(f"pH suitability: {ph_score*100:.1f}%")
-    
-    # Temperature suitability (weight: 15%)
-    temp_weight = 0.15
-    if crop['temp_min'] <= temperature <= crop['temp_max']:
-        temp_score = 1.0
-    else:
-        # Calculate how far from optimal range
-        temp_mid = (crop['temp_min'] + crop['temp_max']) / 2
-        temp_distance = min(abs(temperature - crop['temp_min']), abs(temperature - crop['temp_max']))
-        temp_score = max(0, 1 - (temp_distance / 15))  # Reduced to 0 if 15°C away
-    score += temp_score * 100 * temp_weight
-    reasons.append(f"Temperature suitability: {temp_score*100:.1f}%")
-    
-    # Rainfall suitability (weight: 10%)
-    rain_weight = 0.10
-    if crop['rainfall_min'] <= rainfall <= crop['rainfall_max']:
-        rain_score = 1.0
-    else:
-        # Calculate how far from optimal range
-        rain_mid = (crop['rainfall_min'] + crop['rainfall_max']) / 2
-        rain_distance = min(abs(rainfall - crop['rainfall_min']), abs(rainfall - crop['rainfall_max']))
-        rain_score = max(0, 1 - (rain_distance / 500))  # Reduced to 0 if 500mm away
-    score += rain_score * 100 * rain_weight
-    reasons.append(f"Rainfall suitability: {rain_score*100:.1f}%")
-    
-    # Humidity suitability (weight: 5%)
-    humidity_weight = 0.05
-    if crop['humidity_min'] <= humidity <= crop['humidity_max']:
-        humidity_score = 1.0
-    else:
-        # Calculate how far from optimal range
-        humidity_mid = (crop['humidity_min'] + crop['humidity_max']) / 2
-        humidity_distance = min(abs(humidity - crop['humidity_min']), abs(humidity - crop['humidity_max']))
-        humidity_score = max(0, 1 - (humidity_distance / 30))  # Reduced to 0 if 30% away
-    score += humidity_score * 100 * humidity_weight
-    reasons.append(f"Humidity suitability: {humidity_score*100:.1f}%")
-    
-    # Nutrient suitability (weight: 10%)
-    nutrient_weight = 0.10
-    n_score = 1.0 if crop['n_min'] <= nitrogen <= crop['n_max'] else max(0, 1 - abs(nitrogen - (crop['n_min'] + crop['n_max'])/2) / 50)
-    p_score = 1.0 if crop['p_min'] <= phosphorus <= crop['p_max'] else max(0, 1 - abs(phosphorus - (crop['p_min'] + crop['p_max'])/2) / 40)
-    k_score = 1.0 if crop['k_min'] <= potassium <= crop['k_max'] else max(0, 1 - abs(potassium - (crop['k_min'] + crop['k_max'])/2) / 40)
-    
-    nutrient_score = (n_score + p_score + k_score) / 3
-    score += nutrient_score * 100 * nutrient_weight
-    reasons.append(f"Nutrient suitability: {nutrient_score*100:.1f}%")
-    
-    # Ensure score is between 0 and 100
-    score = max(0, min(100, score))
-    
-    return score, reasons
+    for reason in reasons:
+        # Extract percentage from the reason text
+        if ":" in reason and "%" in reason:
+            label, value_text = reason.split(":", 1)
+            value = float(value_text.replace("%", "").strip())
+            
+            st.markdown(f"{label}")
+            st.markdown(f'<div class="suitability-bar" style="width: {value}%;"></div>', unsafe_allow_html=True)
+            st.markdown(f"{value:.1f}%")
+            st.write("")
 
-def predict_best_crops(soil_type, ph, nitrogen, phosphorus, potassium, 
-                      temperature, rainfall, humidity, region, top_n=3):
-    """
-    Predict the best crops based on input parameters
-    """
-    results = []
-    
-    for crop in CROPS:
-        score, reasons = calculate_suitability_score(
-            crop, soil_type, ph, nitrogen, phosphorus, potassium,
-            temperature, rainfall, humidity, region
-        )
-        
-        # Generate detailed analysis
-        analysis = generate_detailed_analysis(crop, soil_type, ph, nitrogen, phosphorus, potassium,
-                                            temperature, rainfall, humidity, region)
-        
-        results.append({
-            'crop': crop['name'],
-            'score': score,
-            'reasons': reasons,
-            'analysis': analysis,
-            'yield': f"{np.random.uniform(2.0, 5.0):.1f}",
-            'planting_time': PLANTING_TIMES.get(crop['name'], 'Varies by region'),
-            'water_req': WATER_REQUIREMENTS.get(crop['name'], 'Moderate'),
-            'fertilizer': FERTILIZER_RECOMMENDATIONS.get(crop['name'], 'N:P:K = 50:50:50 kg/ha'),
-            'harvest_time': HARVEST_TIMES.get(crop['name'], 'Varies by region'),
-            'market_price': f"₹{np.random.randint(25, 55)}",
-            'demand_trend': 'High' if crop['name'] in ['Rice', 'Wheat'] else 'Moderate' if crop['name'] in ['Maize', 'Cotton'] else 'Stable'
-        })
-    
-    # Sort by score and return top N results
-    results.sort(key=lambda x: x['score'], reverse=True)
-    return results[:top_n]
+# Main content
+tab1, tab2, tab3, tab4 = st.tabs(["Dashboard", "Crop Recommendation", "Soil Analysis", "Weather Forecast"])
 
-def generate_detailed_analysis(crop, soil_type, ph, nitrogen, phosphorus, potassium,
-                             temperature, rainfall, humidity, region):
-    """
-    Generate detailed analysis for a crop
-    """
-    analysis = []
+with tab1:
+    st.markdown('<h2 class="sub-header">Farm Overview</h2>', unsafe_allow_html=True)
     
-    # Regional analysis
-    regional_pref = REGIONAL_PREFERENCES.get(region, {}).get(crop['name'], 0)
-    if regional_pref >= 0.7:
-        analysis.append(f"{crop['name']} is highly preferred in {region} region.")
-    elif regional_pref >= 0.4:
-        analysis.append(f"{crop['name']} is moderately suitable for {region} region.")
+    col1, col2, col3 = st.columns(3)
+    with col1: 
+        st.markdown(f'<div class="card"><h3>Farm Size</h3><p style="font-size: 24px; color: #2E8B57;">{farm_size} acres</p></div>', unsafe_allow_html=True)
+    with col2: 
+        soil_display = soil_type if soil_type != "Select Soil Type" else "Not specified"
+        st.markdown(f'<div class="card"><h3>Soil Type</h3><p style="font-size: 24px; color: #2E8B57;">{soil_display}</p></div>', unsafe_allow_html=True)
+    with col3: 
+        region_display = farm_location if farm_location != "Select Region" else "Not specified"
+        st.markdown(f'<div class="card"><h3>Region</h3><p style="font-size: 24px; color: #2E8B57;">{region_display}</p></div>', unsafe_allow_html=True)
+
+with tab2:
+    st.markdown('<h2 class="sub-header">Crop Recommendation</h2>', unsafe_allow_html=True)
+    
+    if analyze_button:
+        with st.spinner('Analyzing your farm data and generating recommendations...'):
+            progress_bar = st.progress(0)
+            for percent_complete in range(100):
+                time.sleep(0.01)
+                progress_bar.progress(percent_complete + 1)
+            
+            # Handle optional parameters
+            region = farm_location if farm_location != "Select Region" else None
+            soil = soil_type if soil_type != "Select Soil Type" else None
+            
+            recommendations = predict_best_crops(
+                soil, soil_ph, nitrogen, phosphorus, potassium, 
+                temperature, rainfall, humidity, region
+            )
+            
+            # Display top recommendation
+            if recommendations:
+                top_recommendation = recommendations[0]
+                
+                st.markdown('<div class="recommendation-card">', unsafe_allow_html=True)
+                st.markdown(f"### 🌱 Recommended Crop: *{top_recommendation['crop']}*")
+                st.markdown(f"*Suitability Score:* {top_recommendation['score']:.1f}%")
+                st.markdown(f"*Expected Yield:* {top_recommendation['yield']} tons/acre")
+                st.markdown('</div>', unsafe_allow_html=True)
+                
+                # Display suitability factors
+                st.markdown("#### Suitability Analysis")
+                display_suitability_bars(top_recommendation['reasons'])
+                
+                # Display detailed analysis
+                st.markdown("#### Detailed Analysis")
+                for analysis_point in top_recommendation['analysis']:
+                    st.markdown(f'<div class="analysis-box">{analysis_point}</div>', unsafe_allow_html=True)
+                
+                # Display crop details
+                col1, col2 = st.columns(2)
+                with col1:
+                    st.markdown("*Best Planting Time*")
+                    st.write(top_recommendation['planting_time'])
+                    st.markdown("*Water Requirements*")
+                    st.write(top_recommendation['water_req'])
+                with col2:
+                    st.markdown("*Fertilizer Recommendations*")
+                    st.write(top_recommendation['fertilizer'])
+                    st.markdown("*Harvest Timeline*")
+                    st.write(top_recommendation['harvest_time'])
+                
+                # Display market insights
+                st.markdown("#### Market Insights")
+                st.success(f"Current market price: {top_recommendation['market_price']} per kg")
+                st.write(f"Demand trend: {top_recommendation['demand_trend']}")
+                
+                # Show alternative options
+                if len(recommendations) > 1:
+                    st.markdown("#### Alternative Options")
+                    for i, rec in enumerate(recommendations[1:], 1):
+                        st.markdown(f"{i}. {rec['crop']}** (Suitability: {rec['score']:.1f}%)")
+            else:
+                st.error("No suitable crops found for your conditions. Please adjust your parameters.")
+    
     else:
-        analysis.append(f"{crop['name']} is not typically grown in {region} but may still be viable.")
+        st.info("Click the 'Analyze & Recommend' button in the sidebar to get crop recommendations")
+
+with tab3:
+    st.markdown('<h2 class="sub-header">Soil Analysis</h2>', unsafe_allow_html=True)
     
-    # Soil analysis
-    if soil_type and soil_type in crop['soil_types']:
-        analysis.append(f"Ideal soil type: {soil_type} is perfect for {crop['name']}.")
-    elif soil_type:
-        analysis.append(f"Soil type: {soil_type} is not ideal but {crop['name']} can adapt.")
-    else:
-        analysis.append(f"{crop['name']} grows best in {', '.join(crop['soil_types'])} soils.")
-    
-    # pH analysis
-    if crop['ph_min'] <= ph <= crop['ph_max']:
-        analysis.append(f"Soil pH ({ph}) is ideal for {crop['name']}.")
-    else:
-        analysis.append(f"Soil pH ({ph}) is outside the optimal range ({crop['ph_min']}-{crop['ph_max']}) for {crop['name']}.")
-    
-    # Temperature analysis
-    if crop['temp_min'] <= temperature <= crop['temp_max']:
-        analysis.append(f"Temperature ({temperature}°C) is ideal for {crop['name']}.")
-    else:
-        analysis.append(f"Temperature ({temperature}°C) is outside the optimal range ({crop['temp_min']}-{crop['temp_max']}°C) for {crop['name']}.")
-    
-    # Rainfall analysis
-    if crop['rainfall_min'] <= rainfall <= crop['rainfall_max']:
-        analysis.append(f"Rainfall ({rainfall}mm) is sufficient for {crop['name']}.")
-    else:
-        analysis.append(f"Rainfall ({rainfall}mm) is outside the optimal range ({crop['rainfall_min']}-{crop['rainfall_max']}mm) for {crop['name']}.")
-    
-    # Nutrient analysis
-    nutrient_status = []
-    if crop['n_min'] <= nitrogen <= crop['n_max']:
-        nutrient_status.append("Nitrogen levels are optimal")
-    elif nitrogen < crop['n_min']:
-        nutrient_status.append(f"Add {crop['n_min'] - nitrogen} kg/ha Nitrogen")
-    else:
-        nutrient_status.append("Reduce Nitrogen application")
-    
-    if crop['p_min'] <= phosphorus <= crop['p_max']:
-        nutrient_status.append("Phosphorus levels are optimal")
-    elif phosphorus < crop['p_min']:
-        nutrient_status.append(f"Add {crop['p_min'] - phosphorus} kg/ha Phosphorus")
-    else:
-        nutrient_status.append("Reduce Phosphorus application")
-    
-    if crop['k_min'] <= potassium <= crop['k_max']:
-        nutrient_status.append("Potassium levels are optimal")
-    elif potassium < crop['k_min']:
-        nutrient_status.append(f"Add {crop['k_min'] - potassium} kg/ha Potassium")
-    else:
-        nutrient_status.append("Reduce Potassium application")
-    
-    analysis.append("Nutrient status: " + ", ".join(nutrient_status) + ".")
-    
-    return analysis
+    if soil_type != "Select Soil Type":
+        try:
+            soil_img = Image.open(f"assets/soil_types/{soil_type.lower().replace('
