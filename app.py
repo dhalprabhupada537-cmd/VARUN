@@ -250,4 +250,4 @@ with tab3:
     
     if soil_type != "Select Soil Type":
         try:
-            soil_img = Image.open(f"assets/soil_types/{soil_type.lower().replace('
+            soil_img = Image.open(f"assets/soil_types/{soil_type.lower()}.png")
