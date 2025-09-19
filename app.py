@@ -157,7 +157,7 @@ def display_suitability_bars(reasons):
             label, value_text = reason.split(":", 1)
             value = float(value_text.replace("%", "").strip())
             
-            st.markdown(f"{label}")
+            st.markdown(f"**{label}**")
             st.markdown(f'<div class="suitability-bar" style="width: {value}%;"></div>', unsafe_allow_html=True)
             st.markdown(f"{value:.1f}%")
             st.write("")
@@ -202,9 +202,9 @@ with tab2:
                 top_recommendation = recommendations[0]
                 
                 st.markdown('<div class="recommendation-card">', unsafe_allow_html=True)
-                st.markdown(f"### 🌱 Recommended Crop: *{top_recommendation['crop']}*")
-                st.markdown(f"*Suitability Score:* {top_recommendation['score']:.1f}%")
-                st.markdown(f"*Expected Yield:* {top_recommendation['yield']} tons/acre")
+                st.markdown(f"### 🌱 Recommended Crop: **{top_recommendation['crop']}**")
+                st.markdown(f"**Suitability Score:** {top_recommendation['score']:.1f}%")
+                st.markdown(f"**Expected Yield:** {top_recommendation['yield']} tons/acre")
                 st.markdown('</div>', unsafe_allow_html=True)
                 
                 # Display suitability factors
@@ -219,14 +219,14 @@ with tab2:
                 # Display crop details
                 col1, col2 = st.columns(2)
                 with col1:
-                    st.markdown("*Best Planting Time*")
+                    st.markdown("**Best Planting Time**")
                     st.write(top_recommendation['planting_time'])
-                    st.markdown("*Water Requirements*")
+                    st.markdown("**Water Requirements**")
                     st.write(top_recommendation['water_req'])
                 with col2:
-                    st.markdown("*Fertilizer Recommendations*")
+                    st.markdown("**Fertilizer Recommendations**")
                     st.write(top_recommendation['fertilizer'])
-                    st.markdown("*Harvest Timeline*")
+                    st.markdown("**Harvest Timeline**")
                     st.write(top_recommendation['harvest_time'])
                 
                 # Display market insights
@@ -238,7 +238,7 @@ with tab2:
                 if len(recommendations) > 1:
                     st.markdown("#### Alternative Options")
                     for i, rec in enumerate(recommendations[1:], 1):
-                        st.markdown(f"{i}. {rec['crop']}** (Suitability: {rec['score']:.1f}%)")
+                        st.markdown(f"**{i}. {rec['crop']}** (Suitability: {rec['score']:.1f}%)")
             else:
                 st.error("No suitable crops found for your conditions. Please adjust your parameters.")
     
@@ -250,4 +250,4 @@ with tab3:
     
     if soil_type != "Select Soil Type":
         try:
-            soil_img = Image.open(f"assets/soil_types/{soil_type.lower()}.png")
+            soil_img = Image.open(f"assets/soil_types/{soil_type.lower().replace('
