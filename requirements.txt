@@ -2,5 +2,6 @@ streamlit
 pandas
 numpy
 plotly
-Pillow
-
+scikit-learn
+requests
+pillow
