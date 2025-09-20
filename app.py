@@ -33,7 +33,8 @@ LANGUAGES = {
             'Odisha': 'Odisha',
             'Jharkhand': 'Jharkhand',
             'West Bengal': 'West Bengal',
-            'Bihar': 'Bihar'
+            'Bihar': 'Bihar',
+            'Select': 'Select Region'
         },
         'ui': {
             'app_name': 'VARUN AI',
@@ -81,7 +82,18 @@ LANGUAGES = {
             'team_name': 'Team AgroNova',
             'for_sih': 'for SIH 2025',
             'language': 'Language',
-            'select_language': 'Select Language'
+            'select_language': 'Select Language',
+            'not_specified': 'Not specified',
+            'regional_preference': 'Regional Preference',
+            'soil_type_match': 'Soil Type Match',
+            'ph_suitability': 'pH Suitability',
+            'temperature_suitability': 'Temperature Suitability',
+            'rainfall_suitability': 'Rainfall Suitability',
+            'nutrient_suitability': 'Nutrient Suitability',
+            'alternative_options': 'Alternative Options',
+            'detailed_factor_analysis': 'Detailed Factor Analysis',
+            'suitability_analysis': 'Suitability Analysis for',
+            'analysis_loading': 'Analyzing your farm data and generating recommendations...'
         },
         'crops': {
             'Wheat': 'Wheat',
@@ -89,7 +101,27 @@ LANGUAGES = {
             'Maize': 'Maize',
             'Cotton': 'Cotton',
             'Soybean': 'Soybean',
-            'Pulses': 'Pulses'
+            'Pulses': 'Pulses',
+            'Sugarcane': 'Sugarcane',
+            'Groundnut': 'Groundnut'
+        },
+        'reasons': {
+            'highly_suitable': 'Highly suitable for {} region',
+            'not_typical': 'Not typically grown in {}',
+            'ideal_soil': 'Ideal for {} soil',
+            'not_optimal_soil': 'Not optimal for {} soil (prefers {})',
+            'optimal_ph': 'Optimal pH range ({}-{})',
+            'ph_low': 'pH slightly low (ideal: {}-{})',
+            'ph_high': 'pH slightly high (ideal: {}-{})',
+            'optimal_temp': 'Optimal temperature range ({}-{}°C)',
+            'temp_low': 'Temperature slightly low (ideal: {}-{}°C)',
+            'temp_high': 'Temperature slightly high (ideal: {}-{}°C)',
+            'optimal_rain': 'Optimal rainfall ({}-{}mm)',
+            'rain_low': 'Rainfall slightly low (ideal: {}-{}mm)',
+            'rain_high': 'Rainfall slightly high (ideal: {}-{}mm)',
+            'nitrogen_issue': 'Nitrogen level not optimal for {}',
+            'phosphorus_issue': 'Phosphorus level not optimal for {}',
+            'potassium_issue': 'Potassium level not optimal for {}'
         }
     },
     'hi': {
@@ -107,7 +139,8 @@ LANGUAGES = {
             'Odisha': 'ओडिशा',
             'Jharkhand': 'झारखंड',
             'West Bengal': 'पश्चिम बंगाल',
-            'Bihar': 'बिहार'
+            'Bihar': 'बिहार',
+            'Select': 'क्षेत्र चुनें'
         },
         'ui': {
             'app_name': 'VARUN AI',
@@ -155,7 +188,18 @@ LANGUAGES = {
             'team_name': 'टीम एग्रोनोवा',
             'for_sih': 'एसआईएच 2025 के लिए',
             'language': 'भाषा',
-            'select_language': 'भाषा चुनें'
+            'select_language': 'भाषा चुनें',
+            'not_specified': 'निर्दिष्ट नहीं',
+            'regional_preference': 'क्षेत्रीय प्राथमिकता',
+            'soil_type_match': 'मिट्टी प्रकार मिलान',
+            'ph_suitability': 'pH उपयुक्तता',
+            'temperature_suitability': 'तापमान उपयुक्तता',
+            'rainfall_suitability': 'वर्षा उपयुक्तता',
+            'nutrient_suitability': 'पोषक तत्व उपयुक्तता',
+            'alternative_options': 'वैकल्पिक विकल्प',
+            'detailed_factor_analysis': 'विस्तृत कारक विश्लेषण',
+            'suitability_analysis': 'के लिए उपयुक्तता विश्लेषण',
+            'analysis_loading': 'आपके फार्म डेटा का विश्लेषण और सिफारिशें तैयार की जा रही हैं...'
         },
         'crops': {
             'Wheat': 'गेहूं',
@@ -163,7 +207,27 @@ LANGUAGES = {
             'Maize': 'मक्का',
             'Cotton': 'कपास',
             'Soybean': 'सोयाबीन',
-            'Pulses': 'दलहन'
+            'Pulses': 'दलहन',
+            'Sugarcane': 'गन्ना',
+            'Groundnut': 'मूंगफली'
+        },
+        'reasons': {
+            'highly_suitable': '{} क्षेत्र के लिए अत्यधिक उपयुक्त',
+            'not_typical': '{} में आमतौर पर नहीं उगाया जाता',
+            'ideal_soil': '{} मिट्टी के लिए आदर्श',
+            'not_optimal_soil': '{} मिट्टी के लिए इष्टतम नहीं (पसंद करता है {})',
+            'optimal_ph': 'इष्टतम pH सीमा ({}-{})',
+            'ph_low': 'pH थोड़ा कम (आदर्श: {}-{})',
+            'ph_high': 'pH थोड़ा अधिक (आदर्श: {}-{})',
+            'optimal_temp': 'इष्टतम तापमान सीमा ({}-{}°C)',
+            'temp_low': 'तापमान थोड़ा कम (आदर्श: {}-{}°C)',
+            'temp_high': 'तापमान थोड़ा अधिक (आदर्श: {}-{}°C)',
+            'optimal_rain': 'इष्टतम वर्षा ({}-{}mm)',
+            'rain_low': 'वर्षा थोड़ी कम (आदर्श: {}-{}mm)',
+            'rain_high': 'वर्षा थोड़ी अधिक (आदर्श: {}-{}mm)',
+            'nitrogen_issue': '{} के लिए नाइट्रोजन स्तर इष्टतम नहीं',
+            'phosphorus_issue': '{} के लिए फॉस्फोरस स्तर इष्टतम नहीं',
+            'potassium_issue': '{} के लिए पोटैशियम स्तर इष्टतम नहीं'
         }
     },
     'or': {
@@ -181,7 +245,8 @@ LANGUAGES = {
             'Odisha': 'ଓଡିଶା',
             'Jharkhand': 'ଝାଡଖଣ୍ଡ',
             'West Bengal': 'ପଶ୍ଚିମ ବଙ୍ଗ',
-            'Bihar': 'ବିହାର'
+            'Bihar': 'ବିହାର',
+            'Select': 'ଅଞ୍ଚଳ ଚୟନ କରନ୍ତୁ'
         },
         'ui': {
             'app_name': 'VARUN AI',
@@ -205,7 +270,7 @@ LANGUAGES = {
             'dashboard': 'ଡ୍ୟାସବୋର୍ଡ',
             'crop_recommendation': 'ଫସଲ ପରାମର୍ଶ',
             'soil_analysis': 'ମୃତ୍ତିକା ବିଶ୍ଳେଷଣ',
-            'weather_forecast': 'ପାଣି�पାଗ ପୂର୍ବାନୁମାନ',
+            'weather_forecast': 'ପାଣିପାଗ ପୂର୍ବାନୁମାନ',
             'farm_overview': 'ଚାଷ ଜମିର ସମୀକ୍ଷା',
             'soil_nutrient_levels': 'ମୃତ୍ତିକାର ପୋଷକ ତତ୍ତ୍ୱର ସ୍ତର',
             'recommended_crop': 'ପରାମର୍ଶିତ ଫସଲ',
@@ -216,7 +281,7 @@ LANGUAGES = {
             'best_planting_time': 'ସର୍ବୋତ୍ତମ ରୋପଣ ସମୟ',
             'water_requirements': 'ଜଳ ଆବଶ୍ୟକତା',
             'fertilizer_recommendations': 'ସାର ପରାମର୍ଶ',
-            'harvest_timeline': 'ଫସଲ କଟାଇ ସମୟସୀମା',
+            'harvest_timeline': 'ଫସଲ କଟାଇ ସମୟସୀଞା',
             'market_insights': 'ବଜାରର ଅନ୍ତର୍ଦୃଷ୍ଟି',
             'current_market_price': 'ବର୍ତ୍ତମାନର ବଜାର ମୂଲ୍ୟ',
             'demand_trend': 'ଚାହିଦା ପ୍ରବୃତ୍ତି',
@@ -229,15 +294,46 @@ LANGUAGES = {
             'team_name': 'ଦଳ ଆଗ୍ରୋନୋଭା',
             'for_sih': 'SIH 2025 ପାଇଁ',
             'language': 'ଭାଷା',
-            'select_language': 'ଭାଷା ଚୟନ କରନ୍ତୁ'
+            'select_language': 'ଭାଷା ଚୟନ କରନ୍ତୁ',
+            'not_specified': 'ନିର୍ଦ୍ଦିଷ୍ଟ ନୁହେଁ',
+            'regional_preference': 'କ୍ଷେତ୍ରୀୟ ପସନ୍ଦ',
+            'soil_type_match': 'ମାଟି ପ୍ରକାର ମେଳ',
+            'ph_suitability': 'pH ଉପଯୁକ୍ତତା',
+            'temperature_suitability': 'ତାପମାତ୍ରା ଉପଯୁକ୍ତତା',
+            'rainfall_suitability': 'ବର୍ଷା ଉପଯୁକ୍ତତା',
+            'nutrient_suitability': 'ପୋଷକ ଉପଯୁକ୍ତତା',
+            'alternative_options': 'ବିକଳ୍ପ ବିକଳ୍ପ',
+            'detailed_factor_analysis': 'ବିସ୍ତୃତ କାରକ ବିଶ୍ଳେଷଣ',
+            'suitability_analysis': 'ପାଇଁ ଉପଯୁକ୍ତତା ବିଶ୍ଳେଷଣ',
+            'analysis_loading': 'ଆପଣଙ୍କ ଫାର୍ମ ତଥ୍ୟ ବିଶ୍ଳେଷଣ ଏବଂ ପରାମର୍ଶ ପ୍ରସ୍ତୁତ କରାଯାଉଛି...'
         },
         'crops': {
-            'Wheat': 'ଗହଞ',
+            'Wheat': 'ଗହମ',
             'Rice': 'ଚାଉଳ',
             'Maize': 'ମକା',
             'Cotton': 'କପାହ',
             'Soybean': 'ସୋୟାବିନ',
-            'Pulses': 'ଡାଲି'
+            'Pulses': 'ଡାଲି',
+            'Sugarcane': 'ଆଖୁ',
+            'Groundnut': 'ଚିନାବାଦାମ'
+        },
+        'reasons': {
+            'highly_suitable': '{} ଅଞ୍ଚଳ ପାଇଁ ଅତ୍ୟଧିକ ଉପଯୁକ୍ତ',
+            'not_typical': '{} ରେ ସାଧାରଣତଃ ଚାଷ କରାଯାଏ ନାହିଁ',
+            'ideal_soil': '{} ମାଟି ପାଇଁ ଆଦର୍ଶ',
+            'not_optimal_soil': '{} ମାଟି ପାଇଁ ଉତ୍କୃଷ୍ଟ ନୁହେଁ (ପସନ୍ଦ କରେ {})',
+            'optimal_ph': 'ଉତ୍କୃଷ୍ଟ pH ସୀମା ({}-{})',
+            'ph_low': 'pH ଟିକେ କମ୍ (ଆଦର୍ଶ: {}-{})',
+            'ph_high': 'pH ଟିକେ ଅଧିକ (ଆଦର୍ଶ: {}-{})',
+            'optimal_temp': 'ଉତ୍କୃଷ୍ଟ ତାପମାତ୍ରା ସୀମା ({}-{}°C)',
+            'temp_low': 'ତାପମାତ୍ରା ଟିକେ କମ୍ (ଆଦର୍ଶ: {}-{}°C)',
+            'temp_high': 'ତାପମାତ୍ରା ଟିକେ ଅଧିକ (ଆଦର୍ଶ: {}-{}°C)',
+            'optimal_rain': 'ଉତ୍କୃଷ୍ଟ ବର୍ଷା ({}-{}mm)',
+            'rain_low': 'ବର୍ଷା ଟିକେ କମ୍ (ଆଦର୍ଶ: {}-{}mm)',
+            'rain_high': 'ବର୍ଷା ଟିକେ ଅଧିକ (ଆଦର୍ଶ: {}-{}mm)',
+            'nitrogen_issue': '{} ପାଇଁ ନାଇଟ୍ରୋଜେନ୍ ସ୍ତର ଉତ୍କୃଷ୍ଟ ନୁହେଁ',
+            'phosphorus_issue': '{} ପାଇଁ ଫସଫରସ୍ ସ୍ତର ଉତ୍କୃଷ୍ଟ ନୁହେଁ',
+            'potassium_issue': '{} ପାଇଁ ପଟାସିଅମ୍ ସ୍ତର ଉତ୍କୃଷ୍ଟ ନୁହେଁ'
         }
     },
     'ta': {
@@ -255,7 +351,8 @@ LANGUAGES = {
             'Odisha': 'ஒடிசா',
             'Jharkhand': 'ஜார்கண்ட்',
             'West Bengal': 'மேற்கு வங்காளம்',
-            'Bihar': 'பீகார்'
+            'Bihar': 'பீகார்',
+            'Select': 'பிராந்தியத்தைத் தேர்ந்தெடுக்கவும்'
         },
         'ui': {
             'app_name': 'VARUN AI',
@@ -282,7 +379,7 @@ LANGUAGES = {
             'weather_forecast': 'வானிலை முன்னறிவிப்பு',
             'farm_overview': 'விவசாய நிலை மேலோட்டம்',
             'soil_nutrient_levels': 'மண் ஊட்டச்சத்து அளவுகள்',
-            'recommended_crop': 'பரிந்துரைக்கப்பட்ட பயிர',
+            'recommended_crop': 'பரிந்துரைக்கப்பட்ட பயிர்',
             'expected_yield': 'எதிர்பார்க்கப்படும் விளைச்சல்',
             'success_probability': 'வெற்றி நிகழ்தகவு',
             'why_this_crop': 'இந்த பயிர் ஏன்?',
@@ -303,7 +400,18 @@ LANGUAGES = {
             'team_name': 'டீம் அக்ரோநோவா',
             'for_sih': 'SIH 2025க்காக',
             'language': 'மொழி',
-            'select_language': 'மொழியைத் தேர்ந்தெடுக்கவும்'
+            'select_language': 'மொழியைத் தேர்ந்தெடுக்கவும்',
+            'not_specified': 'குறிப்பிடப்படவில்லை',
+            'regional_preference': 'பிராந்திய விருப்பம்',
+            'soil_type_match': 'மண் வகை பொருத்தம்',
+            'ph_suitability': 'pH பொருத்தம்',
+            'temperature_suitability': 'வெப்பநிலை பொருத்தம்',
+            'rainfall_suitability': 'மழை பொருத்தம்',
+            'nutrient_suitability': 'ஊட்டச்சத்து பொருத்தம்',
+            'alternative_options': 'மாற்று விருப்பங்கள்',
+            'detailed_factor_analysis': 'விரிவான காரணி பகுப்பாய்வு',
+            'suitability_analysis': 'க்கான பொருத்தம் பகுப்பாய்வு',
+            'analysis_loading': 'உங்கள் பண்ணை தரவை பகுப்பாய்வு செய்து பரிந்துரைகளை உருவாக்குகிறோம்...'
         },
         'crops': {
             'Wheat': 'கோதுமை',
@@ -311,7 +419,27 @@ LANGUAGES = {
             'Maize': 'சோளம்',
             'Cotton': 'பருத்தி',
             'Soybean': 'சோயா',
-            'Pulses': 'பருப்பு வகைகள்'
+            'Pulses': 'பருப்பு வகைகள்',
+            'Sugarcane': 'கரும்பு',
+            'Groundnut': 'நிலக்கடலை'
+        },
+        'reasons': {
+            'highly_suitable': '{} பிராந்தியத்திற்கு மிகவும் பொருத்தமானது',
+            'not_typical': '{} இல் பொதுவாக பயிரிடப்படுவதில்லை',
+            'ideal_soil': '{} மண்ணுக்கு ஏற்றது',
+            'not_optimal_soil': '{} மண்ணுக்கு உகந்ததல்ல (விரும்புகிறது {})',
+            'optimal_ph': 'உகந்த pH வரம்பு ({}-{})',
+            'ph_low': 'pH சற்று குறைவு (உகந்த: {}-{})',
+            'ph_high': 'pH சற்று அதிகம் (உகந்த: {}-{})',
+            'optimal_temp': 'உகந்த வெப்பநிலை வரம்பு ({}-{}°C)',
+            'temp_low': 'வெப்பநிலை சற்று குறைவு (உகந்த: {}-{}°C)',
+            'temp_high': 'வெப்பநிலை சற்று அதிகம் (உகந்த: {}-{}°C)',
+            'optimal_rain': 'உகந்த மழை ({}-{}mm)',
+            'rain_low': 'மழை சற்று குறைவு (உகந்த: {}-{}mm)',
+            'rain_high': 'மழை சற்று அதிகம் (உகந்த: {}-{}mm)',
+            'nitrogen_issue': '{} க்கு நைட்ரஜன் அளவு உகந்ததல்ல',
+            'phosphorus_issue': '{} க்கு பாஸ்பரஸ் அளவு உகந்ததல்ல',
+            'potassium_issue': '{} க்கு பொட்டாசியம் அளவு உகந்ததல்ல'
         }
     },
     'bn': {
@@ -322,14 +450,15 @@ LANGUAGES = {
             'Haryana': 'হরিয়ানা',
             'Uttar Pradesh': 'উত্তর প্রদেশ',
             'Maharashtra': 'মহারাষ্ট্র',
-            'Karnataka': 'কর্ণাটक',
+            'Karnataka': 'কর্ণাটক',
             'Tamil Nadu': 'তামিলনাড়ু',
             'Andhra Pradesh': 'অন্ধ্র প্রদেশ',
             'Gujarat': 'গুজরাট',
             'Odisha': 'ওড়িশা',
             'Jharkhand': 'ঝাড়খণ্ড',
             'West Bengal': 'পশ্চিমবঙ্গ',
-            'Bihar': 'বিহার'
+            'Bihar': 'বিহার',
+            'Select': 'অঞ্চল নির্বাচন করুন'
         },
         'ui': {
             'app_name': 'VARUN AI',
@@ -364,7 +493,7 @@ LANGUAGES = {
             'best_planting_time': 'সেরা রোপণের সময়',
             'water_requirements': 'পানির প্রয়োজনীয়তা',
             'fertilizer_recommendations': 'সার সুপারিশ',
-            'harvest_timeline': 'फसल কাটার সময়সীমা',
+            'harvest_timeline': 'ফসল কাটার সময়সীমা',
             'market_insights': 'বাজার অন্তর্দৃষ্টি',
             'current_market_price': 'বর্তমান বাজার মূল্য',
             'demand_trend': 'চাহিদার প্রবণতা',
@@ -377,7 +506,18 @@ LANGUAGES = {
             'team_name': 'টিম এগ্রোনোভা',
             'for_sih': 'SIH 2025 এর জন্য',
             'language': 'ভাষা',
-            'select_language': 'ভাষা নির্বাচন করুন'
+            'select_language': 'ভাষা নির্বাচন করুন',
+            'not_specified': 'নির্দিষ্ট করা হয়নি',
+            'regional_preference': 'আঞ্চলিক পছন্দ',
+            'soil_type_match': 'মাটির ধরন মিল',
+            'ph_suitability': 'pH উপযুক্ততা',
+            'temperature_suitability': 'তাপমাত্রা উপযুক্ততা',
+            'rainfall_suitability': 'বৃষ্টিপাত উপযুক্ততা',
+            'nutrient_suitability': 'পুষ্টি উপযুক্ততা',
+            'alternative_options': 'বিকল্প বিকল্প',
+            'detailed_factor_analysis': 'বিস্তারিত ফ্যাক্টর বিশ্লেষণ',
+            'suitability_analysis': 'এর জন্য উপযুক্ততা বিশ্লেষণ',
+            'analysis_loading': 'আপনার খামারের ডেটা বিশ্লেষণ এবং সুপারিশ তৈরি করা হচ্ছে...'
         },
         'crops': {
             'Wheat': 'গম',
@@ -385,7 +525,27 @@ LANGUAGES = {
             'Maize': 'ভুট্টা',
             'Cotton': 'তুলা',
             'Soybean': 'সয়াবিন',
-            'Pulses': 'ডাল'
+            'Pulses': 'ডাল',
+            'Sugarcane': 'আখ',
+            'Groundnut': 'চিনাবাদাম'
+        },
+        'reasons': {
+            'highly_suitable': '{} অঞ্চলের জন্য অত্যন্ত উপযুক্ত',
+            'not_typical': '{} এ সাধারণত চাষ করা হয় না',
+            'ideal_soil': '{} মাটির জন্য আদর্শ',
+            'not_optimal_soil': '{} মাটির জন্য সর্বোত্তম নয় (পছন্দ করে {})',
+            'optimal_ph': 'সর্বোত্তম pH পরিসীমা ({}-{})',
+            'ph_low': 'pH কিছুটা কম (আদর্শ: {}-{})',
+            'ph_high': 'pH কিছুটা বেশি (আদর্শ: {}-{})',
+            'optimal_temp': 'সর্বোত্তম তাপমাত্রা পরিসীমা ({}-{}°C)',
+            'temp_low': 'তাপমাত্রা কিছুটা কম (আদর্শ: {}-{}°C)',
+            'temp_high': 'তাপমাত্রা কিছুটা বেশি (আদর্শ: {}-{}°C)',
+            'optimal_rain': 'সর্বোত্তম বৃষ্টিপাত ({}-{}mm)',
+            'rain_low': 'বৃষ্টিপাত কিছুটা কম (আদর্শ: {}-{}mm)',
+            'rain_high': 'বৃষ্টিপাত কিছুটা বেশি (আদর্শ: {}-{}mm)',
+            'nitrogen_issue': '{} এর জন্য নাইট্রোজেন স্তর সর্বোত্তম নয়',
+            'phosphorus_issue': '{} এর জন্য ফসফরাস স্তর সর্বোত্তম নয়',
+            'potassium_issue': '{} এর জন্য পটাসিয়াম স্তর সর্বোত্তম নয়'
         }
     },
     'mr': {
@@ -403,7 +563,8 @@ LANGUAGES = {
             'Odisha': 'ओडिशा',
             'Jharkhand': 'झारखंड',
             'West Bengal': 'पश्चिम बंगाल',
-            'Bihar': 'बिहार'
+            'Bihar': 'बिहार',
+            'Select': 'प्रदेश निवडा'
         },
         'ui': {
             'app_name': 'VARUN AI',
@@ -451,7 +612,18 @@ LANGUAGES = {
             'team_name': 'टीम अॅग्रोनोव्हा',
             'for_sih': 'SIH 2025 साठी',
             'language': 'भाषा',
-            'select_language': 'भाषा निवडा'
+            'select_language': 'भाषा निवडा',
+            'not_specified': 'निर्दिष्ट नाही',
+            'regional_preference': 'प्रादेशिक प्राधान्य',
+            'soil_type_match': 'माती प्रकार जुळणी',
+            'ph_suitability': 'pH योग्यता',
+            'temperature_suitability': 'तापमान योग्यता',
+            'rainfall_suitability': 'पाऊस योग्यता',
+            'nutrient_suitability': 'पोषक योग्यता',
+            'alternative_options': 'पर्यायी पर्याय',
+            'detailed_factor_analysis': 'तपशीलवार घटक विश्लेषण',
+            'suitability_analysis': 'साठी योग्यता विश्लेषण',
+            'analysis_loading': 'आपला शेत डेटा विश्लेषण आणि शिफारसी तयार केल्या जात आहेत...'
         },
         'crops': {
             'Wheat': 'गहू',
@@ -459,7 +631,27 @@ LANGUAGES = {
             'Maize': 'मका',
             'Cotton': 'कापूस',
             'Soybean': 'सोयाबीन',
-            'Pulses': 'डाळ'
+            'Pulses': 'डाळ',
+            'Sugarcane': 'ऊस',
+            'Groundnut': 'भुईमूग'
+        },
+        'reasons': {
+            'highly_suitable': '{} प्रदेशासाठी अत्यंत योग्य',
+            'not_typical': '{} मध्ये सामान्यतः लावली जात नाही',
+            'ideal_soil': '{} मातीसाठी आदर्श',
+            'not_optimal_soil': '{} मातीसाठी इष्टतम नाही (प्राधान्य {})',
+            'optimal_ph': 'इष्टतम pH श्रेणी ({}-{})',
+            'ph_low': 'pH किंचित कमी (आदर्श: {}-{})',
+            'ph_high': 'pH किंचित जास्त (आदर्श: {}-{})',
+            'optimal_temp': 'इष्टतम तापमान श्रेणी ({}-{}°C)',
+            'temp_low': 'तापमान किंचित कमी (आदर्श: {}-{}°C)',
+            'temp_high': 'तापमान किंचित जास्त (आदर्श: {}-{}°C)',
+            'optimal_rain': 'इष्टतम पाऊस ({}-{}mm)',
+            'rain_low': 'पाऊस किंचित कमी (आदर्श: {}-{}mm)',
+            'rain_high': 'पाऊस किंचित जास्त (आदर्श: {}-{}mm)',
+            'nitrogen_issue': '{} साठी नायट्रोजन पातळी इष्टतम नाही',
+            'phosphorus_issue': '{} साठी फॉस्फरस पातळी इष्टतम नाही',
+            'potassium_issue': '{} साठी पोटॅशियम पातळी इष्टतम नाही'
         }
     }
 }
@@ -489,6 +681,12 @@ def get_available_languages():
 def get_state_name(state, lang):
     """Get translated state name"""
     return LANGUAGES[lang]['states'].get(state, state)
+
+# Initialize session state for language
+if 'language' not in st.session_state:
+    st.session_state.language = 'en'
+if 'last_state' not in st.session_state:
+    st.session_state.last_state = ''
 
 # ===== ENHANCED CSS STYLING =====
 st.markdown("""
@@ -630,6 +828,21 @@ st.markdown("""
         margin-bottom: 0.5rem;
     }
 
+    .analysis-card {
+        background: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%);
+        padding: 1.2rem;
+        border-radius: 10px;
+        margin: 0.8rem 0;
+        border: 1px solid var(--border-color);
+    }
+
+    .factor-score {
+        font-size: 0.9rem;
+        color: var(--primary-color);
+        font-weight: bold;
+        margin: 0.3rem 0;
+    }
+
     /* Responsive design */
     @media (max-width: 768px) {
         .main-header {
@@ -648,12 +861,6 @@ st.markdown("""
     }
 </style>
 """, unsafe_allow_html=True)
-
-# Initialize session state for language
-if 'language' not in st.session_state:
-    st.session_state.language = 'en'
-if 'last_state' not in st.session_state:
-    st.session_state.last_state = ''
 
 # Helper function to get translated text
 def t(key, lang=None):
@@ -678,49 +885,64 @@ def t(key, lang=None):
 
 # Generate soil images if they don't exist
 def generate_soil_images():
-    soil_colors = {
-        "clay": (180, 120, 80),
-        "loam": (160, 100, 60),
-        "sand": (220, 200, 160),
-        "silt": (200, 180, 140)
-    }
-    
-    os.makedirs("assets/soil_types", exist_ok=True)
-    
-    for soil_type, color in soil_colors.items():
-        img_path = f"assets/soil_types/{soil_type}.png"
-        if not os.path.exists(img_path):
-            img = Image.new('RGB', (400, 300), color=color)
-            draw = ImageDraw.Draw(img)
-            
-            # Add texture
-            for _ in range(800):
-                x = np.random.randint(0, 400)
-                y = np.random.randint(0, 300)
-                size = np.random.randint(2, 8)
-                draw.ellipse([(x, y), (x+size, y+size)], 
-                           fill=tuple(max(0, c-30) for c in color))
-            
-            img.save(img_path)
+    try:
+        soil_colors = {
+            "clay": (180, 120, 80),
+            "loam": (160, 100, 60),
+            "sand": (220, 200, 160),
+            "silt": (200, 180, 140)
+        }
+        
+        os.makedirs("assets/soil_types", exist_ok=True)
+        
+        for soil_type, color in soil_colors.items():
+            img_path = f"assets/soil_types/{soil_type}.png"
+            if not os.path.exists(img_path):
+                img = Image.new('RGB', (400, 300), color=color)
+                draw = ImageDraw.Draw(img)
+                
+                # Add texture
+                for _ in range(800):
+                    x = np.random.randint(0, 400)
+                    y = np.random.randint(0, 300)
+                    size = np.random.randint(2, 8)
+                    draw.ellipse([(x, y), (x+size, y+size)], 
+                               fill=tuple(max(0, c-30) for c in color))
+                
+                img.save(img_path)
+    except Exception as e:
+        st.error(f"Error generating soil images: {e}")
 
 # Generate logo if it doesn't exist
 def generate_logo():
-    if not os.path.exists("assets/logo.png"):
-        img = Image.new('RGB', (400, 200), color=(46, 139, 87))
-        draw = ImageDraw.Draw(img)
-        
-        # Draw VARUN text
-        draw.text((120, 70), "VARUN", fill=(255, 255, 255))
-        draw.text((130, 120), "ai", fill=(255, 215, 0))
-        
-        # Draw plant icon
-        draw.ellipse([(30, 70), (90, 130)], fill=(255, 215, 0))
-        img.save("assets/logo.png")
+    try:
+        if not os.path.exists("assets/logo.png"):
+            img = Image.new('RGB', (400, 200), color=(46, 139, 87))
+            draw = ImageDraw.Draw(img)
+            
+            # Draw VARUN text
+            draw.text((120, 70), "VARUN", fill=(255, 255, 255))
+            draw.text((130, 120), "ai", fill=(255, 215, 0))
+            
+            # Draw plant icon
+            draw.ellipse([(30, 70), (90, 130)], fill=(255, 215, 0))  # Sun
+            
+            # Draw a small plant
+            draw.rectangle([(180, 130), (190, 150)], fill=(139, 69, 19))  # Stem
+            draw.polygon([(175, 130), (185, 100), (195, 130)], fill=(34, 139, 34))  # Leaves
+            
+            img.save("assets/logo.png")
+    except Exception as e:
+        st.error(f"Error generating logo: {e}")
 
 # Generate images
-os.makedirs("assets", exist_ok=True)
-generate_logo()
-generate_soil_images()
+try:
+    os.makedirs("assets", exist_ok=True)
+    os.makedirs("assets/soil_types", exist_ok=True)
+    generate_logo()
+    generate_soil_images()
+except Exception as e:
+    st.error(f"Error creating assets directory: {e}")
 
 # Language selector at top right
 with st.container():
@@ -750,7 +972,11 @@ with col2:
 
 # Sidebar
 with st.sidebar:
-    st.image("assets/logo.png", width=280)
+    try:
+        st.image("assets/logo.png", width=280)
+    except:
+        st.warning("Logo image not found")
+    
     st.markdown(f"## {t('ui.farmer_details')}")
     
     farmer_name = st.text_input(t('ui.full_name'))
@@ -778,7 +1004,19 @@ with st.sidebar:
     farm_size = st.slider(t('ui.farm_size'), 1, 100, 10)
     
     st.markdown(f"## {t('ui.soil_properties')}")
-    soil_type = st.selectbox(t('ui.soil_type'), ["Loam", "Clay", "Sandy", "Silt"])
+    
+    # Get soil types in current language
+    soil_options = ["Select", "Loam", "Clay", "Sandy", "Silt"]
+    soil_display_names = [t('ui.select') if opt == "Select" else opt for opt in soil_options]
+    
+    selected_soil_index = st.selectbox(
+        t('ui.soil_type'),
+        range(len(soil_options)),
+        format_func=lambda i: soil_display_names[i]
+    )
+    
+    soil_type = soil_options[selected_soil_index]
+    
     soil_ph = st.slider(t('ui.soil_ph'), 4.0, 9.0, 6.5)
     soil_moisture = st.slider(t('ui.soil_moisture'), 0, 100, 50)
     nitrogen = st.slider(t('ui.nitrogen'), 0, 200, 50)
@@ -792,25 +1030,25 @@ with st.sidebar:
     
     analyze_button = st.button(t('ui.analyze_button'), type="primary", use_container_width=True)
 
-# Crop recommendation model (same as before)
+# Enhanced crop recommendation model with detailed analysis
 def predict_best_crop(soil_type, ph, nitrogen, phosphorus, potassium, temperature, rainfall, humidity, region):
     # Regional crop preferences
     regional_preferences = {
-        "Punjab": ["Wheat", "Rice", "Cotton", "Maize"],
-        "Haryana": ["Wheat", "Rice", "Cotton", "Mustard"],
-        "Uttar Pradesh": ["Wheat", "Rice", "Sugarcane", "Potato"],
-        "Maharashtra": ["Cotton", "Soybean", "Pulses", "Sugarcane"],
-        "Karnataka": ["Rice", "Cotton", "Pulses", "Coffee"],
-        "Tamil Nadu": ["Rice", "Sugarcane", "Cotton", "Groundnut"],
-        "Andhra Pradesh": ["Rice", "Cotton", "Chilli", "Groundnut"],
-        "Gujarat": ["Cotton", "Groundnut", "Wheat", "Pulses"],
-        "Odisha": ["Rice", "Pulses", "Oilseeds", "Millets"],
-        "Jharkhand": ["Rice", "Pulses", "Oilseeds", "Maize"],
-        "West Bengal": ["Rice", "Jute", "Tea", "Potato"],
-        "Bihar": ["Rice", "Wheat", "Maize", "Pulses"]
+        "Punjab": ["Wheat", "Rice", "Cotton", "Maize", "Sugarcane"],
+        "Haryana": ["Wheat", "Rice", "Cotton", "Mustard", "Bajra"],
+        "Uttar Pradesh": ["Wheat", "Rice", "Sugarcane", "Potato", "Pulses"],
+        "Maharashtra": ["Cotton", "Soybean", "Pulses", "Sugarcane", "Groundnut"],
+        "Karnataka": ["Rice", "Cotton", "Pulses", "Coffee", "Sugarcane"],
+        "Tamil Nadu": ["Rice", "Sugarcane", "Cotton", "Groundnut", "Coconut"],
+        "Andhra Pradesh": ["Rice", "Cotton", "Chilli", "Groundnut", "Tobacco"],
+        "Gujarat": ["Cotton", "Groundnut", "Wheat", "Pulses", "Castor"],
+        "Odisha": ["Rice", "Pulses", "Oilseeds", "Millets", "Jute"],
+        "Jharkhand": ["Rice", "Pulses", "Oilseeds", "Maize", "Wheat"],
+        "West Bengal": ["Rice", "Jute", "Tea", "Potato", "Wheat"],
+        "Bihar": ["Rice", "Wheat", "Maize", "Pulses", "Sugarcane"]
     }
     
-    # Crop data with optimal conditions
+    # Expanded crop data with optimal conditions
     crops = [
         {
             'name': 'Wheat', 'soil_type': 'Loam', 'ph_min': 6.0, 'ph_max': 7.5,
@@ -841,104 +1079,266 @@ def predict_best_crop(soil_type, ph, nitrogen, phosphorus, potassium, temperatur
             'name': 'Pulses', 'soil_type': 'Loam', 'ph_min': 6.0, 'ph_max': 7.5,
             'temp_min': 15, 'temp_max': 30, 'rainfall_min': 500, 'rainfall_max': 800,
             'n_min': 20, 'n_max': 50, 'p_min': 30, 'p_max': 60, 'k_min': 40, 'k_max': 70
+        },
+        {
+            'name': 'Sugarcane', 'soil_type': 'Loam', 'ph_min': 6.0, 'ph_max': 7.5,
+            'temp_min': 20, 'temp_max': 35, 'rainfall_min': 1000, 'rainfall_max': 1500,
+            'n_min': 100, 'n_max': 150, 'p_min': 50, 'p_max': 80, 'k_min': 80, 'k_max': 120
+        },
+        {
+            'name': 'Groundnut', 'soil_type': 'Sandy', 'ph_min': 5.5, 'ph_max': 7.0,
+            'temp_min': 20, 'temp_max': 35, 'rainfall_min': 500, 'rainfall_max': 1000,
+            'n_min': 20, 'n_max': 40, 'p_min': 30, 'p_max': 50, 'k_min': 40, 'k_max': 60
         }
     ]
     
-    # Calculate scores
-    scores = []
+    # Calculate scores and detailed analysis
+    crop_analyses = []
     for crop in crops:
-        score = 0
+        analysis = {
+            'name': crop['name'],
+            'score': 0,
+            'details': {
+                'regional_preference': 0,
+                'soil_type': 0,
+                'ph_suitability': 0,
+                'temperature_suitability': 0,
+                'rainfall_suitability': 0,
+                'nutrient_suitability': 0
+            },
+            'reasons': []
+        }
         
         # Regional preference (higher weight)
-        if crop['name'] in regional_preferences.get(region, []):
-            score += 30
+        if region != "Select" and crop['name'] in regional_preferences.get(region, []):
+            analysis['score'] += 30
+            analysis['details']['regional_preference'] = 30
+            analysis['reasons'].append(t('reasons.highly_suitable').format(region))
+        elif region != "Select":
+            analysis['reasons'].append(t('reasons.not_typical').format(region))
         
         # Soil type match
-        if crop['soil_type'].lower() == soil_type.lower():
-            score += 25
+        if soil_type != "Select" and crop['soil_type'].lower() == soil_type.lower():
+            analysis['score'] += 25
+            analysis['details']['soil_type'] = 25
+            analysis['reasons'].append(t('reasons.ideal_soil').format(soil_type))
+        elif soil_type != "Select":
+            analysis['reasons'].append(t('reasons.not_optimal_soil').format(soil_type, crop['soil_type']))
         
         # pH suitability
         if crop['ph_min'] <= ph <= crop['ph_max']:
-            score += 15
+            ph_score = 15
+            analysis['reasons'].append(t('reasons.optimal_ph').format(crop['ph_min'], crop['ph_max']))
         else:
-            score -= 10 * abs(ph - (crop['ph_min'] + crop['ph_max'])/2)
+            # Calculate penalty based on deviation from optimal range
+            if ph < crop['ph_min']:
+                deviation = crop['ph_min'] - ph
+                ph_score = max(0, 15 - (deviation * 5))
+                analysis['reasons'].append(t('reasons.ph_low').format(crop['ph_min'], crop['ph_max']))
+            else:
+                deviation = ph - crop['ph_max']
+                ph_score = max(0, 15 - (deviation * 5))
+                analysis['reasons'].append(t('reasons.ph_high').format(crop['ph_min'], crop['ph_max']))
+        
+        analysis['score'] += ph_score
+        analysis['details']['ph_suitability'] = ph_score
         
         # Temperature suitability
         if crop['temp_min'] <= temperature <= crop['temp_max']:
-            score += 10
+            temp_score = 10
+            analysis['reasons'].append(t('reasons.optimal_temp').format(crop['temp_min'], crop['temp_max']))
         else:
-            score -= 5 * abs(temperature - (crop['temp_min'] + crop['temp_max'])/2)
+            # Calculate penalty based on deviation from optimal range
+            if temperature < crop['temp_min']:
+                deviation = crop['temp_min'] - temperature
+                temp_score = max(0, 10 - (deviation * 0.5))
+                analysis['reasons'].append(t('reasons.temp_low').format(crop['temp_min'], crop['temp_max']))
+            else:
+                deviation = temperature - crop['temp_max']
+                temp_score = max(0, 10 - (deviation * 0.5))
+                analysis['reasons'].append(t('reasons.temp_high').format(crop['temp_min'], crop['temp_max']))
+        
+        analysis['score'] += temp_score
+        analysis['details']['temperature_suitability'] = temp_score
         
         # Rainfall suitability
         if crop['rainfall_min'] <= rainfall <= crop['rainfall_max']:
-            score += 10
+            rain_score = 10
+            analysis['reasons'].append(t('reasons.optimal_rain').format(crop['rainfall_min'], crop['rainfall_max']))
         else:
-            score -= 3 * abs(rainfall - (crop['rainfall_min'] + crop['rainfall_max'])/2)
+            # Calculate penalty based on deviation from optimal range
+            if rainfall < crop['rainfall_min']:
+                deviation = crop['rainfall_min'] - rainfall
+                rain_score = max(0, 10 - (deviation * 0.01))
+                analysis['reasons'].append(f"Rainfall slightly high (ideal: {crop['rainfall_min']}-{crop['rainfall_max']}mm)")
+        
+        analysis['score'] += rain_score
+        analysis['details']['rainfall_suitability'] = rain_score
         
         # Nutrient suitability
-        n_score = 8 if crop['n_min'] <= nitrogen <= crop['n_max'] else -2 * abs(nitrogen - (crop['n_min'] + crop['n_max'])/2)
-        p_score = 8 if crop['p_min'] <= phosphorus <= crop['p_max'] else -2 * abs(phosphorus - (crop['p_min'] + crop['p_max'])/2)
-        k_score = 9 if crop['k_min'] <= potassium <= crop['k_max'] else -2 * abs(potassium - (crop['k_min'] + crop['k_max'])/2)
+        n_score = 8 if crop['n_min'] <= nitrogen <= crop['n_max'] else max(0, 8 - abs(nitrogen - (crop['n_min'] + crop['n_max'])/2) * 0.2)
+        p_score = 8 if crop['p_min'] <= phosphorus <= crop['p_max'] else max(0, 8 - abs(phosphorus - (crop['p_min'] + crop['p_max'])/2) * 0.2)
+        k_score = 9 if crop['k_min'] <= potassium <= crop['k_max'] else max(0, 9 - abs(potassium - (crop['k_min'] + crop['k_max'])/2) * 0.2)
         
-        score += n_score + p_score + k_score
-        scores.append(score)
+        nutrient_score = n_score + p_score + k_score
+        analysis['score'] += nutrient_score
+        analysis['details']['nutrient_suitability'] = nutrient_score
+        
+        if n_score < 5:
+            analysis['reasons'].append(f"Nitrogen level not optimal for {crop['name']}")
+        if p_score < 5:
+            analysis['reasons'].append(f"Phosphorus level not optimal for {crop['name']}")
+        if k_score < 5:
+            analysis['reasons'].append(f"Potassium level not optimal for {crop['name']}")
+        
+        crop_analyses.append(analysis)
     
-    # Get best crop
-    best_idx = np.argmax(scores)
-    best_crop = crops[best_idx]
+    # Sort by score
+    crop_analyses.sort(key=lambda x: x['score'], reverse=True)
     
-    # Generate recommendation
+    # Generate detailed recommendations for top 3 crops
+    recommendations = []
     planting_times = {
-        'Wheat': t('crops.Wheat') + ' - October-November',
-        'Rice': t('crops.Rice') + ' - June-July', 
-        'Maize': t('crops.Maize') + ' - April-May',
-        'Cotton': t('crops.Cotton') + ' - May-June',
-        'Soybean': t('crops.Soybean') + ' - June-July',
-        'Pulses': t('crops.Pulses') + ' - October-November'
+        'Wheat': 'October-November',
+        'Rice': 'June-July', 
+        'Maize': 'April-May',
+        'Cotton': 'May-June',
+        'Soybean': 'June-July',
+        'Pulses': 'October-November',
+        'Sugarcane': 'February-March',
+        'Groundnut': 'June-July'
     }
     
-    return {
-        'crop': t(f'crops.{best_crop["name"]}'),
-        'probability': min(95, max(65, int(scores[best_idx]))),
-        'yield': f"{np.random.uniform(2.0, 5.0):.1f}",
-        'reason': f"{t(f'crops.{best_crop['name']}')} is ideal for {region}'s climate and your soil conditions ({soil_type} soil, pH {ph}).",
-        'planting_time': planting_times.get(best_crop['name'], 'Varies by region'),
-        'water_req': 'Moderate (600-800 mm)' if best_crop['name'] in ['Wheat', 'Maize'] else 
-                     'High (1000-1500 mm)' if best_crop['name'] == 'Rice' else
-                     'Low (400-600 mm)' if best_crop['name'] == 'Cotton' else 'Moderate (500-700 mm)',
-        'fertilizer': 'N:P:K = 60:40:40 kg/ha' if best_crop['name'] == 'Wheat' else 
-                      'N:P:K = 80:40:40 kg/ha' if best_crop['name'] == 'Rice' else
-                      'N:P:K = 100:50:50 kg/ha' if best_crop['name'] == 'Maize' else
-                      'N:P:K = 50:25:25 kg/ha' if best_crop['name'] == 'Cotton' else 'N:P:K = 40:60:40 kg/ha',
-        'harvest_time': 'March-April' if best_crop['name'] == 'Wheat' else 
-                        'October-November' if best_crop['name'] == 'Rice' else
-                        'August-September' if best_crop['name'] == 'Maize' else
-                        'October-December' if best_crop['name'] == 'Cotton' else 'September-October',
-        'market_price': f"₹{np.random.randint(25, 55)}",
-        'demand_trend': 'High' if best_crop['name'] in ['Rice', 'Wheat'] else 'Stable'
-    }
+    for i, analysis in enumerate(crop_analyses[:3]):
+        crop_name = analysis['name']
+        recommendations.append({
+            'rank': i+1,
+            'crop': crop_name,
+            'score': analysis['score'],
+            'probability': min(95, max(65, int(analysis['score']))),
+            'yield': f"{np.random.uniform(2.0, 5.0):.1f}",
+            'reasons': analysis['reasons'],
+            'details': analysis['details'],
+            'planting_time': planting_times.get(crop_name, 'Varies by region'),
+            'water_req': 'Moderate (600-800 mm)' if crop_name in ['Wheat', 'Maize'] else 
+                         'High (1000-1500 mm)' if crop_name == 'Rice' else
+                         'Low (400-600 mm)' if crop_name == 'Cotton' else 
+                         'Moderate (500-700 mm)' if crop_name in ['Soybean', 'Pulses'] else
+                         'High (1200-1800 mm)' if crop_name == 'Sugarcane' else
+                         'Moderate (500-800 mm)',
+            'fertilizer': 'N:P:K = 60:40:40 kg/ha' if crop_name == 'Wheat' else 
+                          'N:P:K = 80:40:40 kg/ha' if crop_name == 'Rice' else
+                          'N:P:K = 100:50:50 kg/ha' if crop_name == 'Maize' else
+                          'N:P:K = 50:25:25 kg/ha' if crop_name == 'Cotton' else 
+                          'N:P:K = 40:60:40 kg/ha' if crop_name == 'Soybean' else
+                          'N:P:K = 150:60:100 kg/ha' if crop_name == 'Sugarcane' else
+                          'N:P:K = 20:50:40 kg/ha',
+            'harvest_time': 'March-April' if crop_name == 'Wheat' else 
+                            'October-November' if crop_name == 'Rice' else
+                            'August-September' if crop_name == 'Maize' else
+                            'October-December' if crop_name == 'Cotton' else 
+                            'September-October' if crop_name == 'Soybean' else
+                            'February-March' if crop_name == 'Sugarcane' else
+                            'September-October',
+            'market_price': f"₹{np.random.randint(25, 55)}",
+            'demand_trend': 'High' if crop_name in ['Rice', 'Wheat'] else 
+                            'Moderate' if crop_name in ['Maize', 'Cotton'] else
+                            'Stable'
+        })
+    
+    return recommendations
 
-# Main content
-tab1, tab2, tab3, tab4 = st.tabs([
-    t('ui.dashboard'), 
-    t('ui.crop_recommendation'), 
-    t('ui.soil_analysis'), 
-    t('ui.weather_forecast')
-])
+# Function to create suitability visualization
+def create_suitability_chart(details, crop_name):
+    categories = ['Regional\nPreference', 'Soil Type\nMatch', 'pH\nSuitability', 
+                 'Temperature\nSuitability', 'Rainfall\nSuitability', 'Nutrient\nSuitability']
+    values = [details['regional_preference'], details['soil_type'], details['ph_suitability'],
+             details['temperature_suitability'], details['rainfall_suitability'], details['nutrient_suitability']]
+    max_values = [30, 25, 15, 10, 10, 25]  # Maximum possible scores for each category
+    
+    fig = go.Figure()
+    
+    # Add actual values
+    fig.add_trace(go.Scatterpolar(
+        r=values,
+        theta=categories,
+        fill='toself',
+        name='Actual Suitability',
+        line_color='#4CAF50'
+    ))
+    
+    # Add maximum possible values (for reference)
+    fig.add_trace(go.Scatterpolar(
+        r=max_values,
+        theta=categories,
+        fill='toself',
+        name='Maximum Possible',
+        line_color='#FF9800',
+        opacity=0.2
+    ))
+    
+    fig.update_layout(
+        polar=dict(
+            radialaxis=dict(
+                visible=True,
+                range=[0, 30]  # Set range based on maximum value
+            )),
+        showlegend=True,
+        title=f"Suitability Analysis for {crop_name}"
+    )
+    
+    return fig
 
-with tab1:
-    st.markdown(f'<h2 class="sub-header">{t("ui.farm_overview")}</h2>', unsafe_allow_html=True)
+# Function to display detailed factor analysis
+def display_factor_analysis(details):
+    st.markdown("#### Detailed Factor Analysis")
     
     col1, col2, col3 = st.columns(3)
-    with col1: 
-        st.markdown(f'<div class="card"><div class="metric-label">{t("ui.farm_size")}</div><div class="metric-value">{farm_size} acres</div></div>', unsafe_allow_html=True)
+    
+    with col1:
+        st.markdown(f"*Regional Preference*")
+        st.markdown(f'<p class="factor-score">{details["regional_preference"]}/30</p>', unsafe_allow_html=True)
+        st.progress(details["regional_preference"]/30)
+        
+        st.markdown(f"*Soil Type Match*")
+        st.markdown(f'<p class="factor-score">{details["soil_type"]}/25</p>', unsafe_allow_html=True)
+        st.progress(details["soil_type"]/25)
+    
+    with col2:
+        st.markdown(f"*pH Suitability*")
+        st.markdown(f'<p class="factor-score">{details["ph_suitability"]}/15</p>', unsafe_allow_html=True)
+        st.progress(details["ph_suitability"]/15)
+        
+        st.markdown(f"*Temperature Suitability*")
+        st.markdown(f'<p class="factor-score">{details["temperature_suitability"]}/10</p>', unsafe_allow_html=True)
+        st.progress(details["temperature_suitability"]/10)
+    
+    with col3:
+        st.markdown(f"*Rainfall Suitability*")
+        st.markdown(f'<p class="factor-score">{details["rainfall_suitability"]}/10</p>', unsafe_allow_html=True)
+        st.progress(details["rainfall_suitability"]/10)
+        
+        st.markdown(f"*Nutrient Suitability*")
+        st.markdown(f'<p class="factor-score">{details["nutrient_suitability"]}/25</p>', unsafe_allow_html=True)
+        st.progress(details["nutrient_suitability"]/25)
+
+# Main content
+tab1, tab2, tab3, tab4 = st.tabs(["Dashboard", "Crop Recommendation", "Soil Analysis", "Weather Forecast"])
+
+with tab1:
+    st.markdown('<h2 class="sub-header">Farm Overview</h2>', unsafe_allow_html=True)
+    
+    col1, col2, col3 = st.columns(3)
+    with col1: st.markdown('<div class="card"><h3>Farm Size</h3><p style="font-size: 24px; color: #2E8B57;">' + str(farm_size) + ' acres</p></div>', unsafe_allow_html=True)
     with col2: 
-        st.markdown(f'<div class="card"><div class="metric-label">{t("ui.soil_type")}</div><div class="metric-value">{soil_type}</div></div>', unsafe_allow_html=True)
+        soil_display = soil_type if soil_type != "Select" else "Not specified"
+        st.markdown('<div class="card"><h3>Soil Type</h3><p style="font-size: 24px; color: #2E8B57;">' + soil_display + '</p></div>', unsafe_allow_html=True)
     with col3: 
-        st.markdown(f'<div class="card"><div class="metric-label">{t("ui.region")}</div><div class="metric-value">{get_state_name(farm_location, st.session_state.language)}</div></div>', unsafe_allow_html=True)
+        region_display = farm_location if farm_location != "Select" else "Not specified"
+        st.markdown('<div class="card"><h3>Region</h3><p style="font-size: 24px; color: #2E8B57;">' + region_display + '</p></div>', unsafe_allow_html=True)
 
 with tab2:
-    st.markdown(f'<h2 class="sub-header">{t("ui.crop_recommendation")}</h2>', unsafe_allow_html=True)
+    st.markdown('<h2 class="sub-header">Crop Recommendation</h2>', unsafe_allow_html=True)
     
     if analyze_button:
         with st.spinner('Analyzing your farm data and generating recommendations...'):
@@ -947,89 +1347,122 @@ with tab2:
                 time.sleep(0.01)
                 progress_bar.progress(percent_complete + 1)
             
-            recommendation = predict_best_crop(soil_type, soil_ph, nitrogen, phosphorus, 
-                                             potassium, temperature, rainfall, humidity, farm_location)
+            recommendations = predict_best_crop(soil_type, soil_ph, nitrogen, phosphorus, 
+                                              potassium, temperature, rainfall, humidity, farm_location)
             
+            # Display top recommendation
+            top_recommendation = recommendations[0]
             st.markdown('<div class="recommendation-card">', unsafe_allow_html=True)
-            st.markdown(f"### 🌱 {t('ui.recommended_crop')}: **{recommendation['crop']}**")
-            st.markdown(f"**{t('ui.expected_yield')}:** {recommendation['yield']} tons/acre")
-            st.markdown(f"**{t('ui.success_probability')}:** {recommendation['probability']}%")
+            st.markdown(f"### 🌱 Top Recommendation: *{top_recommendation['crop']}*")
+            st.markdown(f"*Expected Yield:* {top_recommendation['yield']} tons/acre")
+            st.markdown(f"*Success Probability:* {top_recommendation['probability']}%")
             st.markdown('</div>', unsafe_allow_html=True)
             
-            st.markdown(f"#### {t('ui.why_this_crop')}")
-            st.info(recommendation['reason'])
+            # Display suitability chart
+            st.plotly_chart(create_suitability_chart(top_recommendation['details'], top_recommendation['crop']), 
+                           use_container_width=True)
             
-            st.markdown(f"#### {t('ui.planting_guide')}")
+            # Display detailed factor analysis
+            display_factor_analysis(top_recommendation['details'])
+            
+            # Display reasons
+            st.markdown("#### Why this crop?")
+            for reason in top_recommendation['reasons']:
+                st.info(f"• {reason}")
+            
+            # Display crop details
             col1, col2 = st.columns(2)
-            
             with col1:
-                st.markdown(f"**{t('ui.best_planting_time')}**")
-                st.write(recommendation['planting_time'])
-                
-                st.markdown(f"**{t('ui.water_requirements')}**")
-                st.write(recommendation['water_req'])
-            
+                st.markdown("*Best Planting Time*")
+                st.write(top_recommendation['planting_time'])
+                st.markdown("*Water Requirements*")
+                st.write(top_recommendation['water_req'])
             with col2:
-                st.markdown(f"**{t('ui.fertilizer_recommendations')}**")
-                st.write(recommendation['fertilizer'])
-                
-                st.markdown(f"**{t('ui.harvest_timeline')}**")
-                st.write(recommendation['harvest_time'])
+                st.markdown("*Fertilizer Recommendations*")
+                st.write(top_recommendation['fertilizer'])
+                st.markdown("*Harvest Timeline*")
+                st.write(top_recommendation['harvest_time'])
             
-            st.markdown(f"#### {t('ui.market_insights')}")
-            st.success(f"{t('ui.current_market_price')}: {recommendation['market_price']} per kg")
-            st.write(f"{t('ui.demand_trend')}: {recommendation['demand_trend']}")
+            # Display market insights
+            st.markdown("#### Market Insights")
+            st.success(f"Current market price: {top_recommendation['market_price']} per kg")
+            st.write(f"Demand trend: {top_recommendation['demand_trend']}")
+            
+            # Show alternative options
+            if len(recommendations) > 1:
+                st.markdown("#### Alternative Options")
+                cols = st.columns(len(recommendations) - 1)
+                for idx, rec in enumerate(recommendations[1:]):
+                    with cols[idx]:
+                        st.markdown(f'<div class="analysis-card"><h4>{rec["crop"]}</h4><p>Score: {rec["score"]:.1f}</p><p>Probability: {rec["probability"]}%</p></div>', 
+                                  unsafe_allow_html=True)
     
     else:
-        st.info(t('ui.click_to_analyze'))
+        st.info("Click the 'Analyze & Recommend' button in the sidebar to get crop recommendations")
 
 with tab3:
-    st.markdown(f'<h2 class="sub-header">{t("ui.soil_analysis")}</h2>', unsafe_allow_html=True)
+    st.markdown('<h2 class="sub-header">Soil Analysis</h2>', unsafe_allow_html=True)
     
-    # Load soil image with error handling
-    try:
-        soil_img = Image.open(f"assets/soil_types/{soil_type.lower()}.png")
-        st.image(soil_img, caption=f"{soil_type} {t('ui.soil_type')}", use_container_width=True)
-    except FileNotFoundError:
-        st.warning("Soil image not found. Please run generate_images.py to create soil images.")
-        # Create a simple colored placeholder
-        soil_colors = {
-            "clay": (180, 120, 80),
-            "loam": (160, 100, 60),
-            "sand": (220, 200, 160),
-            "silt": (200, 180, 140)
-        }
-        color = soil_colors.get(soil_type.lower(), (200, 200, 200))
-        placeholder = Image.new('RGB', (400, 300), color=color)
-        draw = ImageDraw.Draw(placeholder)
-        draw.text((150, 140), soil_type.upper(), fill=(255, 255, 255))
-        st.image(placeholder, caption=f"{soil_type} {t('ui.soil_type')} (Placeholder)", use_container_width=True)
-    
-    col1, col2, col3 = st.columns(3)
-    with col1: 
-        st.markdown(f'<div class="weather-card"><div class="metric-label">{t("ui.ph_level")}</div><div class="metric-value">{soil_ph}</div></div>', unsafe_allow_html=True)
-    with col2: 
-        st.markdown(f'<div class="weather-card"><div class="metric-label">{t("ui.moisture")}</div><div class="metric-value">{soil_moisture}%</div></div>', unsafe_allow_html=True)
-    with col3: 
-        st.markdown(f'<div class="weather-card"><div class="metric-label">{t("ui.organic_matter")}</div><div class="metric-value">3.2%</div></div>', unsafe_allow_html=True)
-
-with tab4:
-    st.markdown(f'<h2 class="sub-header">{t("ui.weather_forecast")}</h2>', unsafe_allow_html=True)
+    if soil_type != "Select":
+        try:
+            soil_img = Image.open(f"assets/soil_types/{soil_type.lower()}.png")
+            st.image(soil_img, caption=f"{soil_type} Soil", use_container_width=True)
+        except:
+            st.warning("Soil image not available")
     
     col1, col2, col3, col4 = st.columns(4)
     with col1: 
-        st.markdown(f'<div class="weather-card"><div class="metric-label">{t("ui.temperature")}</div><div class="metric-value">{temperature}°C</div></div>', unsafe_allow_html=True)
+        st.markdown('<div class="weather-card"><h4>pH Level</h4><p style="font-size: 20px;">' + str(soil_ph) + '</p></div>', unsafe_allow_html=True)
     with col2: 
-        st.markdown(f'<div class="weather-card"><div class="metric-label">{t("ui.humidity")}</div><div class="metric-value">{humidity}%</div></div>', unsafe_allow_html=True)
+        st.markdown('<div class="weather-card"><h4>Moisture</h4><p style="font-size: 20px;">' + str(soil_moisture) + '%</p></div>', unsafe_allow_html=True)
     with col3: 
-        st.markdown(f'<div class="weather-card"><div class="metric-label">{t("ui.rainfall")}</div><div class="metric-value">{rainfall} mm</div></div>', unsafe_allow_html=True)
+        st.markdown('<div class="weather-card"><h4>Nitrogen</h4><p style="font-size: 20px;">' + str(nitrogen) + ' kg/ha</p></div>', unsafe_allow_html=True)
     with col4: 
-        st.markdown(f'<div class="weather-card"><div class="metric-label">{t("ui.wind_speed")}</div><div class="metric-value">12 km/h</div></div>', unsafe_allow_html=True)
+        st.markdown('<div class="weather-card"><h4>Organic Matter</h4><p style="font-size: 20px;">3.2%</p></div>', unsafe_allow_html=True)
+    
+    col1, col2 = st.columns(2)
+    with col1: 
+        st.markdown('<div class="weather-card"><h4>Phosphorus</h4><p style="font-size: 20px;">' + str(phosphorus) + ' kg/ha</p></div>', unsafe_allow_html=True)
+    with col2: 
+        st.markdown('<div class="weather-card"><h4>Potassium</h4><p style="font-size: 20px;">' + str(potassium) + ' kg/ha</p></div>', unsafe_allow_html=True)
+
+with tab4:
+    st.markdown('<h2 class="sub-header">Weather Forecast</h2>', unsafe_allow_html=True)
+    
+    col1, col2, col3, col4 = st.columns(4)
+    with col1: 
+        st.markdown('<div class="weather-card"><h4>Temperature</h4><p style="font-size: 20px;">' + str(temperature) + '°C</p></div>', unsafe_allow_html=True)
+    with col2: 
+        st.markdown('<div class="weather-card"><h4>Humidity</h4><p style="font-size: 20px;">' + str(humidity) + '%</p></div>', unsafe_allow_html=True)
+    with col3: 
+        st.markdown('<div class="weather-card"><h4>Rainfall</h4><p style="font-size: 20px;">' + str(rainfall) + ' mm</p></div>', unsafe_allow_html=True)
+    with col4: 
+        st.markdown('<div class="weather-card"><h4>Wind Speed</h4><p style="font-size: 20px;">12 km/h</p></div>', unsafe_allow_html=True)
+    
+    # Generate forecast data
+    dates = [datetime.now() + timedelta(days=i) for i in range(7)]
+    temp_forecast = [temperature + np.random.uniform(-3, 3) for _ in range(7)]
+    rain_forecast = [max(0, rainfall/365 + np.random.uniform(-2, 5)) for _ in range(7)]
+    
+    # Create forecast chart
+    fig = go.Figure()
+    fig.add_trace(go.Scatter(x=dates, y=temp_forecast, mode='lines+markers', name='Temperature (°C)', line=dict(color='red')))
+    fig.add_trace(go.Bar(x=dates, y=rain_forecast, name='Rainfall (mm)', yaxis='y2', marker_color='blue'))
+    
+    fig.update_layout(
+        title='7-Day Weather Forecast',
+        xaxis=dict(title='Date'),
+        yaxis=dict(title='Temperature (°C)', side='left', showgrid=False),
+        yaxis2=dict(title='Rainfall (mm)', side='right', overlaying='y', showgrid=False),
+        legend=dict(x=0, y=1.1, orientation='h')
+    )
+    
+    st.plotly_chart(fig, use_container_width=True)
 
 # Footer
-st.markdown(f"""
+st.markdown("""
 <div class="footer">
-    <p>{t('ui.created_by')} <span class="team-name">{t('ui.team_name')}</span> {t('ui.for_sih')}</p>
-    <p>VARUN AI - {t('ui.tagline')}</p>
+    <p>Created with ❤ by <span class="team-name">Team AgroNova</span> for SIH 2025</p>
+    <p>VARUN AI - Vikasit Adhunik Roopantaran ke liye Uttam Nirdesh</p>
 </div>
 """, unsafe_allow_html=True)
