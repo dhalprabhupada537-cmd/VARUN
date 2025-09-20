@@ -8,10 +8,6 @@ import time
 from datetime import datetime, timedelta
 import os
 
-# Import language utilities and style
-from utils.languages import LANGUAGES, get_language_for_state, get_available_languages, get_state_name
-from utils.style import get_css
-
 # Page configuration
 st.set_page_config(
     page_title="VARUN AI Crop Recommendation",
@@ -19,6 +15,398 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded"
 )
+
+# ===== EMBEDDED LANGUAGE DATA (No import needed) =====
+LANGUAGES = {
+    'en': {
+        'name': 'English',
+        'direction': 'ltr',
+        'states': {
+            'Punjab': 'Punjab',
+            'Haryana': 'Haryana', 
+            'Uttar Pradesh': 'Uttar Pradesh',
+            'Maharashtra': 'Maharashtra',
+            'Karnataka': 'Karnataka',
+            'Tamil Nadu': 'Tamil Nadu',
+            'Andhra Pradesh': 'Andhra Pradesh',
+            'Gujarat': 'Gujarat',
+            'Odisha': 'Odisha',
+            'Jharkhand': 'Jharkhand',
+            'West Bengal': 'West Bengal',
+            'Bihar': 'Bihar'
+        },
+        'ui': {
+            'app_name': 'VARUN AI',
+            'tagline': 'Vikasit Adhunik Roopantaran ke liye Uttam Nirdesh',
+            'farmer_details': 'Farmer Details',
+            'full_name': 'Full Name',
+            'region': 'Region',
+            'farm_size': 'Farm Size (acres)',
+            'soil_properties': 'Soil Properties',
+            'soil_type': 'Soil Type',
+            'soil_ph': 'Soil pH',
+            'soil_moisture': 'Soil Moisture (%)',
+            'nitrogen': 'Nitrogen (kg/ha)',
+            'phosphorus': 'Phosphorus (kg/ha)',
+            'potassium': 'Potassium (kg/ha)',
+            'environmental_factors': 'Environmental Factors',
+            'temperature': 'Temperature (°C)',
+            'rainfall': 'Annual Rainfall (mm)',
+            'humidity': 'Humidity (%)',
+            'analyze_button': 'Analyze & Recommend',
+            'dashboard': 'Dashboard',
+            'crop_recommendation': 'Crop Recommendation',
+            'soil_analysis': 'Soil Analysis',
+            'weather_forecast': 'Weather Forecast',
+            'farm_overview': 'Farm Overview',
+            'soil_nutrient_levels': 'Soil Nutrient Levels',
+            'recommended_crop': 'Recommended Crop',
+            'expected_yield': 'Expected Yield',
+            'success_probability': 'Success Probability',
+            'why_this_crop': 'Why this crop?',
+            'planting_guide': 'Planting Guide',
+            'best_planting_time': 'Best Planting Time',
+            'water_requirements': 'Water Requirements',
+            'fertilizer_recommendations': 'Fertilizer Recommendations',
+            'harvest_timeline': 'Harvest Timeline',
+            'market_insights': 'Market Insights',
+            'current_market_price': 'Current market price',
+            'demand_trend': 'Demand trend',
+            'click_to_analyze': 'Click the button to get crop recommendations',
+            'ph_level': 'pH Level',
+            'moisture': 'Moisture',
+            'organic_matter': 'Organic Matter',
+            'wind_speed': 'Wind Speed',
+            'created_by': 'Created with love by',
+            'team_name': 'Team AgroNova',
+            'for_sih': 'for SIH 2025',
+            'language': 'Language',
+            'select_language': 'Select Language'
+        },
+        'crops': {
+            'Wheat': 'Wheat',
+            'Rice': 'Rice',
+            'Maize': 'Maize',
+            'Cotton': 'Cotton',
+            'Soybean': 'Soybean',
+            'Pulses': 'Pulses'
+        }
+    },
+    'hi': {
+        'name': 'हिंदी',
+        'direction': 'ltr',
+        'states': {
+            'Punjab': 'पंजाब',
+            'Haryana': 'हरियाणा',
+            'Uttar Pradesh': 'उत्तर प्रदेश',
+            'Maharashtra': 'महाराष्ट्र',
+            'Karnataka': 'कर्नाटक',
+            'Tamil Nadu': 'तमिलनाडु',
+            'Andhra Pradesh': 'आंध्र प्रदेश',
+            'Gujarat': 'गुजरात',
+            'Odisha': 'ओडिशा',
+            'Jharkhand': 'झारखंड',
+            'West Bengal': 'पश्चिम बंगाल',
+            'Bihar': 'बिहार'
+        },
+        'ui': {
+            'app_name': 'VARUN AI',
+            'tagline': 'विकसित आधुनिक रूपांतरण के लिए उत्तम निर्देश',
+            'farmer_details': 'किसान विवरण',
+            'full_name': 'पूरा नाम',
+            'region': 'क्षेत्र',
+            'farm_size': 'खेत का आकार (एकड़)',
+            'soil_properties': 'मिट्टी के गुण',
+            'soil_type': 'मिट्टी का प्रकार',
+            'soil_ph': 'मिट्टी का pH',
+            'soil_moisture': 'मिट्टी की नमी (%)',
+            'nitrogen': 'नाइट्रोजन (kg/ha)',
+            'phosphorus': 'फॉस्फोरस (kg/ha)',
+            'potassium': 'पोटैशियम (kg/ha)',
+            'environmental_factors': 'पर्यावरणीय कारक',
+            'temperature': 'तापमान (°C)',
+            'rainfall': 'वार्षिक वर्षा (mm)',
+            'humidity': 'आर्द्रता (%)',
+            'analyze_button': 'विश्लेषण करें और सिफारिश करें',
+            'dashboard': 'डैशबोर्ड',
+            'crop_recommendation': 'फसल सिफारिश',
+            'soil_analysis': 'मिट्टी विश्लेषण',
+            'weather_forecast': 'मौसम पूर्वानुमान',
+            'farm_overview': 'खेत का अवलोकन',
+            'soil_nutrient_levels': 'मिट्टी के पोषक तत्वों के स्तर',
+            'recommended_crop': 'सिफारिश की गई फसल',
+            'expected_yield': 'अनुमानित उपज',
+            'success_probability': 'सफलता की संभावना',
+            'why_this_crop': 'यह फसल क्यों?',
+            'planting_guide': 'रोपण मार्गदर्शिका',
+            'best_planting_time': 'सर्वोत्तम रोपण समय',
+            'water_requirements': 'पानी की आवश्यकताएं',
+            'fertilizer_recommendations': 'उर्वरक सिफारिशें',
+            'harvest_timeline': 'फसल कटाई की समयसीमा',
+            'market_insights': 'बाजार की जानकारी',
+            'current_market_price': 'वर्तमान बाजार मूल्य',
+            'demand_trend': 'मांग की प्रवृत्ति',
+            'click_to_analyze': 'फसल सिफारिशें प्राप्त करने के लिए बटन पर क्लिक करें',
+            'ph_level': 'pH स्तर',
+            'moisture': 'नमी',
+            'organic_matter': 'कार्बनिक पदार्थ',
+            'wind_speed': 'हवा की गति',
+            'created_by': 'प्यार से बनाया गया',
+            'team_name': 'टीम एग्रोनोवा',
+            'for_sih': 'एसआईएच 2025 के लिए',
+            'language': 'भाषा',
+            'select_language': 'भाषा चुनें'
+        },
+        'crops': {
+            'Wheat': 'गेहूं',
+            'Rice': 'चावल',
+            'Maize': 'मक्का',
+            'Cotton': 'कपास',
+            'Soybean': 'सोयाबीन',
+            'Pulses': 'दलहन'
+        }
+    },
+    'or': {
+        'name': 'ଓଡିଆ',
+        'direction': 'ltr',
+        'states': {
+            'Punjab': 'ପଞ୍ଜାବ',
+            'Haryana': 'ହରିୟାଣା',
+            'Uttar Pradesh': 'ଉତ୍ତର ପ୍ରଦେଶ',
+            'Maharashtra': 'ମହାରାଷ୍ଟ୍ର',
+            'Karnataka': 'କର୍ଣାଟକ',
+            'Tamil Nadu': 'ତାମିଲନାଡୁ',
+            'Andhra Pradesh': 'ଆନ୍ଧ୍ର ପ୍ରଦେଶ',
+            'Gujarat': 'ଗୁଜରାଟ',
+            'Odisha': 'ଓଡିଶା',
+            'Jharkhand': 'ଝାଡଖଣ୍ଡ',
+            'West Bengal': 'ପଶ୍ଚିମ ବଙ୍ଗ',
+            'Bihar': 'ବିହାର'
+        },
+        'ui': {
+            'app_name': 'VARUN AI',
+            'tagline': 'ବିକଶିତ ଆଧୁନିକ ରୂପାନ୍ତରଣ ପାଇଁ ଉତ୍ତମ �ନିର୍ଦେଶ',
+            'farmer_details': 'କୃଷକର ବିବରଣୀ',
+            'full_name': 'ପୂରା ନାମ',
+            'region': 'ଅଞ୍ଚଳ',
+            'farm_size': 'ଚାଷ ଜମିର ଆକାର (ଏକର)',
+            'soil_properties': 'ମୃତ୍ତିକାର ଗୁଣ',
+            'soil_type': 'ମୃତ୍ତିକାର ପ୍ରକାର',
+            'soil_ph': 'ମୃତ୍ତିକାର pH',
+            'soil_moisture': 'ମୃତ୍ତିକାର ଆର୍ଦ୍ରତା (%)',
+            'nitrogen': 'ନାଇଟ୍ରୋଜେନ୍ (kg/ha)',
+            'phosphorus': 'ଫସଫରସ୍ (kg/ha)',
+            'potassium': 'ପଟାସିଅମ୍ (kg/ha)',
+            'environmental_factors': 'ପରିବେଶଗତ କାରକ',
+            'temperature': 'ତାପମାତ୍ରା (°C)',
+            'rainfall': 'ବାର୍ଷିକ ବର୍ଷା (mm)',
+            'humidity': 'ଆର୍ଦ୍ରତା (%)',
+            'analyze_button': 'ବିଶ୍ଳେଷଣ କର ଏବଂ ପରାମର୍ଶ ଦିଅ',
+            'dashboard': 'ଡ୍ୟାସବୋର୍ଡ',
+            'crop_recommendation': 'ଫସଲ ପରାମର୍ଶ',
+            'soil_analysis': 'ମୃତ୍ତିକା ବିଶ୍ଳେଷଣ',
+            'weather_forecast': 'ପାଣିପାଗ ପୂର୍ବାନୁମାନ',
+            'farm_overview': 'ଚାଷ ଜମିର ସମୀକ୍ଷା',
+            'soil_nutrient_levels': 'ମୃତ୍ତିକାର ପୋଷକ ତତ୍ତ୍ୱର ସ୍ତର',
+            'recommended_crop': 'ପରାମର୍ଶିତ ଫସଲ',
+            'expected_yield': 'ଆଶାକୃତ ଉତ୍ପାଦନ',
+            'success_probability': 'ସଫଳତାର ସମ୍ଭାବନା',
+            'why_this_crop': 'ଏହି ଫସଲ କାହିଁକି?',
+            'planting_guide': 'ରୋପଣ ମାର୍ଗଦର୍ଶିକା',
+            'best_planting_time': 'ସର୍ବୋତ୍ତମ ରୋପଣ ସଞ୍ଚୟ',
+            'water_requirements': 'ଜଳ ଆବଶ୍ୟକତା',
+            'fertilizer_recommendations': 'ସାର ପରାମର୍ଶ',
+            'harvest_timeline': 'ଫସଲ କଟାଇ ସମୟସୀମା',
+            'market_insights': 'ବଜାରର ଅନ୍ତର୍ଦୃଷ୍ଟି',
+            'current_market_price': 'ବର୍ତ୍ତମାନର ବଜାର ମୂଲ୍ୟ',
+            'demand_trend': 'ଚାହିଦା ପ୍ରବୃତ୍ତି',
+            'click_to_analyze': 'ଫସଲ ପରାମର୍ଶ ପାଇବା ପାଇଁ ବଟନ୍ ଦବାନ୍ତୁ',
+            'ph_level': 'pH ସ୍ତର',
+            'moisture': 'ଆର୍ଦ୍ରତା',
+            'organic_matter': 'ଜୈବିକ ପଦାର୍ଥ',
+            'wind_speed': 'ପବନର ଗତି',
+            'created_by': 'ଭାଲୋବାସା କରି ତିଆରି କରାଯାଇଛି',
+            'team_name': 'ଦଳ ଆଗ୍ରୋନୋଭା',
+            'for_sih': 'SIH 2025 ପାଇଁ',
+            'language': 'ଭାଷା',
+            'select_language': 'ଭାଷା ଚୟନ କରନ୍ତୁ'
+        },
+        'crops': {
+            'Wheat': 'ଗହମ',
+            'Rice': 'ଚାଉଳ',
+            'Maize': 'ମକା',
+            'Cotton': 'କପାହ',
+            'Soybean': 'ସୋୟାବିନ',
+            'Pulses': 'ଡାଲି'
+        }
+    }
+}
+
+# State to language mapping
+STATE_LANGUAGE_MAPPING = {
+    'Odisha': 'or',
+    'Jharkhand': 'hi',
+    'Bihar': 'hi',
+    'Punjab': 'hi',
+    'Haryana': 'hi',
+    'Uttar Pradesh': 'hi',
+    'Default': 'en'
+}
+
+def get_language_for_state(state):
+    """Get the default language for a given state"""
+    return STATE_LANGUAGE_MAPPING.get(state, STATE_LANGUAGE_MAPPING['Default'])
+
+def get_available_languages():
+    """Return list of available languages"""
+    return list(LANGUAGES.keys())
+
+def get_state_name(state, lang):
+    """Get translated state name"""
+    return LANGUAGES[lang]['states'].get(state, state)
+
+# ===== EMBEDDED CSS STYLING =====
+def get_css():
+    return """
+    <style>
+    :root {
+        --primary-color: #2E8B57;
+        --secondary-color: #3CB371;
+        --accent-color: #4CAF50;
+        --background-color: #FFFFFF;
+        --card-background: #F8F9FA;
+        --text-color: #333333;
+        --border-color: #E0E0E0;
+        --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        --hover-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --background-color: #1E1E1E;
+            --card-background: #2D2D2D;
+            --text-color: #FFFFFF;
+            --border-color: #404040;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            --hover-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+        }
+    }
+
+    .main-header {
+        font-size: 3rem;
+        color: var(--primary-color);
+        text-align: center;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .tagline {
+        font-size: 1.1rem;
+        color: var(--secondary-color);
+        text-align: center;
+        margin-top: 0;
+        margin-bottom: 2rem;
+        font-style: italic;
+    }
+
+    .sub-header {
+        font-size: 1.6rem;
+        color: var(--primary-color);
+        border-bottom: 2px solid var(--secondary-color);
+        padding-bottom: 0.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .card {
+        padding: 1.5rem;
+        border-radius: 12px;
+        background-color: var(--card-background);
+        border: 1px solid var(--border-color);
+        box-shadow: var(--shadow);
+        margin: 1rem 0;
+        transition: all 0.3s ease;
+    }
+
+    .card:hover {
+        box-shadow: var(--hover-shadow);
+        transform: translateY(-2px);
+    }
+
+    .recommendation-card {
+        background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%);
+        padding: 2rem;
+        border-radius: 15px;
+        border-left: 5px solid var(--accent-color);
+        box-shadow: var(--shadow);
+        margin: 1.5rem 0;
+    }
+
+    .weather-card {
+        background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%);
+        padding: 1.5rem;
+        border-radius: 12px;
+        text-align: center;
+        box-shadow: var(--shadow);
+        border: 1px solid var(--border-color);
+    }
+
+    .soil-image {
+        border-radius: 12px;
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        box-shadow: var(--shadow);
+        border: 1px solid var(--border-color);
+    }
+
+    .footer {
+        text-align: center;
+        margin-top: 3rem;
+        padding: 2rem;
+        background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+        color: white;
+        border-radius: 12px;
+        box-shadow: var(--shadow);
+    }
+
+    .team-name {
+        font-weight: bold;
+        color: #FFD700;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    }
+
+    .language-selector {
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        z-index: 1000;
+        background: var(--card-background);
+        padding: 0.5rem 1rem;
+        border-radius: 25px;
+        box-shadow: var(--shadow);
+        border: 1px solid var(--border-color);
+    }
+
+    .stProgress > div > div > div > div {
+        background: linear-gradient(90deg, var(--accent-color) 0%, #8BC34A 100%);
+    }
+
+    .metric-value {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: var(--primary-color);
+        margin: 0.5rem 0;
+    }
+
+    .metric-label {
+        font-size: 0.9rem;
+        color: var(--text-color);
+        opacity: 0.8;
+        margin-bottom: 0.5rem;
+    }
+    </style>
+    """
 
 # Initialize session state for language
 if 'language' not in st.session_state:
