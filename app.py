@@ -16,7 +16,7 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# ===== EMBEDDED LANGUAGE DATA (No import needed) =====
+# ===== EMBEDDED LANGUAGE DATA =====
 LANGUAGES = {
     'en': {
         'name': 'English',
@@ -185,7 +185,7 @@ LANGUAGES = {
         },
         'ui': {
             'app_name': 'VARUN AI',
-            'tagline': 'ବିକଶିତ ଆଧୁନିକ ରୂପାନ୍ତରଣ ପାଇଁ ଉତ୍ତମ �ନିର୍ଦେଶ',
+            'tagline': 'ବିକଶିତ ଆଧୁନିକ ରୂପାନ୍ତରଣ ପାଇଁ ଉତ୍ତମ ନିର୍ଦେଶ',
             'farmer_details': 'କୃଷକର ବିବରଣୀ',
             'full_name': 'ପୂରା ନାମ',
             'region': 'ଅଞ୍ଚଳ',
@@ -205,7 +205,7 @@ LANGUAGES = {
             'dashboard': 'ଡ୍ୟାସବୋର୍ଡ',
             'crop_recommendation': 'ଫସଲ ପରାମର୍ଶ',
             'soil_analysis': 'ମୃତ୍ତିକା ବିଶ୍ଳେଷଣ',
-            'weather_forecast': 'ପାଣିପାଗ ପୂର୍ବାନୁମାନ',
+            'weather_forecast': 'ପାଣି�पାଗ ପୂର୍ବାନୁମାନ',
             'farm_overview': 'ଚାଷ ଜମିର ସମୀକ୍ଷା',
             'soil_nutrient_levels': 'ମୃତ୍ତିକାର ପୋଷକ ତତ୍ତ୍ୱର ସ୍ତର',
             'recommended_crop': 'ପରାମର୍ଶିତ ଫସଲ',
@@ -213,7 +213,7 @@ LANGUAGES = {
             'success_probability': 'ସଫଳତାର ସମ୍ଭାବନା',
             'why_this_crop': 'ଏହି ଫସଲ କାହିଁକି?',
             'planting_guide': 'ରୋପଣ ମାର୍ଗଦର୍ଶିକା',
-            'best_planting_time': 'ସର୍ବୋତ୍ତମ ରୋପଣ ସଞ୍ଚୟ',
+            'best_planting_time': 'ସର୍ବୋତ୍ତମ ରୋପଣ ସମୟ',
             'water_requirements': 'ଜଳ ଆବଶ୍ୟକତା',
             'fertilizer_recommendations': 'ସାର ପରାମର୍ଶ',
             'harvest_timeline': 'ଫସଲ କଟାଇ ସମୟସୀମା',
@@ -232,12 +232,234 @@ LANGUAGES = {
             'select_language': 'ଭାଷା ଚୟନ କରନ୍ତୁ'
         },
         'crops': {
-            'Wheat': 'ଗହମ',
+            'Wheat': 'ଗହଞ',
             'Rice': 'ଚାଉଳ',
             'Maize': 'ମକା',
             'Cotton': 'କପାହ',
             'Soybean': 'ସୋୟାବିନ',
             'Pulses': 'ଡାଲି'
+        }
+    },
+    'ta': {
+        'name': 'தமிழ்',
+        'direction': 'ltr',
+        'states': {
+            'Punjab': 'பஞ்சாப்',
+            'Haryana': 'ஹரியானா',
+            'Uttar Pradesh': 'உத்தரப் பிரதேசம்',
+            'Maharashtra': 'மகாராஷ்டிரா',
+            'Karnataka': 'கர்நாடகா',
+            'Tamil Nadu': 'தமிழ்நாடு',
+            'Andhra Pradesh': 'ஆந்திரப் பிரதேசம்',
+            'Gujarat': 'குஜராத்',
+            'Odisha': 'ஒடிசா',
+            'Jharkhand': 'ஜார்கண்ட்',
+            'West Bengal': 'மேற்கு வங்காளம்',
+            'Bihar': 'பீகார்'
+        },
+        'ui': {
+            'app_name': 'VARUN AI',
+            'tagline': 'மேம்பட்ட நவீன மாற்றத்திற்கான சிறந்த வழிகாட்டி',
+            'farmer_details': 'விவசாயி விவரங்கள்',
+            'full_name': 'முழு பெயர்',
+            'region': 'பிராந்தியம்',
+            'farm_size': 'விவசாய நில அளவு (ஏக்கர்)',
+            'soil_properties': 'மண் பண்புகள்',
+            'soil_type': 'மண் வகை',
+            'soil_ph': 'மண் pH',
+            'soil_moisture': 'மண் ஈரப்பதம் (%)',
+            'nitrogen': 'நைட்ரஜன் (kg/ha)',
+            'phosphorus': 'பாஸ்பரஸ் (kg/ha)',
+            'potassium': 'பொட்டாசியம் (kg/ha)',
+            'environmental_factors': 'சுற்றுச்சூழல் காரணிகள்',
+            'temperature': 'வெப்பநிலை (°C)',
+            'rainfall': 'ஆண்டு மழை (mm)',
+            'humidity': 'ஈரப்பதம் (%)',
+            'analyze_button': 'பகுப்பாய்வு செய்து பரிந்துரைக்கவும்',
+            'dashboard': 'டாஷ்போர்டு',
+            'crop_recommendation': 'பயிர் பரிந்துரை',
+            'soil_analysis': 'மண் பகுப்பாய்வு',
+            'weather_forecast': 'வானிலை முன்னறிவிப்பு',
+            'farm_overview': 'விவசாய நிலை மேலோட்டம்',
+            'soil_nutrient_levels': 'மண் ஊட்டச்சத்து அளவுகள்',
+            'recommended_crop': 'பரிந்துரைக்கப்பட்ட பயிர',
+            'expected_yield': 'எதிர்பார்க்கப்படும் விளைச்சல்',
+            'success_probability': 'வெற்றி நிகழ்தகவு',
+            'why_this_crop': 'இந்த பயிர் ஏன்?',
+            'planting_guide': 'நடவு வழிகாட்டி',
+            'best_planting_time': 'சிறந்த நடவு நேரம்',
+            'water_requirements': 'நீர் தேவைகள்',
+            'fertilizer_recommendations': 'உர பரிந்துரைகள்',
+            'harvest_timeline': 'அறுவடை காலக்கெடு',
+            'market_insights': 'சந்தை நுண்ணறிவுகள்',
+            'current_market_price': 'தற்போதைய சந்தை விலை',
+            'demand_trend': 'தேவைப் போக்கு',
+            'click_to_analyze': 'பயிர் பரிந்துரைகளைப் பெற பொத்தானைக் கிளிக் செய்யவும்',
+            'ph_level': 'pH அளவு',
+            'moisture': 'ஈரப்பதம்',
+            'organic_matter': 'கரிமப் பொருள்',
+            'wind_speed': 'காற்றின் வேகம்',
+            'created_by': 'அன்போடு உருவாக்கப்பட்டது',
+            'team_name': 'டீம் அக்ரோநோவா',
+            'for_sih': 'SIH 2025க்காக',
+            'language': 'மொழி',
+            'select_language': 'மொழியைத் தேர்ந்தெடுக்கவும்'
+        },
+        'crops': {
+            'Wheat': 'கோதுமை',
+            'Rice': 'நெல்',
+            'Maize': 'சோளம்',
+            'Cotton': 'பருத்தி',
+            'Soybean': 'சோயா',
+            'Pulses': 'பருப்பு வகைகள்'
+        }
+    },
+    'bn': {
+        'name': 'বাংলা',
+        'direction': 'ltr',
+        'states': {
+            'Punjab': 'পঞ্জাব',
+            'Haryana': 'হরিয়ানা',
+            'Uttar Pradesh': 'উত্তর প্রদেশ',
+            'Maharashtra': 'মহারাষ্ট্র',
+            'Karnataka': 'কর্ণাটक',
+            'Tamil Nadu': 'তামিলনাড়ু',
+            'Andhra Pradesh': 'অন্ধ্র প্রদেশ',
+            'Gujarat': 'গুজরাট',
+            'Odisha': 'ওড়িশা',
+            'Jharkhand': 'ঝাড়খণ্ড',
+            'West Bengal': 'পশ্চিমবঙ্গ',
+            'Bihar': 'বিহার'
+        },
+        'ui': {
+            'app_name': 'VARUN AI',
+            'tagline': 'উন্নত আধুনিক রূপান্তরের জন্য সেরা নির্দেশিকা',
+            'farmer_details': 'কৃষকের বিবরণ',
+            'full_name': 'পুরো নাম',
+            'region': 'অঞ্চল',
+            'farm_size': 'খামারের আকার (একর)',
+            'soil_properties': 'মাটির বৈশিষ্ট্য',
+            'soil_type': 'মাটির ধরন',
+            'soil_ph': 'মাটির pH',
+            'soil_moisture': 'মাটির আর্দ্রতা (%)',
+            'nitrogen': 'নাইট্রোজেন (kg/ha)',
+            'phosphorus': 'ফসফরাস (kg/ha)',
+            'potassium': 'পটাসিয়াম (kg/ha)',
+            'environmental_factors': 'পরিবেশগত কারণ',
+            'temperature': 'তাপমাত্রা (°C)',
+            'rainfall': 'বার্ষিক বৃষ্টিপাত (mm)',
+            'humidity': 'আর্দ্রতা (%)',
+            'analyze_button': 'বিশ্লেষণ করুন এবং সুপারিশ করুন',
+            'dashboard': 'ড্যাশবোর্ড',
+            'crop_recommendation': 'ফসল সুপারিশ',
+            'soil_analysis': 'মাটির বিশ্লেষণ',
+            'weather_forecast': 'আবহাওয়ার পূর্বাভাস',
+            'farm_overview': 'খামারের ওভারভিউ',
+            'soil_nutrient_levels': 'মাটির পুষ্টির মাত্রা',
+            'recommended_crop': 'সুপারিশকৃত ফসল',
+            'expected_yield': 'প্রত্যাশিত ফলন',
+            'success_probability': 'সাফল্যের সম্ভাবনা',
+            'why_this_crop': 'এই ফসল কেন?',
+            'planting_guide': 'রোপণ গাইড',
+            'best_planting_time': 'সেরা রোপণের সময়',
+            'water_requirements': 'পানির প্রয়োজনীয়তা',
+            'fertilizer_recommendations': 'সার সুপারিশ',
+            'harvest_timeline': 'फसल কাটার সময়সীমা',
+            'market_insights': 'বাজার অন্তর্দৃষ্টি',
+            'current_market_price': 'বর্তমান বাজার মূল্য',
+            'demand_trend': 'চাহিদার প্রবণতা',
+            'click_to_analyze': 'ফসলের সুপারিশ পেতে বাটন ক্লিক করুন',
+            'ph_level': 'pH মাত্রা',
+            'moisture': 'আর্দ্রতা',
+            'organic_matter': 'জৈব পদার্থ',
+            'wind_speed': 'বাতাসের গতি',
+            'created_by': 'ভালোবাসা সহ তৈরি',
+            'team_name': 'টিম এগ্রোনোভা',
+            'for_sih': 'SIH 2025 এর জন্য',
+            'language': 'ভাষা',
+            'select_language': 'ভাষা নির্বাচন করুন'
+        },
+        'crops': {
+            'Wheat': 'গম',
+            'Rice': 'ধান',
+            'Maize': 'ভুট্টা',
+            'Cotton': 'তুলা',
+            'Soybean': 'সয়াবিন',
+            'Pulses': 'ডাল'
+        }
+    },
+    'mr': {
+        'name': 'मराठी',
+        'direction': 'ltr',
+        'states': {
+            'Punjab': 'पंजाब',
+            'Haryana': 'हरियाणा',
+            'Uttar Pradesh': 'उत्तर प्रदेश',
+            'Maharashtra': 'महाराष्ट्र',
+            'Karnataka': 'कर्नाटक',
+            'Tamil Nadu': 'तमिळनाडू',
+            'Andhra Pradesh': 'आंध्र प्रदेश',
+            'Gujarat': 'गुजरात',
+            'Odisha': 'ओडिशा',
+            'Jharkhand': 'झारखंड',
+            'West Bengal': 'पश्चिम बंगाल',
+            'Bihar': 'बिहार'
+        },
+        'ui': {
+            'app_name': 'VARUN AI',
+            'tagline': 'विकसित आधुनिक रूपांतरणासाठी उत्तम मार्गदर्शन',
+            'farmer_details': 'शेतकरी तपशील',
+            'full_name': 'पूर्ण नाव',
+            'region': 'प्रदेश',
+            'farm_size': 'शेताचा आकार (एकर)',
+            'soil_properties': 'मातीचे गुणधर्म',
+            'soil_type': 'मातीचा प्रकार',
+            'soil_ph': 'मातीचा pH',
+            'soil_moisture': 'मातीची आर्द्रता (%)',
+            'nitrogen': 'नायट्रोजन (kg/ha)',
+            'phosphorus': 'फॉस्फरस (kg/ha)',
+            'potassium': 'पोटॅशियम (kg/ha)',
+            'environmental_factors': 'पर्यावरणीय घटक',
+            'temperature': 'तापमान (°C)',
+            'rainfall': 'वार्षिक पाऊस (mm)',
+            'humidity': 'आर्द्रता (%)',
+            'analyze_button': 'विश्लेषण करा आणि शिफारस करा',
+            'dashboard': 'डॅशबोर्ड',
+            'crop_recommendation': 'पीक शिफारस',
+            'soil_analysis': 'माती विश्लेषण',
+            'weather_forecast': 'हवामान अंदाज',
+            'farm_overview': 'शेताचा आढावा',
+            'soil_nutrient_levels': 'मातीतील पोषक द्रव्य पातळी',
+            'recommended_crop': 'शिफारस केलेली पीक',
+            'expected_yield': 'अपेक्षित उत्पादन',
+            'success_probability': 'यशाची शक्यता',
+            'why_this_crop': 'हे पीक का?',
+            'planting_guide': 'लागवड मार्गदर्शक',
+            'best_planting_time': 'उत्तम लागवडीची वेळ',
+            'water_requirements': 'पाण्याची आवश्यकता',
+            'fertilizer_recommendations': 'खत शिफारसी',
+            'harvest_timeline': 'कापणी वेळरेषा',
+            'market_insights': 'बाजारातील अंतर्दृष्टी',
+            'current_market_price': 'सध्याचा बाजारभाव',
+            'demand_trend': 'मागणीची प्रवृत्ती',
+            'click_to_analyze': 'पीक शिफारसी मिळविण्यासाठी बटण क्लिक करा',
+            'ph_level': 'pH पातळी',
+            'moisture': 'आर्द्रता',
+            'organic_matter': 'सेंद्रिय पदार्थ',
+            'wind_speed': 'वाऱ्याची गती',
+            'created_by': 'प्रेमाने तयार केले',
+            'team_name': 'टीम अॅग्रोनोव्हा',
+            'for_sih': 'SIH 2025 साठी',
+            'language': 'भाषा',
+            'select_language': 'भाषा निवडा'
+        },
+        'crops': {
+            'Wheat': 'गहू',
+            'Rice': 'तांदूळ',
+            'Maize': 'मका',
+            'Cotton': 'कापूस',
+            'Soybean': 'सोयाबीन',
+            'Pulses': 'डाळ'
         }
     }
 }
@@ -250,6 +472,9 @@ STATE_LANGUAGE_MAPPING = {
     'Punjab': 'hi',
     'Haryana': 'hi',
     'Uttar Pradesh': 'hi',
+    'West Bengal': 'bn',
+    'Maharashtra': 'mr',
+    'Tamil Nadu': 'ta',
     'Default': 'en'
 }
 
@@ -265,10 +490,9 @@ def get_state_name(state, lang):
     """Get translated state name"""
     return LANGUAGES[lang]['states'].get(state, state)
 
-# ===== EMBEDDED CSS STYLING =====
-def get_css():
-    return """
-    <style>
+# ===== ENHANCED CSS STYLING =====
+st.markdown("""
+<style>
     :root {
         --primary-color: #2E8B57;
         --secondary-color: #3CB371;
@@ -293,7 +517,7 @@ def get_css():
     }
 
     .main-header {
-        font-size: 3rem;
+        font-size: 3.5rem;
         color: var(--primary-color);
         text-align: center;
         font-weight: bold;
@@ -302,7 +526,7 @@ def get_css():
     }
 
     .tagline {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
         color: var(--secondary-color);
         text-align: center;
         margin-top: 0;
@@ -311,7 +535,7 @@ def get_css():
     }
 
     .sub-header {
-        font-size: 1.6rem;
+        font-size: 1.8rem;
         color: var(--primary-color);
         border-bottom: 2px solid var(--secondary-color);
         padding-bottom: 0.5rem;
@@ -405,17 +629,31 @@ def get_css():
         opacity: 0.8;
         margin-bottom: 0.5rem;
     }
-    </style>
-    """
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+        .main-header {
+            font-size: 2.5rem;
+        }
+        
+        .card {
+            padding: 1rem;
+        }
+        
+        .language-selector {
+            top: 0.5rem;
+            right: 0.5rem;
+            padding: 0.3rem 0.8rem;
+        }
+    }
+</style>
+""", unsafe_allow_html=True)
 
 # Initialize session state for language
 if 'language' not in st.session_state:
     st.session_state.language = 'en'
 if 'last_state' not in st.session_state:
     st.session_state.last_state = ''
-
-# Apply custom CSS
-st.markdown(get_css(), unsafe_allow_html=True)
 
 # Helper function to get translated text
 def t(key, lang=None):
@@ -554,7 +792,7 @@ with st.sidebar:
     
     analyze_button = st.button(t('ui.analyze_button'), type="primary", use_container_width=True)
 
-# Crop recommendation model
+# Crop recommendation model (same as before)
 def predict_best_crop(soil_type, ph, nitrogen, phosphorus, potassium, temperature, rainfall, humidity, region):
     # Regional crop preferences
     regional_preferences = {
