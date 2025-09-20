@@ -325,9 +325,9 @@ with tab2:
                                              potassium, temperature, rainfall, humidity, farm_location)
             
             st.markdown('<div class="recommendation-card">', unsafe_allow_html=True)
-            st.markdown(f"### 🌱 {t('ui.recommended_crop')}: *{recommendation['crop']}*")
-            st.markdown(f"{t('ui.expected_yield')}:** {recommendation['yield']} tons/acre")
-            st.markdown(f"{t('ui.success_probability')}:** {recommendation['probability']}%")
+            st.markdown(f"### 🌱 {t('ui.recommended_crop')}: **{recommendation['crop']}**")
+            st.markdown(f"**{t('ui.expected_yield')}:** {recommendation['yield']} tons/acre")
+            st.markdown(f"**{t('ui.success_probability')}:** {recommendation['probability']}%")
             st.markdown('</div>', unsafe_allow_html=True)
             
             st.markdown(f"#### {t('ui.why_this_crop')}")
@@ -337,17 +337,17 @@ with tab2:
             col1, col2 = st.columns(2)
             
             with col1:
-                st.markdown(f"{t('ui.best_planting_time')}")
+                st.markdown(f"**{t('ui.best_planting_time')}**")
                 st.write(recommendation['planting_time'])
                 
-                st.markdown(f"{t('ui.water_requirements')}")
+                st.markdown(f"**{t('ui.water_requirements')}**")
                 st.write(recommendation['water_req'])
             
             with col2:
-                st.markdown(f"{t('ui.fertilizer_recommendations')}")
+                st.markdown(f"**{t('ui.fertilizer_recommendations')}**")
                 st.write(recommendation['fertilizer'])
                 
-                st.markdown(f"{t('ui.harvest_timeline')}")
+                st.markdown(f"**{t('ui.harvest_timeline')}**")
                 st.write(recommendation['harvest_time'])
             
             st.markdown(f"#### {t('ui.market_insights')}")
