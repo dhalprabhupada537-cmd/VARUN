@@ -295,7 +295,7 @@ st.markdown("""
 <style>
     /* Main background */
     .stApp {
-        background: linear-gradient(120deg, #D9A679 0%, #4CAF50 100%);
+        background: linear-gradient(120deg, #D9A679 30%, #4CAF50 70%);
     }
     
     /* Headers */
@@ -1199,6 +1199,7 @@ st.markdown(f"""
     <p>VARUN AI - Vikasit Adhunik Roopantaran ke liye Uttam Nirdesh</p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
