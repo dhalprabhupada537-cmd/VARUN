@@ -295,7 +295,7 @@ st.markdown("""
 <style>
     /* Main background */
     .stApp {
-        background: linear-gradient(135deg, #20b2aa 0%, #e2e8f0 0%);
+        background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
     }
     
     /* Headers */
@@ -305,10 +305,11 @@ st.markdown("""
         text-align: center;
         font-weight: bold;
         margin-bottom: 0;
-        background: linear-gradient(135deg, #2E8B57 70%, #3CB371 30%);
+        background: linear-gradient(135deg, #2E8B57 0%, #3CB371 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        font-family: 'Arial', sans-serif;
     }
     .tagline {
         font-size: 1.2rem;
@@ -316,6 +317,8 @@ st.markdown("""
         text-align: center;
         margin-top: 0;
         font-style: italic;
+        font-weight: 500;
+        font-family: 'Arial', sans-serif;
     }
     .sub-header {
         font-size: 1.8rem;
@@ -323,6 +326,8 @@ st.markdown("""
         border-bottom: 2px solid #3CB371;
         padding-bottom: 10px;
         margin-top: 20px;
+        font-weight: 700;
+        font-family: 'Arial', sans-serif;
     }
     
     /* Cards */
@@ -331,15 +336,22 @@ st.markdown("""
         border-radius: 15px;
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.05);
         margin: 15px 0;
-        background: linear-gradient(135deg, #FFFFFF 20%, #2F3A4A 80%);
+        background: linear-gradient(135deg, #FFFFFF 0%, #F9FAFB 100%);
         border-left: 5px solid #4CAF50;
         transition: transform 0.3s ease;
         border: 1px solid #E5E7EB;
-        color: #374151;
+        color: #1F2937;
+        font-family: 'Arial', sans-serif;
     }
     .card:hover {
         transform: translateY(-3px);
         box-shadow: 0 8px 16px 0 rgba(0,0,0,0.1);
+    }
+    .card h3 {
+        color: #2E8B57;
+        font-weight: 600;
+        margin-bottom: 10px;
+        font-family: 'Arial', sans-serif;
     }
     
     /* Recommendation card */
@@ -351,6 +363,12 @@ st.markdown("""
         margin-bottom: 20px;
         border: 1px solid #BBF7D0;
         color: #14532D;
+        font-family: 'Arial', sans-serif;
+    }
+    .recommendation-card h3 {
+        color: #166534;
+        font-weight: 700;
+        font-family: 'Arial', sans-serif;
     }
     
     /* Soil image */
@@ -364,7 +382,7 @@ st.markdown("""
     
     /* Weather cards */
     .weather-card {
-        background: linear-gradient(135deg, #EFF6FF 00%, #026A81 100%);
+        background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%);
         padding: 20px;
         border-radius: 12px;
         text-align: center;
@@ -375,6 +393,13 @@ st.markdown("""
         justify-content: center;
         border: 1px solid #BFDBFE;
         color: #1E40AF;
+        font-family: 'Arial', sans-serif;
+    }
+    .weather-card h4 {
+        color: #1E40AF;
+        font-weight: 600;
+        margin-bottom: 5px;
+        font-family: 'Arial', sans-serif;
     }
     
     /* Footer */
@@ -385,10 +410,12 @@ st.markdown("""
         background: linear-gradient(135deg, #2E8B57 0%, #3CB371 100%);
         color: white;
         border-radius: 10px;
+        font-family: 'Arial', sans-serif;
     }
     .team-name {
         font-weight: bold;
         color: #FFD700;
+        font-family: 'Arial', sans-serif;
     }
     
     /* Progress bars */
@@ -405,6 +432,13 @@ st.markdown("""
         height: 140px;
         border: 1px solid #FDE68A;
         color: #78350F;
+        font-family: 'Arial', sans-serif;
+    }
+    .analysis-card h4 {
+        color: #92400E;
+        font-weight: 600;
+        margin-bottom: 5px;
+        font-family: 'Arial', sans-serif;
     }
     
     /* Factor score */
@@ -412,16 +446,18 @@ st.markdown("""
         font-size: 14px;
         color: #2E8B57;
         font-weight: bold;
+        font-family: 'Arial', sans-serif;
     }
     
     /* Disease card */
     .disease-card {
-        background: linear-gradient(135deg, #FEF2F2 30%, #FEE2E2 70%);
+        background: linear-gradient(135deg, #FEF2F2 0%, #FEE2E2 100%);
         padding: 15px;
         border-radius: 10px;
         margin: 10px 0;
         border: 1px solid #FECACA;
         color: #7F1D1D;
+        font-family: 'Arial', sans-serif;
     }
     
     /* Fertilizer card */
@@ -432,16 +468,25 @@ st.markdown("""
         margin: 10px 0;
         border: 1px solid #BBF7D0;
         color: #14532D;
+        font-family: 'Arial', sans-serif;
+    }
+    .fertilizer-card h4 {
+        color: #166534;
+        font-weight: 600;
+        margin-bottom: 5px;
+        font-family: 'Arial', sans-serif;
     }
     
     /* Sidebar */
     .sidebar .sidebar-content {
         background: linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%);
+        font-family: 'Arial', sans-serif;
     }
     
     /* Tabs */
     .stTabs [data-baseweb="tab-list"] {
         gap: 8px;
+        font-family: 'Arial', sans-serif;
     }
     .stTabs [data-baseweb="tab"] {
         height: 50px;
@@ -452,15 +497,19 @@ st.markdown("""
         padding: 10px 16px;
         color: #4B5563;
         font-weight: 500;
+        font-family: 'Arial', sans-serif;
     }
     .stTabs [aria-selected="true"] {
         background-color: #2E8B57;
         color: white;
+        font-weight: 600;
+        font-family: 'Arial', sans-serif;
     }
     
     /* Text elements */
     .stMarkdown, .stText, .stInfo, .stSuccess {
-        color: #374151;
+        color: #1F2937;
+        font-family: 'Arial', sans-serif;
     }
     
     /* Buttons */
@@ -471,6 +520,7 @@ st.markdown("""
         border-radius: 8px;
         padding: 10px 20px;
         font-weight: 600;
+        font-family: 'Arial', sans-serif;
     }
     .stButton button:hover {
         background: linear-gradient(135deg, #3CB371 0%, #2E8B57 100%);
@@ -480,10 +530,66 @@ st.markdown("""
     /* Sliders */
     .stSlider {
         color: #2E8B57;
+        font-family: 'Arial', sans-serif;
+    }
+    
+    /* Form elements */
+    .stSelectbox, .stTextInput, .stSlider {
+        font-family: 'Arial', sans-serif;
+    }
+    
+    /* Info boxes */
+    .stInfo {
+        background-color: #EFF6FF;
+        border-left: 4px solid #3B82F6;
+        color: #1E40AF;
+        font-family: 'Arial', sans-serif;
+    }
+    
+    /* Success boxes */
+    .stSuccess {
+        background-color: #F0FDF4;
+        border-left: 4px solid #22C55E;
+        color: #166534;
+        font-family: 'Arial', sans-serif;
+    }
+    
+    /* Chart text */
+    .js-plotly-plot .plotly, .plot-container {
+        font-family: 'Arial', sans-serif !important;
+    }
+    
+    /* Section headers */
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Arial', sans-serif;
+        color: #2E8B57;
+    }
+    
+    /* Regular text */
+    body, p, div, span {
+        font-family: 'Arial', sans-serif;
+        color: #1F2937;
+    }
+    
+    /* Sidebar text */
+    .sidebar .stMarkdown {
+        color: #1F2937;
+        font-family: 'Arial', sans-serif;
+    }
+    
+    /* Table text */
+    .stTable {
+        font-family: 'Arial', sans-serif;
+        color: #1F2937;
+    }
+    
+    /* Metric text */
+    .stMetric {
+        font-family: 'Arial', sans-serif;
+        color: #1F2937;
     }
 </style>
 """, unsafe_allow_html=True)
-
 # Generate soil images if they don't exist
 def generate_soil_images():
     try:
@@ -1199,6 +1305,7 @@ st.markdown(f"""
     <p>VARUN AI - Vikasit Adhunik Roopantaran ke liye Uttam Nirdesh</p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
