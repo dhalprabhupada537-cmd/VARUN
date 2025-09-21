@@ -295,13 +295,13 @@ st.markdown("""
 <style>
     /* Main background */
     .stApp {
-        background: linear-gradient(135deg, #f8fafc 70%, #e2e8f0 30%);
+        background: linear-gradient(135deg, #f8fafc 30%, #e2e8f0 70%);
     }
     
     /* Headers */
     .main-header {
         font-size: 3.5rem;
-        color: #2E8B57;
+        color: #FFFFFF;
         text-align: center;
         font-weight: bold;
         margin-bottom: 0;
@@ -1199,6 +1199,7 @@ st.markdown(f"""
     <p>VARUN AI - Vikasit Adhunik Roopantaran ke liye Uttam Nirdesh</p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
