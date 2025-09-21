@@ -344,7 +344,7 @@ st.markdown("""
     
     /* Recommendation card */
     .recommendation-card {
-        background: linear-gradient(135deg, #F0FDF4 0%, #DCFCE7 100%);
+        background: linear-gradient(135deg, #EFF6FF 0%, #DCFCE7 100%);
         padding: 25px;
         border-radius: 15px;
         border-left: 5px solid #22C55E;
@@ -1199,6 +1199,7 @@ st.markdown(f"""
     <p>VARUN AI - Vikasit Adhunik Roopantaran ke liye Uttam Nirdesh</p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
