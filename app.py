@@ -492,7 +492,6 @@ def generate_soil_images():
             "loam": (160, 100, 60),
             "sand": (220, 200, 160),
             "silt": (200, 180, 140)
-            "sandy":(244, 164, 96)
         }
         
         os.makedirs("assets/soil_types", exist_ok=True)
@@ -1200,6 +1199,7 @@ st.markdown(f"""
     <p>VARUN AI - Vikasit Adhunik Roopantaran ke liye Uttam Nirdesh</p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
