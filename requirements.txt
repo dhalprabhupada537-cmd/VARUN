@@ -2,9 +2,6 @@ streamlit
 pandas
 numpy
 plotly
-Pillow
-gTTS
-googletrans
-SpeechRecognition
+scikit-learn
 requests
-pyaudio
+pillow
