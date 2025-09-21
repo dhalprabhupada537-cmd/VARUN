@@ -572,7 +572,7 @@ current_lang = translations[current_lang_code]
 # App header
 col1, col2, col3 = st.columns([1, 3, 1])
 with col2:
-    st.markdown(f'<h1 class="main-header">VARUN<span style="color: #FFA500;">ai</span></h1>', unsafe_allow_html=True)
+    st.markdown(f'<h1 class="main-header">VARUN<span style="color: 14532D;">ai</span></h1>', unsafe_allow_html=True)
     st.markdown(f'<p class="tagline">{current_lang["tagline"]}</p>', unsafe_allow_html=True)
 
 # Sidebar
@@ -1199,6 +1199,7 @@ st.markdown(f"""
     <p>VARUN AI - Vikasit Adhunik Roopantaran ke liye Uttam Nirdesh</p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
