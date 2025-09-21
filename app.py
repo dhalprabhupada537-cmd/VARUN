@@ -107,7 +107,7 @@ def get_translations():
             'humidity': 'आर्द्रता (%)',
             'analyze_button': 'विश्लेषण और सिफारिश करें',
             'farm_overview': 'खेत का अवलोकन',
-            'crop_recommendation': 'फसल सि�फारिश',
+            'crop_recommendation': 'फसल सि फारिश',
             'soil_analysis': 'मिट्टी विश्लेषण',
             'weather_forecast': 'मौसम पूर्वानुमान',
             'top_recommendation': 'शीर्ष सिफारिश',
@@ -216,7 +216,7 @@ def get_translations():
             'why_this_crop': 'ఈ పంట ఎందుకు?',
             'best_planting_time': 'ఉత్తమ నాటే సమయం',
             'water_requirements': 'నీటి అవసరాలు',
-            'fertilizer_recommendations': 'ఎరువు సి�फార్సులు',
+            'fertilizer_recommendations': 'ఎరువు సి फార్సులు',
             'harvest_timeline': 'పంట కోత సమయం',
             'market_insights': 'మార్కెట్ ఇన్సైట్స్',
             'current_market_price': 'ప్రస్తుత మార్కెట్ ధర',
@@ -289,48 +289,7 @@ def get_translations():
         }
     }
     return translations
-import speech_recognition as sr
-import pyttsx3,webbrowser
-recognizer = sr.Recognizer()
-engine = pyttsx3.init()
-def speak(text):
-    print("Assistant:", text)
-    engine.say(text)
-    engine.runAndWait()
-def listen_command():
-    with sr.Microphone(device_index=1) as source:  
-        recognizer.adjust_for_ambient_noise(source, duration=1)
-        print("Listening...")
-        try:
-            audio = recognizer.listen(source, timeout=10, phrase_time_limit=5)
-            print("Recognizing...")
-            command = recognizer.recognize_google(audio)
-            return command.lower()
-        except sr.WaitTimeoutError:
-            speak("No speech detected, please try again.")
-        except sr.UnknownValueError:
-            speak("Sorry, I could not understand.")
-        except sr.RequestError:
-            speak("Speech recognition service is down.")
-    return ""
-def process_command(command):
-    if "open google" in command:
-        speak("Opening Google")
-        webbrowser.open("https://www.google.com")
-    elif command.strip() == "":
-        pass  
-    else:
-        speak("Sorry, I don't know how to do that yet.")
-if _name_ == "_main_":
-    speak("Hello,user Say something...")
-    while True:
-        command = listen_command()
-        if command:
-            print("You said:", command)
-            if "exit" in command or "quit" in command or "stop" in command:
-                speak("Goodbye!")
-                break
-            process_command(command)
+
 # Custom CSS with enhanced VARUN branding
 st.markdown("""
 <style>
@@ -1240,17 +1199,6 @@ st.markdown(f"""
     <p>VARUN AI - Vikasit Adhunik Roopantaran ke liye Uttam Nirdesh</p>
 </div>
 """, unsafe_allow_html=True)
-
-
-
-
-
-
-
-
-
-
-
 
 
 
