@@ -301,11 +301,11 @@ st.markdown("""
     /* Headers */
     .main-header {
         font-size: 3.5rem;
-        color: #FFFFFF;
+        color: #2E8B57;
         text-align: center;
         font-weight: bold;
         margin-bottom: 0;
-        background: linear-gradient(135deg, #2E8B57 70%, #3CB371 300%);
+        background: linear-gradient(135deg, #2E8B57 70%, #3CB371 30%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
@@ -331,7 +331,7 @@ st.markdown("""
         border-radius: 15px;
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.05);
         margin: 15px 0;
-        background: linear-gradient(135deg, #FFFFFF 0%, #F9FAFB 100%);
+        background: linear-gradient(135deg, #FFFFFF 20%, #F9FAFB 80%);
         border-left: 5px solid #4CAF50;
         transition: transform 0.3s ease;
         border: 1px solid #E5E7EB;
@@ -364,7 +364,7 @@ st.markdown("""
     
     /* Weather cards */
     .weather-card {
-        background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%);
+        background: linear-gradient(135deg, #EFF6FF 30%, #DBEAFE 70%);
         padding: 20px;
         border-radius: 12px;
         text-align: center;
@@ -416,7 +416,7 @@ st.markdown("""
     
     /* Disease card */
     .disease-card {
-        background: linear-gradient(135deg, #FEF2F2 0%, #FEE2E2 100%);
+        background: linear-gradient(135deg, #FEF2F2 30%, #FEE2E2 70%);
         padding: 15px;
         border-radius: 10px;
         margin: 10px 0;
@@ -492,6 +492,7 @@ def generate_soil_images():
             "loam": (160, 100, 60),
             "sand": (220, 200, 160),
             "silt": (200, 180, 140)
+            "sandy":(244, 164, 96)
         }
         
         os.makedirs("assets/soil_types", exist_ok=True)
@@ -1199,6 +1200,7 @@ st.markdown(f"""
     <p>VARUN AI - Vikasit Adhunik Roopantaran ke liye Uttam Nirdesh</p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
