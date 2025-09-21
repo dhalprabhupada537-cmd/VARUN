@@ -39,7 +39,7 @@ def get_translations():
     translations = {
         'EN': {
             'title': 'VARUN AI Crop Recommendation',
-            'tagline': 'Advanced Modern Transformation for Optimal Guidance',
+            'tagline': 'Vikasit Adhunik Ropantaran ke liye uttam Nirdesh',
             'farmer_details': 'Farmer Details',
             'full_name': 'Full Name',
             'region': 'Region',
@@ -139,7 +139,7 @@ def get_translations():
         },
         'OD': {
             'title': 'ଭରୁଣ AI ଫସଲ ପରାମର୍ଶ',
-            'tagline': 'ସର୍ବୋତ୍ତମ ମାର୍ଗଦର୍ଶନ ପାଇଁ ଉନ୍ନତ ଆଧୁନିକ ରୂପାନ୍ତରଣ',
+            'tagline': 'ବିକଶିତ ଆଧୁନିକ ରୂପାନ୍ତରଣ ପାଇଁ ଉତ୍ତମ ନିର୍ଦ୍ଦେଶ',
             'farmer_details': 'କୃଷକର ବିବରଣୀ',
             'full_name': 'ପୂରା ନାମ',
             'region': 'ଅଞ୍ଚଳ',
@@ -527,7 +527,7 @@ with st.sidebar:
     
     st.markdown(f"## {current_lang['farmer_details']}")
     
-    farmer_name = st.text_input(current_lang["full_name"], "Rajesh Kumar")
+    farmer_name = st.text_input(current_lang["full_name"], "N. Kamal Rao")
     farm_location = st.selectbox(current_lang["region"], current_lang["regions"], index=1)
     farm_size = st.slider(current_lang["farm_size"], 1, 100, 10)
     
@@ -1139,3 +1139,4 @@ st.markdown(f"""
     <p>VARUN AI - Vikasit Adhunik Roopantaran ke liye Uttam Nirdesh</p>
 </div>
 """, unsafe_allow_html=True)
+
