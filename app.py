@@ -145,7 +145,7 @@ def get_translations():
             'region': 'ଅଞ୍ଚଳ',
             'farm_size': 'ଚାଷଜମିର ଆକାର (ଏକର)',
             'soil_properties': 'ମୃତ୍ତିକା ଗୁଣ',
-            'soil_type': 'ମୃତ୍ତି�कା ପ୍ରକାର',
+            'soil_type': 'ମୃତ୍ତିकା ପ୍ରକାର',
             'soil_ph': 'ମୃତ୍ତିକା pH',
             'soil_moisture': 'ମୃତ୍ତିକା ଆର୍ଦ୍ରତା (%)',
             'nitrogen': 'ନାଇଟ୍ରୋଜେନ (କି.ଗ୍ରା./ହେକ୍ଟର)',
@@ -1199,4 +1199,5 @@ st.markdown(f"""
     <p>VARUN AI - Vikasit Adhunik Roopantaran ke liye Uttam Nirdesh</p>
 </div>
 """, unsafe_allow_html=True)
+
 
