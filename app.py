@@ -171,8 +171,8 @@ def get_translations():
             'market_insights': 'ବଜାର ଅନୁଧ୍ୟାନ',
             'current_market_price': 'ବର୍ତ୍ତମାନ ବଜାର ମୂଲ୍ୟ',
             'demand_trend': 'ଚାହିଦା ପ୍ରବୃତ୍ତି',
-            'alternative_options': 'ବିକଳ୍ପ ବିକଳ୍ପ',
-            'fertilizer_guide': 'ସାର ଗାଇଡ୍',
+            'alternative_options': 'ବିକଳ୍ପ',
+            'fertilizer_guide': 'ସାର ମାର୍ଗଦର୍ଶକ',
             'crop_diseases': 'ଫସଲ ରୋଗ ଏବଂ ପ୍ରତିଷେଧ',
             'common_diseases': 'ସାଧାରଣ ରୋଗ',
             'prevention_methods': 'ପ୍ରତିଷେଧ ପଦ୍ଧତି',
@@ -1199,6 +1199,7 @@ st.markdown(f"""
     <p>VARUN AI - Vikasit Adhunik Roopantaran ke liye Uttam Nirdesh</p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
