@@ -295,7 +295,7 @@ st.markdown("""
 <style>
     /* Main background */
     .stApp {
-        background: linear-gradient(135deg, #f8fafc 20%, #e2e8f0 80%);
+        background: linear-gradient(135deg, #f8fafc 70%, #e2e8f0 30%);
     }
     
     /* Headers */
@@ -305,7 +305,7 @@ st.markdown("""
         text-align: center;
         font-weight: bold;
         margin-bottom: 0;
-        background: linear-gradient(135deg, #2E8B57 0%, #3CB371 100%);
+        background: linear-gradient(135deg, #2E8B57 70%, #3CB371 300%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
@@ -1199,6 +1199,7 @@ st.markdown(f"""
     <p>VARUN AI - Vikasit Adhunik Roopantaran ke liye Uttam Nirdesh</p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
