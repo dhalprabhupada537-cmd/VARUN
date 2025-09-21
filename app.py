@@ -39,7 +39,7 @@ def get_translations():
     translations = {
         'EN': {
             'title': 'VARUN AI Crop Recommendation',
-            'tagline': 'Vikasit Adhunik Roopantaran ke liye uttam Nirdesh',
+            'tagline': 'Vikasit Adhunik Roopantaran ke liye Uttam Nirdesh',
             'farmer_details': 'Farmer Details',
             'full_name': 'Full Name',
             'region': 'Region',
@@ -88,7 +88,7 @@ def get_translations():
             'generate_soil': 'Generate Soil Data'
         },
         'HI': {
-            'title': 'वरुण एआई फसल सिफारिश',
+            'title': 'VARUN AI फसल सिफारिश',
             'tagline': 'इष्टतम मार्गदर्शन के लिए उन्नत आधुनिक परिवर्तन',
             'farmer_details': 'किसान का विवरण',
             'full_name': 'पूरा नाम',
@@ -107,7 +107,7 @@ def get_translations():
             'humidity': 'आर्द्रता (%)',
             'analyze_button': 'विश्लेषण और सिफारिश करें',
             'farm_overview': 'खेत का अवलोकन',
-            'crop_recommendation': 'फसल सिफारिश',
+            'crop_recommendation': 'फसल सि�फारिश',
             'soil_analysis': 'मिट्टी विश्लेषण',
             'weather_forecast': 'मौसम पूर्वानुमान',
             'top_recommendation': 'शीर्ष सिफारिश',
@@ -122,13 +122,13 @@ def get_translations():
             'current_market_price': 'वर्तमान बाजार मूल्य',
             'demand_trend': 'मांग का रुझान',
             'alternative_options': 'वैकल्पिक विकल्प',
-            'fertilizer_guide': 'उर्वरक गाइ드',
+            'fertilizer_guide': 'उर्वरक गाइड',
             'crop_diseases': 'फसल रोग और रोकथाम',
             'common_diseases': 'सामान्य रोग',
             'prevention_methods': 'रोकथाम के तरीके',
             'created_by': '❤ से बनाया गया',
-            'team_name': 'टीम एग्रोनोवा',
-            'for_sih': 'एसआईएच 2025 के लिए',
+            'team_name': 'team AgroNova',
+            'for_sih': 'SIH 2025 के लिए',
             'generate_data': 'नमूना डेटा जनरेट करें',
             'regions': ['चुनें', 'पंजाब', 'हरियाणा', 'उत्तर प्रदेश', 'महाराष्ट्र',
                        'कर्नाटक', 'तमिलनाडु', 'आंध्र प्रदेश', 'गुजरात',
@@ -138,14 +138,14 @@ def get_translations():
             'generate_soil': 'मिट्टी डेटा जनरेट करें'
         },
         'OD': {
-            'title': 'ଭରୁଣ AI ଫସଲ ପରାମର୍ଶ',
+            'title': 'VARUN AI ଫସଲ ପରାମର୍ଶ',
             'tagline': 'ବିକଶିତ ଆଧୁନିକ ରୂପାନ୍ତରଣ ପାଇଁ ଉତ୍ତମ ନିର୍ଦ୍ଦେଶ',
             'farmer_details': 'କୃଷକର ବିବରଣୀ',
             'full_name': 'ପୂରା ନାମ',
             'region': 'ଅଞ୍ଚଳ',
             'farm_size': 'ଚାଷଜମିର ଆକାର (ଏକର)',
             'soil_properties': 'ମୃତ୍ତିକା ଗୁଣ',
-            'soil_type': 'ମୃତ୍ତିକା ପ୍ରକାର',
+            'soil_type': 'ମୃତ୍ତି�कା ପ୍ରକାର',
             'soil_ph': 'ମୃତ୍ତିକା pH',
             'soil_moisture': 'ମୃତ୍ତିକା ଆର୍ଦ୍ରତା (%)',
             'nitrogen': 'ନାଇଟ୍ରୋଜେନ (କି.ଗ୍ରା./ହେକ୍ଟର)',
@@ -167,7 +167,7 @@ def get_translations():
             'best_planting_time': 'ସର୍ବୋତ୍ତମ ରୋପଣ ସମୟ',
             'water_requirements': 'ଜଳ ଆବଶ୍ୟକତା',
             'fertilizer_recommendations': 'ସାର ପରାମର୍ଶ',
-            'harvest_timeline': 'ଫସଲ କଟାଇ ସମୟ',
+            'harvest_timeline': 'ଫସଲ କଟାଇ ସଞୟ',
             'market_insights': 'ବଜାର ଅନୁଧ୍ୟାନ',
             'current_market_price': 'ବର୍ତ୍ତମାନ ବଜାର ମୂଲ୍ୟ',
             'demand_trend': 'ଚାହିଦା ପ୍ରବୃତ୍ତି',
@@ -177,7 +177,7 @@ def get_translations():
             'common_diseases': 'ସାଧାରଣ ରୋଗ',
             'prevention_methods': 'ପ୍ରତିଷେଧ ପଦ୍ଧତି',
             'created_by': '❤ ଦ୍ୱାରା ସୃଷ୍ଟି',
-            'team_name': 'ଦଳ ଆଗ୍ରୋନୋଭା',
+            'team_name': 'team AgroNova',
             'for_sih': 'SIH 2025 ପାଇଁ',
             'generate_data': 'ନମୁନା ତଥ୍ୟ ଜେନେରେଟ୍ କରନ୍ତୁ',
             'regions': ['ବାଛନ୍ତୁ', 'ପଞ୍ଜାବ', 'ହରିଆଣା', 'ଉତ୍ତର ପ୍ରଦେଶ', 'ମହାରାଷ୍ଟ୍ର',
@@ -188,7 +188,7 @@ def get_translations():
             'generate_soil': 'ମୃତ୍ତିକା ତଥ୍ୟ ଜେନେରେଟ୍ କରନ୍ତୁ'
         },
         'TE': {
-            'title': 'వరుణ్ AI పంట సిఫార్సు',
+            'title': 'VARUN AI పంట సిఫార్సు',
             'tagline': 'ఉత్తమ మార్గదర్శకత్వం కోసం అధునాతన ఆధునిక పరివర్తన',
             'farmer_details': 'రైతు వివరాలు',
             'full_name': 'పూర్తి పేరు',
@@ -200,7 +200,7 @@ def get_translations():
             'soil_moisture': 'నేల ఆర్ద్రత (%)',
             'nitrogen': 'నత్రజని (కి.గ్రా./హెక్టేర్)',
             'phosphorus': 'భాస్వరం (కి.గ్రా./హెక్టేర్)',
-            'potassium': 'పొటాషియం (కి.ग్రా./హెక్టేర్)',
+            'potassium': 'పొటాషియం (కి.ग్రా./హెక్టేर్)',
             'environmental_factors': 'పర్యావరణ కారకాలు',
             'temperature': 'ఉష్ణోగ్రత (°C)',
             'rainfall': 'వార్షిక వర్షపాతం (మి.మీ.)',
@@ -216,7 +216,7 @@ def get_translations():
             'why_this_crop': 'ఈ పంట ఎందుకు?',
             'best_planting_time': 'ఉత్తమ నాటే సమయం',
             'water_requirements': 'నీటి అవసరాలు',
-            'fertilizer_recommendations': 'ఎరువు సిఫార్సులు',
+            'fertilizer_recommendations': 'ఎరువు సి�फార్సులు',
             'harvest_timeline': 'పంట కోత సమయం',
             'market_insights': 'మార్కెట్ ఇన్సైట్స్',
             'current_market_price': 'ప్రస్తుత మార్కెట్ ధర',
@@ -227,18 +227,18 @@ def get_translations():
             'common_diseases': 'సాధారణ రోగాలు',
             'prevention_methods': 'నివారణ పద్ధతులు',
             'created_by': '❤ తో సృష్టించబడింది',
-            'team_name': 'టీమ్ అగ్రోనోవా',
+            'team_name': 'team AgroNova',
             'for_sih': 'SIH 2025 కోసం',
             'generate_data': 'నమూనా డేటా జనరేట్ చేయండి',
             'regions': ['ఎంచుకోండి', 'పంజాబ్', 'హర్యాణా', 'ఉత్తర ప్రదేశ్', 'మహారాష్ట్ర',
-                       'కర్ణాటక', 'తమిళనాడు', 'ఆంధ్ర ప్రదేశ్', 'గుజరాత్',
+                       'కర్ణాటక', 'తమిళనాడు', 'ఆంధ్ర ప్రదేశ్', 'గుజरాత్',
                        'ఒడిశా', 'ఝార్ఖండ్', 'పశ్చిమ బెంగాల్', 'బీహార్'],
             'soil_types': ['ఎంచుకోండి', 'దోషం', 'మట్టి', 'ఇసుక', 'సిల్ట్'],
             'generate_weather': 'వాతావరణ డేటా జనరేట్ చేయండి',
-            'generate_soil': 'నేల డేటా జనरేట్ చేయండి'
+            'generate_soil': 'నేల డేటా జనరేట్ చేయండి'
         },
         'BN': {
-            'title': 'ভরুণ AI ফসল সুপারিশ',
+            'title': 'VARUN AI ফসল সুপারিশ',
             'tagline': 'সর্বোত্তম নির্দেশনার জন্য উন্নত আধুনিক রূপান্তর',
             'farmer_details': 'কৃষকের বিবরণ',
             'full_name': 'পুরো নাম',
@@ -249,15 +249,15 @@ def get_translations():
             'soil_ph': 'মাটির pH',
             'soil_moisture': 'মাটির আর্দ্রতা (%)',
             'nitrogen': 'নাইট্রোজেন (কেজি/হেক্টর)',
-            'phosphorus': 'ফসফরাস (কেজি/হেক্টর)',
-            'potassium': 'পটাসিয়াম (কেজি/হেক্টর)',
+            'phosphorus': 'ফসফরাস (कেজি/হেক্টর)',
+            'potassium': 'পটাসিয়াম (कেজি/হেক্টর)',
             'environmental_factors': 'পরিবেশগত কারণ',
             'temperature': 'তাপমাত্রা (°C)',
             'rainfall': 'বার্ষিক বৃষ্টিপাত (মিমি)',
             'humidity': 'আর্দ্রতা (%)',
             'analyze_button': 'বিশ্লেষণ এবং সুপারিশ করুন',
             'farm_overview': 'খামার ওভারভিউ',
-            'crop_recommendation': 'ফসল সুপারিশ',
+            'crop_recommendation': 'ফসল সুপارিশ',
             'soil_analysis': 'মাটির বিশ্লেষণ',
             'weather_forecast': 'আবহাওয়ার পূর্বাভাস',
             'top_recommendation': 'শীর্ষ সুপারিশ',
@@ -293,6 +293,12 @@ def get_translations():
 # Custom CSS with enhanced VARUN branding
 st.markdown("""
 <style>
+    /* Main background */
+    .stApp {
+        background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    }
+    
+    /* Headers */
     .main-header {
         font-size: 3.5rem;
         color: #2E8B57;
@@ -302,10 +308,11 @@ st.markdown("""
         background: linear-gradient(135deg, #2E8B57 0%, #3CB371 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
     }
     .tagline {
         font-size: 1.2rem;
-        color: #3CB371;
+        color: #4B5563;
         text-align: center;
         margin-top: 0;
         font-style: italic;
@@ -317,28 +324,36 @@ st.markdown("""
         padding-bottom: 10px;
         margin-top: 20px;
     }
+    
+    /* Cards */
     .card {
         padding: 20px;
         border-radius: 15px;
-        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1);
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.05);
         margin: 15px 0;
-        background-color: #FFFFFF;
+        background: linear-gradient(135deg, #FFFFFF 0%, #F9FAFB 100%);
         border-left: 5px solid #4CAF50;
         transition: transform 0.3s ease;
-        border: 1px solid #e0e0e0;
+        border: 1px solid #E5E7EB;
+        color: #374151;
     }
     .card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.15);
+        transform: translateY(-3px);
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.1);
     }
+    
+    /* Recommendation card */
     .recommendation-card {
-        background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%);
+        background: linear-gradient(135deg, #F0FDF4 0%, #DCFCE7 100%);
         padding: 25px;
         border-radius: 15px;
-        border-left: 5px solid #4CAF50;
+        border-left: 5px solid #22C55E;
         margin-bottom: 20px;
-        border: 1px solid #c8e6c9;
+        border: 1px solid #BBF7D0;
+        color: #14532D;
     }
+    
+    /* Soil image */
     .soil-image {
         border-radius: 12px;
         width: 100%;
@@ -346,18 +361,23 @@ st.markdown("""
         object-fit: cover;
         box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
+    
+    /* Weather cards */
     .weather-card {
-        background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%);
+        background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%);
         padding: 20px;
         border-radius: 12px;
         text-align: center;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.05);
         height: 120px;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        border: 1px solid #bbdefb;
+        border: 1px solid #BFDBFE;
+        color: #1E40AF;
     }
+    
+    /* Footer */
     .footer {
         text-align: center;
         margin-top: 30px;
@@ -370,59 +390,96 @@ st.markdown("""
         font-weight: bold;
         color: #FFD700;
     }
+    
+    /* Progress bars */
     .stProgress > div > div > div > div {
         background: linear-gradient(90deg, #4CAF50 0%, #8BC34A 100%);
     }
+    
+    /* Analysis cards */
     .analysis-card {
-        background: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%);
+        background: linear-gradient(135deg, #FFFBEB 0%, #FEF3C7 100%);
         padding: 15px;
         border-radius: 10px;
         margin: 10px 0;
         height: 140px;
-        border: 1px solid #ffe0b2;
+        border: 1px solid #FDE68A;
+        color: #78350F;
     }
+    
+    /* Factor score */
     .factor-score {
         font-size: 14px;
         color: #2E8B57;
         font-weight: bold;
     }
+    
+    /* Disease card */
     .disease-card {
-        background: linear-gradient(135deg, #FFEBEE 0%, #FFCDD2 100%);
+        background: linear-gradient(135deg, #FEF2F2 0%, #FEE2E2 100%);
         padding: 15px;
         border-radius: 10px;
         margin: 10px 0;
-        border: 1px solid #ffcdd2;
+        border: 1px solid #FECACA;
+        color: #7F1D1D;
     }
+    
+    /* Fertilizer card */
     .fertilizer-card {
-        background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%);
+        background: linear-gradient(135deg, #F0FDF4 0%, #DCFCE7 100%);
         padding: 15px;
         border-radius: 10px;
         margin: 10px 0;
-        border: 1px solid #c8e6c9;
+        border: 1px solid #BBF7D0;
+        color: #14532D;
     }
-    .language-selector {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        z-index: 1000;
-    }
+    
+    /* Sidebar */
     .sidebar .sidebar-content {
-        background: linear-gradient(180deg, #f0f8f0 0%, #e0f0e0 100%);
+        background: linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%);
     }
+    
+    /* Tabs */
     .stTabs [data-baseweb="tab-list"] {
         gap: 8px;
     }
     .stTabs [data-baseweb="tab"] {
         height: 50px;
         white-space: pre-wrap;
-        background-color: #f0f8f0;
+        background-color: #f1f5f9;
         border-radius: 8px 8px 0 0;
         gap: 8px;
         padding: 10px 16px;
+        color: #4B5563;
+        font-weight: 500;
     }
     .stTabs [aria-selected="true"] {
         background-color: #2E8B57;
         color: white;
+    }
+    
+    /* Text elements */
+    .stMarkdown, .stText, .stInfo, .stSuccess {
+        color: #374151;
+    }
+    
+    /* Buttons */
+    .stButton button {
+        background: linear-gradient(135deg, #4CAF50 0%, #3CB371 100%);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        padding: 10px 20px;
+        font-weight: 600;
+    }
+    .stButton button:hover {
+        background: linear-gradient(135deg, #3CB371 0%, #2E8B57 100%);
+        color: white;
+    }
+    
+    /* Sliders */
+    .stSlider {
+        color: #2E8B57;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -527,7 +584,7 @@ with st.sidebar:
     
     st.markdown(f"## {current_lang['farmer_details']}")
     
-    farmer_name = st.text_input(current_lang["full_name"], "N. Kamal Rao")
+    farmer_name = st.text_input(current_lang["full_name"], "N. KAMAL RAO")
     farm_location = st.selectbox(current_lang["region"], current_lang["regions"], index=1)
     farm_size = st.slider(current_lang["farm_size"], 1, 100, 10)
     
@@ -1090,15 +1147,18 @@ with tab4:
     
     # Create forecast chart
     fig = go.Figure()
-    fig.add_trace(go.Scatter(x=dates, y=temp_forecast, mode='lines+markers', name='Temperature (°C)', line=dict(color='red')))
-    fig.add_trace(go.Bar(x=dates, y=rain_forecast, name='Rainfall (mm)', yaxis='y2', marker_color='blue'))
+    fig.add_trace(go.Scatter(x=dates, y=temp_forecast, mode='lines+markers', name='Temperature (°C)', line=dict(color='#3B82F6')))
+    fig.add_trace(go.Bar(x=dates, y=rain_forecast, name='Rainfall (mm)', yaxis='y2', marker_color='#10B981'))
     
     fig.update_layout(
         title='7-Day Weather Forecast',
         xaxis=dict(title='Date'),
-        yaxis=dict(title='Temperature (°C)', side='left', showgrid=False),
-        yaxis2=dict(title='Rainfall (mm)', side='right', overlaying='y', showgrid=False),
-        legend=dict(x=0, y=1.1, orientation='h')
+        yaxis=dict(title='Temperature (°C)', side='left', showgrid=False, color='#3B82F6'),
+        yaxis2=dict(title='Rainfall (mm)', side='right', overlaying='y', showgrid=False, color='#10B981'),
+        legend=dict(x=0, y=1.1, orientation='h'),
+        plot_bgcolor='rgba(0,0,0,0)',
+        paper_bgcolor='rgba(0,0,0,0)',
+        font=dict(color='#374151')
     )
     
     st.plotly_chart(fig, use_container_width=True)
