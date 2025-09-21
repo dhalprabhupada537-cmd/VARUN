@@ -364,7 +364,7 @@ st.markdown("""
     
     /* Weather cards */
     .weather-card {
-        background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%);
+        background: linear-gradient(135deg, #1E40AF 0%, #DBEAFE 100%);
         padding: 20px;
         border-radius: 12px;
         text-align: center;
@@ -1199,6 +1199,7 @@ st.markdown(f"""
     <p>VARUN AI - Vikasit Adhunik Roopantaran ke liye Uttam Nirdesh</p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
