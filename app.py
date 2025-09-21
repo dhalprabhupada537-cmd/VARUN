@@ -39,7 +39,7 @@ def get_translations():
     translations = {
         'EN': {
             'title': 'VARUN AI Crop Recommendation',
-            'tagline': 'Vikasit Adhunik Ropantaran ke liye uttam Nirdesh',
+            'tagline': 'Vikasit Adhunik Roopantaran ke liye uttam Nirdesh',
             'farmer_details': 'Farmer Details',
             'full_name': 'Full Name',
             'region': 'Region',
@@ -1139,4 +1139,5 @@ st.markdown(f"""
     <p>VARUN AI - Vikasit Adhunik Roopantaran ke liye Uttam Nirdesh</p>
 </div>
 """, unsafe_allow_html=True)
+
 
