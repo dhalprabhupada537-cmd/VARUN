@@ -295,7 +295,7 @@ st.markdown("""
 <style>
     /* Main background */
     .stApp {
-        background: linear-gradient(135deg, #f8fafc 100%, #e2e8f0 0%);
+        background: linear-gradient(135deg, #20b2aa 0%, #e2e8f0 0%);
     }
     
     /* Headers */
@@ -331,7 +331,7 @@ st.markdown("""
         border-radius: 15px;
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.05);
         margin: 15px 0;
-        background: linear-gradient(135deg, #FFFFFF 20%, #F9FAFB 80%);
+        background: linear-gradient(135deg, #FFFFFF 20%, #2F3A4A 80%);
         border-left: 5px solid #4CAF50;
         transition: transform 0.3s ease;
         border: 1px solid #E5E7EB;
@@ -364,7 +364,7 @@ st.markdown("""
     
     /* Weather cards */
     .weather-card {
-        background: linear-gradient(135deg, #EFF6FF 30%, #DBEAFE 70%);
+        background: linear-gradient(135deg, #EFF6FF 00%, #026A81 100%);
         padding: 20px;
         border-radius: 12px;
         text-align: center;
@@ -1199,6 +1199,7 @@ st.markdown(f"""
     <p>VARUN AI - Vikasit Adhunik Roopantaran ke liye Uttam Nirdesh</p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
