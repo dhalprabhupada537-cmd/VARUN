@@ -290,242 +290,356 @@ def get_translations():
     }
     return translations
 
-# Custom CSS with premium sunrise field background
-st.markdown("""
-<style>
-    /* Main background with sunrise field gradient */
-    .stApp {
-        background: linear-gradient(180deg, #FF7E30 0%, #FFB347 20%, #87CEEB 40%, #E0F7FA 70%, #FFFFFF 100%);
-        background-attachment: fixed;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-    
-    /* Premium card styling */
-    .main-header {
-        font-size: 3.5rem;
-        color: #2E4057;
-        text-align: center;
-        font-weight: 800;
-        margin-bottom: 0;
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-        font-family: 'Georgia', serif;
-    }
-    
-    .tagline {
-        font-size: 1.2rem;
-        color: #2E4057;
-        text-align: center;
-        margin-top: 0;
-        font-style: italic;
-        font-weight: 500;
-    }
-    
-    .sub-header {
-        font-size: 1.8rem;
-        color: #2E4057;
-        border-bottom: 2px solid #4CAF50;
-        padding-bottom: 10px;
-        margin-top: 20px;
-        font-weight: 700;
-        font-family: 'Georgia', serif;
-    }
-    
-    /* Premium cards with glassmorphism effect */
-    .card {
-        padding: 20px;
-        border-radius: 15px;
-        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
-        margin: 15px 0;
-        background: rgba(255, 255, 255, 0.85);
-        backdrop-filter: blur(4px);
-        -webkit-backdrop-filter: blur(4px);
-        border: 1px solid rgba(255, 255, 255, 0.18);
-        transition: transform 0.3s ease;
-        color: #2E4057;
-    }
-    
-    .card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.25);
-    }
-    
-    /* Recommendation card */
-    .recommendation-card {
-        background: linear-gradient(135deg, rgba(232, 245, 233, 0.9) 0%, rgba(200, 230, 201, 0.9) 100%);
-        padding: 25px;
-        border-radius: 15px;
-        border-left: 5px solid #4CAF50;
-        margin-bottom: 20px;
-        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
-        backdrop-filter: blur(4px);
-        -webkit-backdrop-filter: blur(4px);
-        color: #1B5E20;
-        border: 1px solid rgba(255, 255, 255, 0.18);
-    }
-    
-    /* Soil image */
-    .soil-image {
-        border-radius: 12px;
-        width: 100%;
-        height: 180px;
-        object-fit: cover;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-    
-    /* Weather cards */
-    .weather-card {
-        background: rgba(225, 245, 254, 0.9);
-        padding: 20px;
-        border-radius: 12px;
-        text-align: center;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        height: 120px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        border: 1px solid rgba(179, 229, 252, 0.5);
-        color: #01579B;
-        backdrop-filter: blur(4px);
-        -webkit-backdrop-filter: blur(4px);
-    }
-    
-    /* Footer */
-    .footer {
-        text-align: center;
-        margin-top: 30px;
-        padding: 20px;
-        background: rgba(46, 64, 87, 0.9);
-        color: white;
-        border-radius: 10px;
-        backdrop-filter: blur(4px);
-        -webkit-backdrop-filter: blur(4px);
-        border: 1px solid rgba(255, 255, 255, 0.18);
-    }
-    
-    .team-name {
-        font-weight: bold;
-        color: #FFD700;
-    }
-    
-    /* Progress bars */
-    .stProgress > div > div > div > div {
-        background: linear-gradient(90deg, #4CAF50 0%, #8BC34A 100%);
-    }
-    
-    /* Analysis cards */
-    .analysis-card {
-        background: rgba(255, 248, 225, 0.9);
-        padding: 15px;
-        border-radius: 10px;
-        margin: 10px 0;
-        height: 140px;
-        border: 1px solid rgba(255, 236, 179, 0.5);
-        color: #7F6000;
-        backdrop-filter: blur(4px);
-        -webkit-backdrop-filter: blur(4px);
-    }
-    
-    /* Factor score */
-    .factor-score {
-        font-size: 14px;
-        color: #2E8B57;
-        font-weight: bold;
-    }
-    
-    /* Disease card */
-    .disease-card {
-        background: rgba(255, 235, 238, 0.9);
-        padding: 15px;
-        border-radius: 10px;
-        margin: 10px 0;
-        border: 1px solid rgba(255, 205, 210, 0.5);
-        color: #C62828;
-        backdrop-filter: blur(4px);
-        -webkit-backdrop-filter: blur(4px);
-    }
-    
-    /* Fertilizer card */
-    .fertilizer-card {
-        background: rgba(232, 245, 233, 0.9);
-        padding: 15px;
-        border-radius: 10px;
-        margin: 10px 0;
-        border: 1px solid rgba(200, 230, 201, 0.5);
-        color: #2E7D32;
-        backdrop-filter: blur(4px);
-        -webkit-backdrop-filter: blur(4px);
-    }
-    
-    /* Sidebar */
-    .sidebar .sidebar-content {
-        background: linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%);
-    }
-    
-    /* Tabs */
-    .stTabs [data-baseweb="tab-list"] {
-        gap: 8px;
-    }
-    
-    .stTabs [data-baseweb="tab"] {
-        height: 50px;
-        white-space: pre-wrap;
-        background-color: rgba(255, 255, 255, 0.7);
-        border-radius: 8px 8px 0 0;
-        gap: 8px;
-        padding: 10px 16px;
-        color: #2E4057;
-        font-weight: 600;
-        backdrop-filter: blur(4px);
-        -webkit-backdrop-filter: blur(4px);
-    }
-    
-    .stTabs [aria-selected="true"] {
-        background-color: rgba(76, 175, 80, 0.9);
-        color: white;
-    }
-    
-    /* Text elements */
-    .stMarkdown, .stText, .stInfo, .stSuccess {
-        color: #2E4057;
-    }
-    
-    /* Buttons */
-    .stButton button {
-        background: linear-gradient(135deg, #4CAF50 0%, #3CB371 100%);
-        color: white;
-        border: none;
-        border-radius: 8px;
-        padding: 10px 20px;
-        font-weight: 600;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-    
-    .stButton button:hover {
-        background: linear-gradient(135deg, #3CB371 0%, #2E8B57 100%);
-        color: white;
-        box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-    }
-    
-    /* Sliders */
-    .stSlider {
-        color: #2E8B57;
-    }
-    
-    /* Input fields */
-    .stTextInput>div>div>input, .stSelectbox>div>select {
-        background-color: rgba(255, 255, 255, 0.9);
-        color: #2E4057;
-        border-radius: 8px;
-    }
-    
-    /* Sidebar styling */
-    .css-1d391kg {
-        background: linear-gradient(180deg, rgba(248, 250, 252, 0.9) 0%, rgba(226, 232, 240, 0.9) 100%);
-        backdrop-filter: blur(4px);
-        -webkit-backdrop-filter: blur(4px);
-    }
-</style>
-""", unsafe_allow_html=True)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Farmer's Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            background: linear-gradient(to bottom, 
+                #ff7e5f 0%, 
+                #feb47b 20%, 
+                #7bb0d3 40%, 
+                #86c6e8 60%, 
+                #a1d6b6 80%, 
+                #c5e0a1 100%);
+            background-attachment: fixed;
+            color: #2E4057;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+        }
+        
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            color: #2E4057;
+            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+            margin-bottom: 10px;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            color: #2E4057;
+            font-style: italic;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+        
+        .dashboard {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .card {
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(31, 38, 135, 0.25);
+        }
+        
+        .card-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: #2E4057;
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .weather-graph {
+            height: 200px;
+            margin-top: 15px;
+        }
+        
+        .data-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(46, 64, 87, 0.1);
+        }
+        
+        .data-label {
+            font-weight: 600;
+            color: #2E4057;
+        }
+        
+        .data-value {
+            font-weight: 400;
+            color: #2E8B57;
+        }
+        
+        .recommendation {
+            background: linear-gradient(135deg, rgba(232, 245, 233, 0.9) 0%, rgba(200, 230, 201, 0.9) 100%);
+            padding: 20px;
+            border-radius: 15px;
+            border-left: 5px solid #4CAF50;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+            color: #1B5E20;
+        }
+        
+        .recommendation-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            background: rgba(46, 64, 87, 0.9);
+            color: white;
+            border-radius: 10px;
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+        }
+        
+        .team-name {
+            font-weight: bold;
+            color: #FFD700;
+        }
+        
+        .progress-container {
+            height: 10px;
+            background-color: rgba(46, 64, 87, 0.1);
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+        
+        .progress-bar {
+            height: 100%;
+            border-radius: 5px;
+            background: linear-gradient(90deg, #4CAF50 0%, #8BC34A 100%);
+        }
+        
+        @media (max-width: 768px) {
+            .dashboard {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AgriVision Premium</h1>
+            <p class="tagline">Intelligent Farming Solutions for the Modern Agriculturist</p>
+        </header>
+        
+        <div class="recommendation">
+            <h3 class="recommendation-title">Today's Recommendation</h3>
+            <p>Based on current soil conditions and weather forecast, we recommend irrigating the north field this afternoon. The optimal time would be between 2-4 PM when evaporation rates are lowest.</p>
+        </div>
+        
+        <div class="dashboard">
+            <div class="card">
+                <h2 class="card-title">Weather Forecast</h2>
+                <div class="data-row">
+                    <span class="data-label">Current Temperature:</span>
+                    <span class="data-value">24°C</span>
+                </div>
+                <div class="data-row">
+                    <span class="data-label">Humidity:</span>
+                    <span class="data-value">65%</span>
+                </div>
+                <div class="data-row">
+                    <span class="data-label">Wind Speed:</span>
+                    <span class="data-value">12 km/h</span>
+                </div>
+                <div class="weather-graph">
+                    <canvas id="weatherChart"></canvas>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h2 class="card-title">Soil Conditions</h2>
+                <div class="data-row">
+                    <span class="data-label">Moisture Level:</span>
+                    <span class="data-value">42%</span>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-bar" style="width: 42%"></div>
+                </div>
+                <div class="data-row">
+                    <span class="data-label">pH Level:</span>
+                    <span class="data-value">6.8</span>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-bar" style="width: 68%; background: linear-gradient(90deg, #4CAF50 0%, #FFC107 100%)"></div>
+                </div>
+                <div class="data-row">
+                    <span class="data-label">Nitrogen Level:</span>
+                    <span class="data-value">Medium</span>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-bar" style="width: 60%"></div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h2 class="card-title">Crop Health</h2>
+                <div class="data-row">
+                    <span class="data-label">Growth Stage:</span>
+                    <span class="data-value">Vegetative</span>
+                </div>
+                <div class="data-row">
+                    <span class="data-label">Health Status:</span>
+                    <span class="data-value">Excellent</span>
+                </div>
+                <div class="data-row">
+                    <span class="data-label">Pest Risk:</span>
+                    <span class="data-value">Low</span>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-bar" style="width: 25%; background: linear-gradient(90deg, #4CAF50 0%, #8BC34A 100%)"></div>
+                </div>
+                <div class="data-row">
+                    <span class="data-label">Disease Probability:</span>
+                    <span class="data-value">15%</span>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-bar" style="width: 15%; background: linear-gradient(90deg, #4CAF50 0%, #8BC34A 100%)"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="dashboard">
+            <div class="card">
+                <h2 class="card-title">Irrigation Schedule</h2>
+                <div class="data-row">
+                    <span class="data-label">Last Irrigation:</span>
+                    <span class="data-value">2 days ago</span>
+                </div>
+                <div class="data-row">
+                    <span class="data-label">Next Irrigation:</span>
+                    <span class="data-value">Tomorrow 2 PM</span>
+                </div>
+                <div class="data-row">
+                    <span class="data-label">Water Required:</span>
+                    <span class="data-value">2500 L</span>
+                </div>
+                <div class="data-row">
+                    <span class="data-label">System Status:</span>
+                    <span class="data-value">Active</span>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h2 class="card-title">Task Schedule</h2>
+                <div class="data-row">
+                    <span class="data-label">Fertilization:</span>
+                    <span class="data-value">Due in 3 days</span>
+                </div>
+                <div class="data-row">
+                    <span class="data-label">Weeding:</span>
+                    <span class="data-value">Completed</span>
+                </div>
+                <div class="data-row">
+                    <span class="data-label">Pruning:</span>
+                    <span class="data-value">Due in 2 weeks</span>
+                </div>
+                <div class="data-row">
+                    <span class="data-label">Harvest Estimate:</span>
+                    <span class="data-value">45 days</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>© 2023 AgriVision Premium | Created by <span class="team-name">GreenThumb Analytics</span></p>
+        </div>
+    </div>
+
+    <script>
+        // Weather chart
+        const ctx = document.getElementById('weatherChart').getContext('2d');
+        const weatherChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['6AM', '9AM', '12PM', '3PM', '6PM', '9PM'],
+                datasets: [{
+                    label: 'Temperature (°C)',
+                    data: [18, 22, 26, 25, 21, 19],
+                    backgroundColor: 'rgba(76, 175, 80, 0.2)',
+                    borderColor: 'rgba(76, 175, 80, 1)',
+                    borderWidth: 2,
+                    tension: 0.3,
+                    fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: '#2E4057'
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: false,
+                        grid: {
+                            color: 'rgba(46, 64, 87, 0.1)'
+                        },
+                        ticks: {
+                            color: '#2E4057'
+                        }
+                    },
+                    x: {
+                        grid: {
+                            color: 'rgba(46, 64, 87, 0.1)'
+                        },
+                        ticks: {
+                            color: '#2E4057'
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
 
 # Generate soil images if they don't exist
 def generate_soil_images():
@@ -1242,6 +1356,7 @@ st.markdown(f"""
     <p>VARUN AI - Vikasit Adhunik Roopantaran ke liye Uttam Nirdesh</p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
