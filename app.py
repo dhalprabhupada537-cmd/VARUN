@@ -673,14 +673,16 @@ current_lang = translations[current_lang_code]
 # App header
 col1, col2, col3 = st.columns([1, 3, 1])
 with col2:
-    try:
-        st.image("assets/logo.png", use_column_width=True)
-    except:
-        st.markdown(f'<h1 class="main-header">VARUN<span style="color: #4CAF50;">AI</span></h1>', unsafe_allow_html=True)
-        st.markdown(f'<p class="tagline">{current_lang["tagline"]}</p>', unsafe_allow_html=True)
+    st.markdown(f'<h1 class="main-header">VARUN<span style="color: 14532D;">ai</span></h1>', unsafe_allow_html=True)
+    st.markdown(f'<p class="tagline">{current_lang["tagline"]}</p>', unsafe_allow_html=True)
 
 # Sidebar
 with st.sidebar:
+    try:
+        st.image("assets/logo.png", width=280)
+    except:
+        st.warning("Logo image not found")
+    
     st.markdown(f"## {current_lang['farmer_details']}")
     
     farmer_name = st.text_input(current_lang["full_name"], "N. KAMAL RAO")
@@ -807,7 +809,7 @@ def predict_best_crop(soil_type, ph, nitrogen, phosphorus, potassium, temperatur
             'temp_min': 15, 'temp_max': 30, 'rainfall_min': 500, 'rainfall_max': 800,
             'n_min': 20, 'n_max': 50, 'p_min': 30, 'p_max': 60, 'k_min': 40, 'k_max': 70
         },
-        'Sugarcane': {
+        {
             'name': 'Sugarcane', 'soil_type': 'Loam', 'ph_min': 6.0, 'ph_max': 7.5,
             'temp_min': 20, 'temp_max': 35, 'rainfall_min': 1000, 'rainfall_max': 1500,
             'n_min': 100, 'n_max': 150, 'p_min': 50, 'p_max': 80, 'k_min': 80, 'k_max': 120
@@ -1058,10 +1060,7 @@ def create_suitability_chart(details, crop_name):
                 range=[0, 30]  # Set range based on maximum value
             )),
         showlegend=True,
-        title=f"Suitability Analysis for {crop_name}",
-        paper_bgcolor='rgba(255, 255, 255, 0.9)',
-        plot_bgcolor='rgba(255, 255, 255, 0.9)',
-        font=dict(color='#2D5016')
+        title=f"Suitability Analysis for {crop_name}"
     )
     
     return fig
@@ -1129,13 +1128,13 @@ with tab1:
     
     col1, col2, col3 = st.columns(3)
     with col1: 
-        st.markdown(f'<div class="card"><h3>{current_lang["farm_size"]}</h3><p style="font-size: 24px; color: #4CAF50;">{farm_size} acres</p></div>', unsafe_allow_html=True)
+        st.markdown(f'<div class="card"><h3>{current_lang["farm_size"]}</h3><p style="font-size: 24px; color: #2E8B57;">{farm_size} acres</p></div>', unsafe_allow_html=True)
     with col2: 
         soil_display = soil_type if soil_type != "Select" else "Not specified"
-        st.markdown(f'<div class="card"><h3>{current_lang["soil_type"]}</h3><p style="font-size: 24px; color: #4CAF50;">{soil_display}</p></div>', unsafe_allow_html=True)
+        st.markdown(f'<div class="card"><h3>{current_lang["soil_type"]}</h3><p style="font-size: 24px; color: #2E8B57;">{soil_display}</p></div>', unsafe_allow_html=True)
     with col3: 
         region_display = farm_location if farm_location != "Select" else "Not specified"
-        st.markdown(f'<div class="card"><h3>{current_lang["region"]}</h3><p style="font-size: 24px; color: #4CAF50;">{region_display}</p></div>', unsafe_allow_html=True)
+        st.markdown(f'<div class="card"><h3>{current_lang["region"]}</h3><p style="font-size: 24px; color: #2E8B57;">{region_display}</p></div>', unsafe_allow_html=True)
 
 with tab2:
     st.markdown(f'<h2 class="sub-header">{current_lang["crop_recommendation"]}</h2>', unsafe_allow_html=True)
@@ -1173,15 +1172,15 @@ with tab2:
             # Display crop details
             col1, col2 = st.columns(2)
             with col1:
-                st.markdown(f'<p class="premium-text">{current_lang["best_planting_time"]}</p>', unsafe_allow_html=True)
-                st.markdown(f'<p class="premium-value">{top_recommendation["planting_time"]}</p>', unsafe_allow_html=True)
-                st.markdown(f'<p class="premium-text">{current_lang["water_requirements"]}</p>', unsafe_allow_html=True)
-                st.markdown(f'<p class="premium-value">{top_recommendation["water_req"]}</p>', unsafe_allow_html=True)
+                st.markdown(current_lang["best_planting_time"])
+                st.write(top_recommendation['planting_time'])
+                st.markdown(current_lang["water_requirements"])
+                st.write(top_recommendation['water_req'])
             with col2:
-                st.markdown(f'<p class="premium-text">{current_lang["fertilizer_recommendations"]}</p>', unsafe_allow_html=True)
-                st.markdown(f'<p class="premium-value">{top_recommendation["fertilizer"]}</p>', unsafe_allow_html=True)
-                st.markdown(f'<p class="premium-text">{current_lang["harvest_timeline"]}</p>', unsafe_allow_html=True)
-                st.markdown(f'<p class="premium-value">{top_recommendation["harvest_time"]}</p>', unsafe_allow_html=True)
+                st.markdown(current_lang["fertilizer_recommendations"])
+                st.write(top_recommendation['fertilizer'])
+                st.markdown(current_lang["harvest_timeline"])
+                st.write(top_recommendation['harvest_time'])
             
             # Display market insights
             st.markdown(f"#### {current_lang['market_insights']}")
@@ -1247,20 +1246,20 @@ with tab4:
     temp_forecast = [temperature + np.random.uniform(-3, 3) for _ in range(7)]
     rain_forecast = [max(0, rainfall/365 + np.random.uniform(-2, 5)) for _ in range(7)]
     
-    # Create forecast chart with colors that match the theme
+    # Create forecast chart
     fig = go.Figure()
-    fig.add_trace(go.Scatter(x=dates, y=temp_forecast, mode='lines+markers', name='Temperature (°C)', line=dict(color='#FF8C00')))
-    fig.add_trace(go.Bar(x=dates, y=rain_forecast, name='Rainfall (mm)', yaxis='y2', marker_color='#4682B4'))
+    fig.add_trace(go.Scatter(x=dates, y=temp_forecast, mode='lines+markers', name='Temperature (°C)', line=dict(color='#3B82F6')))
+    fig.add_trace(go.Bar(x=dates, y=rain_forecast, name='Rainfall (mm)', yaxis='y2', marker_color='#10B981'))
     
     fig.update_layout(
         title='7-Day Weather Forecast',
         xaxis=dict(title='Date'),
-        yaxis=dict(title='Temperature (°C)', side='left', showgrid=False, color='#FF8C00'),
-        yaxis2=dict(title='Rainfall (mm)', side='right', overlaying='y', showgrid=False, color='#4682B4'),
+        yaxis=dict(title='Temperature (°C)', side='left', showgrid=False, color='#3B82F6'),
+        yaxis2=dict(title='Rainfall (mm)', side='right', overlaying='y', showgrid=False, color='#10B981'),
         legend=dict(x=0, y=1.1, orientation='h'),
-        plot_bgcolor='rgba(255, 255, 255, 0.9)',
-        paper_bgcolor='rgba(255, 255, 255, 0.9)',
-        font=dict(color='#2D5016')
+        plot_bgcolor='rgba(0,0,0,0)',
+        paper_bgcolor='rgba(0,0,0,0)',
+        font=dict(color='#374151')
     )
     
     st.plotly_chart(fig, use_container_width=True)
@@ -1301,13 +1300,3 @@ st.markdown(f"""
     <p>VARUN AI - Vikasit Adhunik Roopantaran ke liye Uttam Nirdesh</p>
 </div>
 """, unsafe_allow_html=True)
-
-
-
-
-
-
-
-
-
-
