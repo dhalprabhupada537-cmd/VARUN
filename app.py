@@ -293,41 +293,44 @@ def get_translations():
 # Custom CSS with premium sunrise field background
 st.markdown("""
 <style>
-    /* Main background with sunrise field gradient */
+    /* Main background with beautiful sunrise field gradient */
     .stApp {
-        background: linear-gradient(180deg, #FF7E30 0%, #FFB347 20%, #87CEEB 40%, #E0F7FA 70%, #FFFFFF 100%);
+        background: linear-gradient(180deg, #FF8C00 0%, #FFA500 15%, #87CEEB 35%, #98FB98 65%, #F5F5DC 100%);
         background-attachment: fixed;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
     
-    /* Premium card styling */
+    /* Premium header styling */
     .main-header {
         font-size: 3.5rem;
-        color: #2E4057;
+        color: #2D5016;
         text-align: center;
         font-weight: 800;
         margin-bottom: 0;
         text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-        font-family: 'Georgia', serif;
+        font-family: 'Playfair Display', 'Georgia', serif;
+        letter-spacing: 1px;
     }
     
     .tagline {
-        font-size: 1.2rem;
-        color: #2E4057;
+        font-size: 1.3rem;
+        color: #3A5F0B;
         text-align: center;
         margin-top: 0;
         font-style: italic;
         font-weight: 500;
+        letter-spacing: 0.5px;
     }
     
     .sub-header {
         font-size: 1.8rem;
-        color: #2E4057;
-        border-bottom: 2px solid #4CAF50;
+        color: #2D5016;
+        border-bottom: 3px solid #8FBC8F;
         padding-bottom: 10px;
         margin-top: 20px;
         font-weight: 700;
-        font-family: 'Georgia', serif;
+        font-family: 'Playfair Display', 'Georgia', serif;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
     }
     
     /* Premium cards with glassmorphism effect */
@@ -336,12 +339,12 @@ st.markdown("""
         border-radius: 15px;
         box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
         margin: 15px 0;
-        background: rgba(255, 255, 255, 0.85);
-        backdrop-filter: blur(4px);
-        -webkit-backdrop-filter: blur(4px);
-        border: 1px solid rgba(255, 255, 255, 0.18);
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+        border: 1px solid rgba(255, 255, 255, 0.25);
         transition: transform 0.3s ease;
-        color: #2E4057;
+        color: #2D5016;
     }
     
     .card:hover {
@@ -351,16 +354,16 @@ st.markdown("""
     
     /* Recommendation card */
     .recommendation-card {
-        background: linear-gradient(135deg, rgba(232, 245, 233, 0.9) 0%, rgba(200, 230, 201, 0.9) 100%);
+        background: linear-gradient(135deg, rgba(232, 245, 233, 0.95) 0%, rgba(200, 230, 201, 0.95) 100%);
         padding: 25px;
         border-radius: 15px;
         border-left: 5px solid #4CAF50;
         margin-bottom: 20px;
         box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
-        backdrop-filter: blur(4px);
-        -webkit-backdrop-filter: blur(4px);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
         color: #1B5E20;
-        border: 1px solid rgba(255, 255, 255, 0.18);
+        border: 1px solid rgba(255, 255, 255, 0.25);
     }
     
     /* Soil image */
@@ -369,24 +372,25 @@ st.markdown("""
         width: 100%;
         height: 180px;
         object-fit: cover;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        border: 2px solid rgba(255, 255, 255, 0.5);
     }
     
     /* Weather cards */
     .weather-card {
-        background: rgba(225, 245, 254, 0.9);
+        background: rgba(240, 248, 255, 0.95);
         padding: 20px;
         border-radius: 12px;
         text-align: center;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         height: 120px;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        border: 1px solid rgba(179, 229, 252, 0.5);
-        color: #01579B;
-        backdrop-filter: blur(4px);
-        -webkit-backdrop-filter: blur(4px);
+        border: 1px solid rgba(176, 224, 230, 0.7);
+        color: #2D5016;
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
     }
     
     /* Footer */
@@ -394,35 +398,37 @@ st.markdown("""
         text-align: center;
         margin-top: 30px;
         padding: 20px;
-        background: rgba(46, 64, 87, 0.9);
+        background: rgba(45, 80, 22, 0.9);
         color: white;
         border-radius: 10px;
-        backdrop-filter: blur(4px);
-        -webkit-backdrop-filter: blur(4px);
-        border: 1px solid rgba(255, 255, 255, 0.18);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+        border: 1px solid rgba(255, 255, 255, 0.25);
     }
     
     .team-name {
         font-weight: bold;
         color: #FFD700;
+        font-size: 1.1rem;
     }
     
     /* Progress bars */
     .stProgress > div > div > div > div {
         background: linear-gradient(90deg, #4CAF50 0%, #8BC34A 100%);
+        border-radius: 10px;
     }
     
     /* Analysis cards */
     .analysis-card {
-        background: rgba(255, 248, 225, 0.9);
+        background: rgba(255, 248, 225, 0.95);
         padding: 15px;
         border-radius: 10px;
         margin: 10px 0;
         height: 140px;
-        border: 1px solid rgba(255, 236, 179, 0.5);
+        border: 1px solid rgba(255, 236, 179, 0.7);
         color: #7F6000;
-        backdrop-filter: blur(4px);
-        -webkit-backdrop-filter: blur(4px);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
     }
     
     /* Factor score */
@@ -434,31 +440,33 @@ st.markdown("""
     
     /* Disease card */
     .disease-card {
-        background: rgba(255, 235, 238, 0.9);
+        background: rgba(255, 235, 238, 0.95);
         padding: 15px;
         border-radius: 10px;
         margin: 10px 0;
-        border: 1px solid rgba(255, 205, 210, 0.5);
+        border: 1px solid rgba(255, 205, 210, 0.7);
         color: #C62828;
-        backdrop-filter: blur(4px);
-        -webkit-backdrop-filter: blur(4px);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
     }
     
     /* Fertilizer card */
     .fertilizer-card {
-        background: rgba(232, 245, 233, 0.9);
+        background: rgba(232, 245, 233, 0.95);
         padding: 15px;
         border-radius: 10px;
         margin: 10px 0;
-        border: 1px solid rgba(200, 230, 201, 0.5);
+        border: 1px solid rgba(200, 230, 201, 0.7);
         color: #2E7D32;
-        backdrop-filter: blur(4px);
-        -webkit-backdrop-filter: blur(4px);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
     }
     
     /* Sidebar */
     .sidebar .sidebar-content {
-        background: linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%);
+        background: linear-gradient(180deg, rgba(248, 250, 252, 0.95) 0%, rgba(226, 232, 240, 0.95) 100%);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
     }
     
     /* Tabs */
@@ -469,14 +477,15 @@ st.markdown("""
     .stTabs [data-baseweb="tab"] {
         height: 50px;
         white-space: pre-wrap;
-        background-color: rgba(255, 255, 255, 0.7);
+        background-color: rgba(255, 255, 255, 0.8);
         border-radius: 8px 8px 0 0;
         gap: 8px;
         padding: 10px 16px;
-        color: #2E4057;
+        color: #2D5016;
         font-weight: 600;
-        backdrop-filter: blur(4px);
-        -webkit-backdrop-filter: blur(4px);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+        font-family: 'Montserrat', sans-serif;
     }
     
     .stTabs [aria-selected="true"] {
@@ -486,7 +495,8 @@ st.markdown("""
     
     /* Text elements */
     .stMarkdown, .stText, .stInfo, .stSuccess {
-        color: #2E4057;
+        color: #2D5016;
+        font-family: 'Montserrat', sans-serif;
     }
     
     /* Buttons */
@@ -495,15 +505,18 @@ st.markdown("""
         color: white;
         border: none;
         border-radius: 8px;
-        padding: 10px 20px;
+        padding: 12px 24px;
         font-weight: 600;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        font-family: 'Montserrat', sans-serif;
+        transition: all 0.3s ease;
     }
     
     .stButton button:hover {
         background: linear-gradient(135deg, #3CB371 0%, #2E8B57 100%);
         color: white;
-        box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+        transform: translateY(-2px);
     }
     
     /* Sliders */
@@ -514,15 +527,51 @@ st.markdown("""
     /* Input fields */
     .stTextInput>div>div>input, .stSelectbox>div>select {
         background-color: rgba(255, 255, 255, 0.9);
-        color: #2E4057;
+        color: #2D5016;
         border-radius: 8px;
+        font-family: 'Montserrat', sans-serif;
     }
     
     /* Sidebar styling */
     .css-1d391kg {
-        background: linear-gradient(180deg, rgba(248, 250, 252, 0.9) 0%, rgba(226, 232, 240, 0.9) 100%);
-        backdrop-filter: blur(4px);
-        -webkit-backdrop-filter: blur(4px);
+        background: linear-gradient(180deg, rgba(248, 250, 252, 0.95) 0%, rgba(226, 232, 240, 0.95) 100%);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+    }
+    
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
+    
+    ::-webkit-scrollbar-track {
+        background: rgba(242, 242, 242, 0.5);
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        background: #4CAF50;
+        border-radius: 4px;
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+        background: #3CB371;
+    }
+    
+    /* Chart styling */
+    .js-plotly-plot .plotly, .modebar {
+        background: rgba(255, 255, 255, 0.9) !important;
+        border-radius: 10px;
+    }
+    
+    /* Premium text colors for better visibility */
+    .premium-text {
+        color: #2D5016;
+        font-weight: 600;
+    }
+    
+    .premium-value {
+        color: #4CAF50;
+        font-weight: 700;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -564,28 +613,37 @@ def generate_soil_images():
     except Exception as e:
         st.error(f"Error generating soil images: {e}")
 
-# Generate logo if it doesn't exist
+# Generate premium logo
 def generate_logo():
     try:
         if not os.path.exists("assets/logo.png"):
-            img = Image.new('RGB', (400, 200), color=(46, 139, 87))
+            # Create a premium logo with a modern, clean design
+            img = Image.new('RGBA', (400, 200), color=(0, 0, 0, 0))
             draw = ImageDraw.Draw(img)
             
-            # Draw VARUN text
+            # Draw a stylized sun and field
+            # Sun with gradient effect
+            for i in range(60, 0, -5):
+                draw.ellipse([(50-i, 30-i), (120+i, 100+i)], 
+                           fill=(255, 165, 0, 100 - i))
+            
+            # Field with crops
+            draw.rectangle([(0, 130), (400, 200)], fill=(143, 188, 143, 200))
+            
+            # Crops in the field
+            for i in range(0, 400, 20):
+                draw.rectangle([(i, 110), (i+10, 130)], fill=(107, 142, 35, 255))
+            
+            # VARUN AI text with premium font style
             try:
-                font = ImageFont.truetype("arial.ttf", 40)
+                font_large = ImageFont.truetype("arialbd.ttf", 36)
+                font_small = ImageFont.truetype("arial.ttf", 20)
             except:
-                font = ImageFont.load_default()
+                font_large = ImageFont.load_default()
+                font_small = ImageFont.load_default()
             
-            draw.text((120, 70), "VARUN", fill=(255, 255, 255), font=font)
-            draw.text((130, 120), "ai", fill=(255, 215, 0), font=font)
-            
-            # Draw plant icon
-            draw.ellipse([(30, 70), (90, 130)], fill=(255, 215, 0))  # Sun
-            
-            # Draw a small plant
-            draw.rectangle([(180, 130), (190, 150)], fill=(139, 69, 19))  # Stem
-            draw.polygon([(175, 130), (185, 100), (195, 130)], fill=(34, 139, 34))  # Leaves
+            draw.text((150, 70), "VARUN", fill=(45, 80, 22, 255), font=font_large)
+            draw.text((150, 110), "AI CROP ADVISOR", fill=(45, 80, 22, 255), font=font_small)
             
             img.save("assets/logo.png")
     except Exception as e:
@@ -615,16 +673,14 @@ current_lang = translations[current_lang_code]
 # App header
 col1, col2, col3 = st.columns([1, 3, 1])
 with col2:
-    st.markdown(f'<h1 class="main-header">VARUN<span style="color: 14532D;">ai</span></h1>', unsafe_allow_html=True)
-    st.markdown(f'<p class="tagline">{current_lang["tagline"]}</p>', unsafe_allow_html=True)
+    try:
+        st.image("assets/logo.png", use_column_width=True)
+    except:
+        st.markdown(f'<h1 class="main-header">VARUN<span style="color: #4CAF50;">AI</span></h1>', unsafe_allow_html=True)
+        st.markdown(f'<p class="tagline">{current_lang["tagline"]}</p>', unsafe_allow_html=True)
 
 # Sidebar
 with st.sidebar:
-    try:
-        st.image("assets/logo.png", width=280)
-    except:
-        st.warning("Logo image not found")
-    
     st.markdown(f"## {current_lang['farmer_details']}")
     
     farmer_name = st.text_input(current_lang["full_name"], "N. KAMAL RAO")
@@ -751,7 +807,7 @@ def predict_best_crop(soil_type, ph, nitrogen, phosphorus, potassium, temperatur
             'temp_min': 15, 'temp_max': 30, 'rainfall_min': 500, 'rainfall_max': 800,
             'n_min': 20, 'n_max': 50, 'p_min': 30, 'p_max': 60, 'k_min': 40, 'k_max': 70
         },
-        {
+        'Sugarcane': {
             'name': 'Sugarcane', 'soil_type': 'Loam', 'ph_min': 6.0, 'ph_max': 7.5,
             'temp_min': 20, 'temp_max': 35, 'rainfall_min': 1000, 'rainfall_max': 1500,
             'n_min': 100, 'n_max': 150, 'p_min': 50, 'p_max': 80, 'k_min': 80, 'k_max': 120
@@ -1002,7 +1058,10 @@ def create_suitability_chart(details, crop_name):
                 range=[0, 30]  # Set range based on maximum value
             )),
         showlegend=True,
-        title=f"Suitability Analysis for {crop_name}"
+        title=f"Suitability Analysis for {crop_name}",
+        paper_bgcolor='rgba(255, 255, 255, 0.9)',
+        plot_bgcolor='rgba(255, 255, 255, 0.9)',
+        font=dict(color='#2D5016')
     )
     
     return fig
@@ -1070,13 +1129,13 @@ with tab1:
     
     col1, col2, col3 = st.columns(3)
     with col1: 
-        st.markdown(f'<div class="card"><h3>{current_lang["farm_size"]}</h3><p style="font-size: 24px; color: #2E8B57;">{farm_size} acres</p></div>', unsafe_allow_html=True)
+        st.markdown(f'<div class="card"><h3>{current_lang["farm_size"]}</h3><p style="font-size: 24px; color: #4CAF50;">{farm_size} acres</p></div>', unsafe_allow_html=True)
     with col2: 
         soil_display = soil_type if soil_type != "Select" else "Not specified"
-        st.markdown(f'<div class="card"><h3>{current_lang["soil_type"]}</h3><p style="font-size: 24px; color: #2E8B57;">{soil_display}</p></div>', unsafe_allow_html=True)
+        st.markdown(f'<div class="card"><h3>{current_lang["soil_type"]}</h3><p style="font-size: 24px; color: #4CAF50;">{soil_display}</p></div>', unsafe_allow_html=True)
     with col3: 
         region_display = farm_location if farm_location != "Select" else "Not specified"
-        st.markdown(f'<div class="card"><h3>{current_lang["region"]}</h3><p style="font-size: 24px; color: #2E8B57;">{region_display}</p></div>', unsafe_allow_html=True)
+        st.markdown(f'<div class="card"><h3>{current_lang["region"]}</h3><p style="font-size: 24px; color: #4CAF50;">{region_display}</p></div>', unsafe_allow_html=True)
 
 with tab2:
     st.markdown(f'<h2 class="sub-header">{current_lang["crop_recommendation"]}</h2>', unsafe_allow_html=True)
@@ -1114,15 +1173,15 @@ with tab2:
             # Display crop details
             col1, col2 = st.columns(2)
             with col1:
-                st.markdown(current_lang["best_planting_time"])
-                st.write(top_recommendation['planting_time'])
-                st.markdown(current_lang["water_requirements"])
-                st.write(top_recommendation['water_req'])
+                st.markdown(f'<p class="premium-text">{current_lang["best_planting_time"]}</p>', unsafe_allow_html=True)
+                st.markdown(f'<p class="premium-value">{top_recommendation["planting_time"]}</p>', unsafe_allow_html=True)
+                st.markdown(f'<p class="premium-text">{current_lang["water_requirements"]}</p>', unsafe_allow_html=True)
+                st.markdown(f'<p class="premium-value">{top_recommendation["water_req"]}</p>', unsafe_allow_html=True)
             with col2:
-                st.markdown(current_lang["fertilizer_recommendations"])
-                st.write(top_recommendation['fertilizer'])
-                st.markdown(current_lang["harvest_timeline"])
-                st.write(top_recommendation['harvest_time'])
+                st.markdown(f'<p class="premium-text">{current_lang["fertilizer_recommendations"]}</p>', unsafe_allow_html=True)
+                st.markdown(f'<p class="premium-value">{top_recommendation["fertilizer"]}</p>', unsafe_allow_html=True)
+                st.markdown(f'<p class="premium-text">{current_lang["harvest_timeline"]}</p>', unsafe_allow_html=True)
+                st.markdown(f'<p class="premium-value">{top_recommendation["harvest_time"]}</p>', unsafe_allow_html=True)
             
             # Display market insights
             st.markdown(f"#### {current_lang['market_insights']}")
@@ -1188,20 +1247,20 @@ with tab4:
     temp_forecast = [temperature + np.random.uniform(-3, 3) for _ in range(7)]
     rain_forecast = [max(0, rainfall/365 + np.random.uniform(-2, 5)) for _ in range(7)]
     
-    # Create forecast chart
+    # Create forecast chart with colors that match the theme
     fig = go.Figure()
-    fig.add_trace(go.Scatter(x=dates, y=temp_forecast, mode='lines+markers', name='Temperature (°C)', line=dict(color='#3B82F6')))
-    fig.add_trace(go.Bar(x=dates, y=rain_forecast, name='Rainfall (mm)', yaxis='y2', marker_color='#10B981'))
+    fig.add_trace(go.Scatter(x=dates, y=temp_forecast, mode='lines+markers', name='Temperature (°C)', line=dict(color='#FF8C00')))
+    fig.add_trace(go.Bar(x=dates, y=rain_forecast, name='Rainfall (mm)', yaxis='y2', marker_color='#4682B4'))
     
     fig.update_layout(
         title='7-Day Weather Forecast',
         xaxis=dict(title='Date'),
-        yaxis=dict(title='Temperature (°C)', side='left', showgrid=False, color='#3B82F6'),
-        yaxis2=dict(title='Rainfall (mm)', side='right', overlaying='y', showgrid=False, color='#10B981'),
+        yaxis=dict(title='Temperature (°C)', side='left', showgrid=False, color='#FF8C00'),
+        yaxis2=dict(title='Rainfall (mm)', side='right', overlaying='y', showgrid=False, color='#4682B4'),
         legend=dict(x=0, y=1.1, orientation='h'),
-        plot_bgcolor='rgba(0,0,0,0)',
-        paper_bgcolor='rgba(0,0,0,0)',
-        font=dict(color='#374151')
+        plot_bgcolor='rgba(255, 255, 255, 0.9)',
+        paper_bgcolor='rgba(255, 255, 255, 0.9)',
+        font=dict(color='#2D5016')
     )
     
     st.plotly_chart(fig, use_container_width=True)
