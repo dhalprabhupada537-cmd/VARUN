@@ -558,10 +558,10 @@ st.markdown("""
     }
     
     /* Chart styling */
-    .js-plotly-plot .plotly, .modebar {
-        background: rgba(255, 255, 255, 0.9) !important;
-        border-radius: 10px;
-    }
+    .js-plotly-plot .plotly .modebar {
+    background: rgba(135, 206, 235, 0.9) !important; /* skyblue */
+    border-radius: 10px;
+}
     
     /* Premium text colors for better visibility */
     .premium-text {
@@ -1300,3 +1300,4 @@ st.markdown(f"""
     <p>VARUN AI - Vikasit Adhunik Roopantaran ke liye Uttam Nirdesh</p>
 </div>
 """, unsafe_allow_html=True)
+
