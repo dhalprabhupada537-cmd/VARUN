@@ -290,67 +290,77 @@ def get_translations():
     }
     return translations
 
-# Custom CSS with enhanced VARUN branding
+# Custom CSS with premium sunrise field background
 st.markdown("""
 <style>
-    /* Main background */
+    /* Main background with sunrise field gradient */
     .stApp {
-        background: linear-gradient(120deg, #D9A679 30%, #4CAF50 70%);
+        background: linear-gradient(180deg, #FF7E30 0%, #FFB347 20%, #87CEEB 40%, #E0F7FA 70%, #FFFFFF 100%);
+        background-attachment: fixed;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
     
-    /* Headers */
+    /* Premium card styling */
     .main-header {
         font-size: 3.5rem;
-        color: #2E8B57;
+        color: #2E4057;
         text-align: center;
-        font-weight: bold;
+        font-weight: 800;
         margin-bottom: 0;
-        background: linear-gradient(135deg, #2E8B57 0%, #3CB371 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        font-family: 'Georgia', serif;
     }
+    
     .tagline {
         font-size: 1.2rem;
-        color: #4B5563;
+        color: #2E4057;
         text-align: center;
         margin-top: 0;
         font-style: italic;
-    }
-    .sub-header {
-        font-size: 1.8rem;
-        color: #2E8B57;
-        border-bottom: 2px solid #3CB371;
-        padding-bottom: 10px;
-        margin-top: 20px;
+        font-weight: 500;
     }
     
-    /* Cards */
+    .sub-header {
+        font-size: 1.8rem;
+        color: #2E4057;
+        border-bottom: 2px solid #4CAF50;
+        padding-bottom: 10px;
+        margin-top: 20px;
+        font-weight: 700;
+        font-family: 'Georgia', serif;
+    }
+    
+    /* Premium cards with glassmorphism effect */
     .card {
         padding: 20px;
         border-radius: 15px;
-        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.05);
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
         margin: 15px 0;
-        background: linear-gradient(135deg, #FFFFFF 0%, #F9FAFB 100%);
-        border-left: 5px solid #4CAF50;
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+        border: 1px solid rgba(255, 255, 255, 0.18);
         transition: transform 0.3s ease;
-        border: 1px solid #E5E7EB;
-        color: #374151;
+        color: #2E4057;
     }
+    
     .card:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.1);
+        transform: translateY(-5px);
+        box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.25);
     }
     
     /* Recommendation card */
     .recommendation-card {
-        background: linear-gradient(135deg, #EFF6FF 0%, #DCFCE7 100%);
+        background: linear-gradient(135deg, rgba(232, 245, 233, 0.9) 0%, rgba(200, 230, 201, 0.9) 100%);
         padding: 25px;
         border-radius: 15px;
-        border-left: 5px solid #22C55E;
+        border-left: 5px solid #4CAF50;
         margin-bottom: 20px;
-        border: 1px solid #BBF7D0;
-        color: #14532D;
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+        color: #1B5E20;
+        border: 1px solid rgba(255, 255, 255, 0.18);
     }
     
     /* Soil image */
@@ -364,17 +374,19 @@ st.markdown("""
     
     /* Weather cards */
     .weather-card {
-        background: linear-gradient(135deg, #1E40AF 0%, #DBEAFE 100%);
+        background: rgba(225, 245, 254, 0.9);
         padding: 20px;
         border-radius: 12px;
         text-align: center;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         height: 120px;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        border: 1px solid #BFDBFE;
-        color: #1E40AF;
+        border: 1px solid rgba(179, 229, 252, 0.5);
+        color: #01579B;
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
     }
     
     /* Footer */
@@ -382,10 +394,14 @@ st.markdown("""
         text-align: center;
         margin-top: 30px;
         padding: 20px;
-        background: linear-gradient(135deg, #2E8B57 0%, #3CB371 100%);
+        background: rgba(46, 64, 87, 0.9);
         color: white;
         border-radius: 10px;
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+        border: 1px solid rgba(255, 255, 255, 0.18);
     }
+    
     .team-name {
         font-weight: bold;
         color: #FFD700;
@@ -398,13 +414,15 @@ st.markdown("""
     
     /* Analysis cards */
     .analysis-card {
-        background: linear-gradient(135deg, #FFFBEB 0%, #FEF3C7 100%);
+        background: rgba(255, 248, 225, 0.9);
         padding: 15px;
         border-radius: 10px;
         margin: 10px 0;
         height: 140px;
-        border: 1px solid #FDE68A;
-        color: #78350F;
+        border: 1px solid rgba(255, 236, 179, 0.5);
+        color: #7F6000;
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
     }
     
     /* Factor score */
@@ -416,22 +434,26 @@ st.markdown("""
     
     /* Disease card */
     .disease-card {
-        background: linear-gradient(135deg, #FEF2F2 0%, #FEE2E2 100%);
+        background: rgba(255, 235, 238, 0.9);
         padding: 15px;
         border-radius: 10px;
         margin: 10px 0;
-        border: 1px solid #FECACA;
-        color: #7F1D1D;
+        border: 1px solid rgba(255, 205, 210, 0.5);
+        color: #C62828;
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
     }
     
     /* Fertilizer card */
     .fertilizer-card {
-        background: linear-gradient(135deg, #F0FDF4 0%, #DCFCE7 100%);
+        background: rgba(232, 245, 233, 0.9);
         padding: 15px;
         border-radius: 10px;
         margin: 10px 0;
-        border: 1px solid #BBF7D0;
-        color: #14532D;
+        border: 1px solid rgba(200, 230, 201, 0.5);
+        color: #2E7D32;
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
     }
     
     /* Sidebar */
@@ -443,24 +465,28 @@ st.markdown("""
     .stTabs [data-baseweb="tab-list"] {
         gap: 8px;
     }
+    
     .stTabs [data-baseweb="tab"] {
         height: 50px;
         white-space: pre-wrap;
-        background-color: #f1f5f9;
+        background-color: rgba(255, 255, 255, 0.7);
         border-radius: 8px 8px 0 0;
         gap: 8px;
         padding: 10px 16px;
-        color: #4B5563;
-        font-weight: 500;
+        color: #2E4057;
+        font-weight: 600;
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
     }
+    
     .stTabs [aria-selected="true"] {
-        background-color: #2E8B57;
+        background-color: rgba(76, 175, 80, 0.9);
         color: white;
     }
     
     /* Text elements */
     .stMarkdown, .stText, .stInfo, .stSuccess {
-        color: #374151;
+        color: #2E4057;
     }
     
     /* Buttons */
@@ -471,15 +497,32 @@ st.markdown("""
         border-radius: 8px;
         padding: 10px 20px;
         font-weight: 600;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
+    
     .stButton button:hover {
         background: linear-gradient(135deg, #3CB371 0%, #2E8B57 100%);
         color: white;
+        box-shadow: 0 6px 12px rgba(0,0,0,0.15);
     }
     
     /* Sliders */
     .stSlider {
         color: #2E8B57;
+    }
+    
+    /* Input fields */
+    .stTextInput>div>div>input, .stSelectbox>div>select {
+        background-color: rgba(255, 255, 255, 0.9);
+        color: #2E4057;
+        border-radius: 8px;
+    }
+    
+    /* Sidebar styling */
+    .css-1d391kg {
+        background: linear-gradient(180deg, rgba(248, 250, 252, 0.9) 0%, rgba(226, 232, 240, 0.9) 100%);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
     }
 </style>
 """, unsafe_allow_html=True)
@@ -1199,6 +1242,7 @@ st.markdown(f"""
     <p>VARUN AI - Vikasit Adhunik Roopantaran ke liye Uttam Nirdesh</p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
