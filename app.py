@@ -685,7 +685,7 @@ with st.sidebar:
     
     st.markdown(f"## {current_lang['farmer_details']}")
     
-    farmer_name = st.text_input(current_lang["full_name"], "N. KAMAL RAO")
+    farmer_name = st.text_input(current_lang["full_name"], "FARMER'S NAME")
     farm_location = st.selectbox(current_lang["region"], current_lang["regions"], index=1)
     farm_size = st.slider(current_lang["farm_size"], 1, 100, 10)
     
@@ -1300,4 +1300,5 @@ st.markdown(f"""
     <p>VARUN AI - Vikasit Adhunik Roopantaran ke liye Uttam Nirdesh</p>
 </div>
 """, unsafe_allow_html=True)
+
 
